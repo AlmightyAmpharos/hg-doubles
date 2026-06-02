@@ -17,7 +17,10 @@ li {
 
 <h1>Pokédex</h1>
 
-<input type="text" placeholder="Search Pokémon">
+<input
+  id="search"
+  type="text"
+  placeholder="Search Pokémon">
 
 <ul>
     <div id="pokemon-list"></div>
@@ -26,17 +29,39 @@ li {
 fetch('webdata/pokemon.json')
   .then(response => response.json())
   .then(data => {
-    const list = document.getElementById('pokemon-list');
 
-    data.forEach(pokemon => {
-      const div = document.createElement('div');
-      div.innerHTML = `
-  <a href="pokemon-details.html?id=${pokemon.id}">
-    ${pokemon.id}. ${pokemon.name}
-  </a>
-`;
-      list.appendChild(div);
+    const list = document.getElementById('pokemon-list');
+    const search = document.getElementById('search');
+
+    function renderPokemon(filter = '') {
+      list.innerHTML = '';
+
+      data
+  .filter(pokemon =>
+    pokemon.name.toLowerCase().includes(filter.toLowerCase())
+  )
+  .forEach(pokemon => {
+
+    const div = document.createElement('div');
+
+    div.innerHTML = `
+      <img src="${pokemon.sprite}" width="40">
+
+      <a href="pokemon-details.html?id=${pokemon.id}">
+        ${pokemon.id}. ${pokemon.name}
+      </a>
+    `;
+
+    list.appendChild(div);
+  });
+    }
+
+    renderPokemon();
+
+    search.addEventListener('input', () => {
+      renderPokemon(search.value);
     });
+
   });
 </script>
 </body>

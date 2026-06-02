@@ -9,11 +9,21 @@
   "defense": 49
 },
   {
-    "id": 2,
-    "name": "Ivysaur",
-    "type": "Grass / Poison",
-    "hp": 60,
-    "attack": 62,
-    "defense": 63
-  }
+  "id": 2,
+  "name": "Ivysaur",
+  "sprite": "webimages/ivysaur.png",
+  "type": "Grass / Poison",
+  "hp": 55,
+  "attack": 59,
+  "defense": 59
+},
+  {
+  "id": 3,
+  "name": "Venusaur",
+  "sprite": "webimages/venusaur.png",
+  "type": "Grass / Poison",
+  "hp": 65,
+  "attack": 69,
+  "defense": 69
+}
 ]
