@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokémon Details</title>
+</head>
+<body>
+
+<div id="pokemon-details"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const pokemonId = Number(params.get('id'));
+
+fetch('webdata/pokemon.json')
+  .then(response => response.json())
+  .then(data => {
+    const pokemon = data.find(p => p.id === pokemonId);
+
+    document.getElementById('pokemon-details').innerHTML = `
+  <img src="${pokemon.sprite}" width="96">
+  <h1>${pokemon.name}</h1>
+  <p>Type: ${pokemon.type}</p>
+  <p>HP: ${pokemon.hp}</p>
+  <p>Attack: ${pokemon.attack}</p>
+  <p>Defense: ${pokemon.defense}</p>
+`;
+  });
+</script>
+
+</body>
+</html>

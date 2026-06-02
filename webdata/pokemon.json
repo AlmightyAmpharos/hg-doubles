@@ -1,12 +1,13 @@
 [
   {
-    "id": 1,
-    "name": "Bulbasaur",
-    "type": "Grass / Poison",
-    "hp": 45,
-    "attack": 49,
-    "defense": 49
-  },
+  "id": 1,
+  "name": "Bulbasaur",
+  "sprite": "images/bulbasaur.png",
+  "type": "Grass / Poison",
+  "hp": 45,
+  "attack": 49,
+  "defense": 49
+},
   {
     "id": 2,
     "name": "Ivysaur",

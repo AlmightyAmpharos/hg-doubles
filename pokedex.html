@@ -30,7 +30,11 @@ fetch('webdata/pokemon.json')
 
     data.forEach(pokemon => {
       const div = document.createElement('div');
-      div.textContent = `${pokemon.id}. ${pokemon.name}`;
+      div.innerHTML = `
+  <a href="pokemon-details.html?id=${pokemon.id}">
+    ${pokemon.id}. ${pokemon.name}
+  </a>
+`;
       list.appendChild(div);
     });
   });
