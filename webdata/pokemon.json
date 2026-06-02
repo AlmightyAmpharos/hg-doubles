@@ -2,7 +2,7 @@
   {
   "id": 1,
   "name": "Bulbasaur",
-  "sprite": "images/bulbasaur.png",
+  "sprite": "webimages/bulbasaur.png",
   "type": "Grass / Poison",
   "hp": 45,
   "attack": 49,
