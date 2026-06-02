@@ -3,27 +3,36 @@
   "id": 1,
   "name": "Bulbasaur",
   "sprite": "webimages/bulbasaur.png",
-  "type": "Grass / Poison",
+  "type": ["Grass", "Poison"],
   "hp": 45,
   "attack": 49,
-  "defense": 49
+  "defense": 49,
+  "speed": 45,
+  "spAttack": 65,
+  "spDefense": 65
 },
   {
   "id": 2,
   "name": "Ivysaur",
   "sprite": "webimages/ivysaur.png",
-  "type": "Grass / Poison",
+  "type": ["Grass", "Poison"],
   "hp": 55,
   "attack": 59,
-  "defense": 59
+  "defense": 59,
+  "speed": 45,
+  "spAttack": 65,
+  "spDefense": 65
 },
   {
   "id": 3,
   "name": "Venusaur",
   "sprite": "webimages/venusaur.png",
-  "type": "Grass / Poison",
+  "type": ["Grass", "Poison"],
   "hp": 65,
   "attack": 69,
-  "defense": 69
+  "defense": 69,
+  "speed": 45,
+  "spAttack": 65,
+  "spDefense": 65
 }
 ]

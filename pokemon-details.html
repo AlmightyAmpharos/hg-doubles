@@ -20,9 +20,36 @@ fetch('webdata/pokemon.json')
   <img src="${pokemon.sprite}" width="96">
   <h1>${pokemon.name}</h1>
   <p>Type: ${pokemon.type}</p>
-  <p>HP: ${pokemon.hp}</p>
-  <p>Attack: ${pokemon.attack}</p>
-  <p>Defense: ${pokemon.defense}</p>
+  <table border="1">
+  <tr>
+    <th>Stat</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>HP</td>
+    <td>${pokemon.hp}</td>
+  </tr>
+  <tr>
+    <td>Attack</td>
+    <td>${pokemon.attack}</td>
+  </tr>
+  <tr>
+    <td>Defense</td>
+    <td>${pokemon.defense}</td>
+  </tr>
+  <tr>
+    <td>HP</td>
+    <td>${pokemons.speed}</td>
+  </tr>
+  <tr>
+    <td>HP</td>
+    <td>${pokemon.spAttack}</td
+  </tr>
+  <tr>
+    <td>HP</td>
+    <td>${pokemon.spDefense}</td
+  </tr>
+</table>
 `;
   });
 </script>
