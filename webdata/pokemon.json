@@ -9,7 +9,10 @@
   "defense": 49,
   "speed": 45,
   "spAttack": 65,
-  "spDefense": 65
+  "spDefense": 65,
+  "ability1": "Overgrow",
+  "ability2": null,
+  "hiddenAbility": "Chlorophyll"
 },
   {
   "id": 2,
@@ -21,7 +24,10 @@
   "defense": 59,
   "speed": 45,
   "spAttack": 65,
-  "spDefense": 65
+  "spDefense": 65,
+  "ability1": "Overgrow",
+  "ability2": null,
+  "hiddenAbility": "Chlorophyll"
 },
   {
   "id": 3,
@@ -33,6 +39,9 @@
   "defense": 69,
   "speed": 45,
   "spAttack": 65,
-  "spDefense": 65
+  "spDefense": 65,
+  "ability1": "Overgrow",
+  "ability2": null,
+  "hiddenAbility": "Chlorophyll"
 }
 ]

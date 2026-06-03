@@ -2,64 +2,180 @@
 <html>
 <head>
     <title>Pokémon Details</title>
+
+    <style>
+
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .pokemon-header {
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .type-icons img {
+        margin: 0 2px;
+    }
+
+    .ability-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .ability-column {
+        border: 1px solid #ccc;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .stats-box {
+        border: 1px solid #ccc;
+        padding: 20px;
+    }
+
+    .stats-box table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .stats-box td {
+        padding: 8px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .stat-name {
+        font-weight: bold;
+        width: 150px;
+    }
+
+    </style>
+
 </head>
 <body>
 
 <div id="pokemon-details"></div>
 
 <script>
+
 const params = new URLSearchParams(window.location.search);
 const pokemonId = Number(params.get('id'));
 
 fetch('webdata/pokemon.json')
   .then(response => response.json())
   .then(data => {
+
     const pokemon = data.find(p => p.id === pokemonId);
 
+    if (!pokemon) {
+      document.getElementById('pokemon-details').innerHTML =
+        '<h1>Pokémon not found</h1>';
+      return;
+    }
+
+    const bst =
+      pokemon.hp +
+      pokemon.attack +
+      pokemon.defense +
+      pokemon.speed +
+      pokemon.spAttack +
+      pokemon.spDefense;
+
     document.getElementById('pokemon-details').innerHTML = `
-  <img src="${pokemon.sprite}" width="96">
-  <h1>${pokemon.name}</h1>
- <div style="margin: 10px 0;">
-  ${pokemon.type.map(type => `
-    <img
-      src="webimages/types/${type}.png"
-      alt="${type}"
-      height="24"
-      style="margin-right: 4px;">
-  `).join('')}
-</div>
-  <table border="1">
-  <tr>
-    <th>Stat</th>
-    <th>Value</th>
-  </tr>
-  <tr>
-    <td>HP</td>
-    <td>${pokemon.hp}</td>
-  </tr>
-  <tr>
-    <td>Atk</td>
-    <td>${pokemon.attack}</td>
-  </tr>
-  <tr>
-    <td>Def</td>
-    <td>${pokemon.defense}</td>
-  </tr>
-  <tr>
-    <td>Spd</td>
-    <td>${pokemon.speed}</td>
-  </tr>
-  <tr>
-    <td>Sp.Atk</td>
-    <td>${pokemon.spAttack}</td>
-  </tr>
-  <tr>
-    <td>Sp.Def</td>
-    <td>${pokemon.spDefense}</td>
-  </tr>
-</table>
-`;
+
+      <div class="pokemon-header">
+
+        <h1>${pokemon.name}</h1>
+
+        <img src="${pokemon.sprite}" width="160">
+
+        <div class="type-icons">
+
+          ${pokemon.type.map(type => `
+            <img
+              src="webimages/types/${type}.png"
+              alt="${type}"
+              height="24">
+          `).join('')}
+
+        </div>
+
+      </div>
+
+      <div class="ability-box">
+
+        <div class="ability-column">
+          <h3>Ability 1</h3>
+          <p>${pokemon.ability1 ?? 'None'}</p>
+        </div>
+
+        <div class="ability-column">
+          <h3>Ability 2</h3>
+          <p>${pokemon.ability2 ?? 'None'}</p>
+        </div>
+
+        <div class="ability-column">
+          <h3>Hidden Ability</h3>
+          <p>${pokemon.hiddenAbility ?? 'None'}</p>
+        </div>
+
+      </div>
+
+      <div class="stats-box">
+
+        <h2>Base Stats</h2>
+
+        <table>
+
+          <tr>
+            <td class="stat-name">HP</td>
+            <td>${pokemon.hp}</td>
+          </tr>
+
+          <tr>
+            <td class="stat-name">Attack</td>
+            <td>${pokemon.attack}</td>
+          </tr>
+
+          <tr>
+            <td class="stat-name">Defense</td>
+            <td>${pokemon.defense}</td>
+          </tr>
+
+          <tr>
+            <td class="stat-name">Speed</td>
+            <td>${pokemon.speed}</td>
+          </tr>
+
+          <tr>
+            <td class="stat-name">Sp. Atk</td>
+            <td>${pokemon.spAttack}</td>
+          </tr>
+
+          <tr>
+            <td class="stat-name">Sp. Def</td>
+            <td>${pokemon.spDefense}</td>
+          </tr>
+
+          <tr>
+            <td class="stat-name"><strong>BST</strong></td>
+            <td><strong>${bst}</strong></td>
+          </tr>
+
+        </table>
+
+      </div>
+
+    `;
   });
+
 </script>
 
 </body>
