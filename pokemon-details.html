@@ -125,6 +125,15 @@ function renderStat(label, value) {
 /* -------------------------
    DATA LOAD
 --------------------------*/
+function formatAbility(raw) {
+    if (!raw) return "None";
+
+    return raw
+        .replace("ABILITY_", "")          // remove prefix
+        .toLowerCase()                    // lower case
+        .replace(/_/g, " ")               // underscores → spaces
+        .replace(/\b\w/g, c => c.toUpperCase()); // capitalize words
+}
 
 fetch('webdata/pokemon.json')
   .then(response => response.json())
@@ -169,17 +178,17 @@ fetch('webdata/pokemon.json')
 
             <div class="ability-column">
                 <h3>Ability 1</h3>
-                <p>${pokemon.ability1 ?? 'None'}</p>
+                <p>${formatAbility(pokemon.ability1)}</p>
             </div>
 
             <div class="ability-column">
                 <h3>Ability 2</h3>
-                <p>${pokemon.ability2 ?? 'None'}</p>
+                <p>${formatAbility(pokemon.ability2)}</p>
             </div>
 
             <div class="ability-column">
                 <h3>Hidden Ability</h3>
-                <p>${pokemon.hiddenAbility ?? 'None'}</p>
+                <p>${formatAbility(pokemon.hiddenAbility)}</p>
             </div>
 
         </div>
