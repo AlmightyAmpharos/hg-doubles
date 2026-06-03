@@ -135,6 +135,15 @@ function formatAbility(raw) {
         .replace(/\b\w/g, c => c.toUpperCase()); // capitalize words
 }
 
+function formatType(raw) {
+    if (!raw) return "";
+
+    return raw
+        .replace("TYPE_", "")   // remove prefix
+        .toLowerCase()
+        .replace(/\b\w/g, c => c.toUpperCase()); // Water, Fire, Grass
+}
+
 fetch('webdata/pokemon.json')
   .then(response => response.json())
   .then(data => {
@@ -164,13 +173,17 @@ fetch('webdata/pokemon.json')
             <img src="${pokemon.sprite}" width="160">
 
             <div class="type-icons">
-                ${pokemon.type.map(type => `
-                    <img
-                        src="webimages/types/${type}.png"
-                        alt="${type}"
-                        height="24">
-                `).join('')}
-            </div>
+    ${pokemon.type.map(type => {
+        const formatted = formatType(type);
+
+        return `
+            <img
+                src="webimages/types/${formatted}.png"
+                alt="${formatted}"
+                height="24">
+        `;
+    }).join('')}
+</div>
 
         </div>
 
