@@ -19,7 +19,15 @@ fetch('webdata/pokemon.json')
     document.getElementById('pokemon-details').innerHTML = `
   <img src="${pokemon.sprite}" width="96">
   <h1>${pokemon.name}</h1>
-  <p>Type: ${pokemon.type}</p>
+ <div style="margin: 10px 0;">
+  ${pokemon.type.map(type => `
+    <img
+      src="webimages/types/${type}.png"
+      alt="${type}"
+      height="24"
+      style="margin-right: 4px;">
+  `).join('')}
+</div>
   <table border="1">
   <tr>
     <th>Stat</th>
