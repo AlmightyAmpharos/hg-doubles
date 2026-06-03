@@ -41,19 +41,42 @@
         padding: 20px;
     }
 
-    .stats-box table {
-        width: 100%;
-        border-collapse: collapse;
+    .stats-container {
+        border: 1px solid #ccc;
+        padding: 15px;
     }
 
-    .stats-box td {
-        padding: 8px;
-        border-bottom: 1px solid #eee;
+    .stat-row {
+        display: grid;
+        grid-template-columns: 90px 1fr 40px;
+        align-items: center;
+        margin: 6px 0;
+        gap: 10px;
     }
 
-    .stat-name {
+    .stat-label {
         font-weight: bold;
-        width: 150px;
+    }
+
+    .stat-bar-bg {
+        background: #eee;
+        height: 10px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .stat-bar-fill {
+        height: 10px;
+        border-radius: 5px;
+    }
+
+    .stat-value {
+        text-align: right;
+    }
+
+    .bst {
+        margin-top: 10px;
+        text-align: right;
     }
 
     </style>
@@ -68,6 +91,41 @@
 const params = new URLSearchParams(window.location.search);
 const pokemonId = Number(params.get('id'));
 
+/* -------------------------
+   STAT FUNCTIONS (FIXED)
+--------------------------*/
+
+function getStatColor(value) {
+    if (value <= 29) return "#e0534c";
+    if (value <= 59) return "#ef8636";
+    if (value <= 89) return "#F9DE6E";
+    if (value <= 119) return "#AED46D";
+    if (value <= 149) return "#62CA6B";
+    return "#57BFB7";
+}
+
+function renderStat(label, value) {
+    const percent = Math.min(value / 225, 1) * 100;
+    const color = getStatColor(value);
+
+    return `
+        <div class="stat-row">
+            <div class="stat-label">${label}</div>
+
+            <div class="stat-bar-bg">
+                <div class="stat-bar-fill"
+                     style="width:${percent}%; background:${color};"></div>
+            </div>
+
+            <div class="stat-value">${value}</div>
+        </div>
+    `;
+}
+
+/* -------------------------
+   DATA LOAD
+--------------------------*/
+
 fetch('webdata/pokemon.json')
   .then(response => response.json())
   .then(data => {
@@ -75,103 +133,77 @@ fetch('webdata/pokemon.json')
     const pokemon = data.find(p => p.id === pokemonId);
 
     if (!pokemon) {
-      document.getElementById('pokemon-details').innerHTML =
-        '<h1>Pokémon not found</h1>';
-      return;
+        document.getElementById('pokemon-details').innerHTML =
+            '<h1>Pokémon not found</h1>';
+        return;
     }
 
     const bst =
-      pokemon.hp +
-      pokemon.attack +
-      pokemon.defense +
-      pokemon.speed +
-      pokemon.spAttack +
-      pokemon.spDefense;
+        pokemon.hp +
+        pokemon.attack +
+        pokemon.defense +
+        pokemon.speed +
+        pokemon.spAttack +
+        pokemon.spDefense;
 
     document.getElementById('pokemon-details').innerHTML = `
 
-      <div class="pokemon-header">
+        <div class="pokemon-header">
 
-        <h1>${pokemon.name}</h1>
+            <h1>${pokemon.name}</h1>
 
-        <img src="${pokemon.sprite}" width="160">
+            <img src="${pokemon.sprite}" width="160">
 
-        <div class="type-icons">
-
-          ${pokemon.type.map(type => `
-            <img
-              src="webimages/types/${type}.png"
-              alt="${type}"
-              height="24">
-          `).join('')}
+            <div class="type-icons">
+                ${pokemon.type.map(type => `
+                    <img
+                        src="webimages/types/${type}.png"
+                        alt="${type}"
+                        height="24">
+                `).join('')}
+            </div>
 
         </div>
 
-      </div>
+        <div class="ability-box">
 
-      <div class="ability-box">
+            <div class="ability-column">
+                <h3>Ability 1</h3>
+                <p>${pokemon.ability1 ?? 'None'}</p>
+            </div>
 
-        <div class="ability-column">
-          <h3>Ability 1</h3>
-          <p>${pokemon.ability1 ?? 'None'}</p>
+            <div class="ability-column">
+                <h3>Ability 2</h3>
+                <p>${pokemon.ability2 ?? 'None'}</p>
+            </div>
+
+            <div class="ability-column">
+                <h3>Hidden Ability</h3>
+                <p>${pokemon.hiddenAbility ?? 'None'}</p>
+            </div>
+
         </div>
 
-        <div class="ability-column">
-          <h3>Ability 2</h3>
-          <p>${pokemon.ability2 ?? 'None'}</p>
+        <div class="stats-box">
+
+            <h2>Base Stats</h2>
+
+            <div class="stats-container">
+
+                ${renderStat("HP", pokemon.hp)}
+                ${renderStat("Attack", pokemon.attack)}
+                ${renderStat("Defense", pokemon.defense)}
+                ${renderStat("Speed", pokemon.speed)}
+                ${renderStat("Sp. Atk", pokemon.spAttack)}
+                ${renderStat("Sp. Def", pokemon.spDefense)}
+
+                <div class="bst">
+                    <strong>BST:</strong> ${bst}
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="ability-column">
-          <h3>Hidden Ability</h3>
-          <p>${pokemon.hiddenAbility ?? 'None'}</p>
-        </div>
-
-      </div>
-
-      <div class="stats-box">
-
-        <h2>Base Stats</h2>
-
-        <table>
-
-          <tr>
-            <td class="stat-name">HP</td>
-            <td>${pokemon.hp}</td>
-          </tr>
-
-          <tr>
-            <td class="stat-name">Attack</td>
-            <td>${pokemon.attack}</td>
-          </tr>
-
-          <tr>
-            <td class="stat-name">Defense</td>
-            <td>${pokemon.defense}</td>
-          </tr>
-
-          <tr>
-            <td class="stat-name">Speed</td>
-            <td>${pokemon.speed}</td>
-          </tr>
-
-          <tr>
-            <td class="stat-name">Sp. Atk</td>
-            <td>${pokemon.spAttack}</td>
-          </tr>
-
-          <tr>
-            <td class="stat-name">Sp. Def</td>
-            <td>${pokemon.spDefense}</td>
-          </tr>
-
-          <tr>
-            <td class="stat-name"><strong>BST</strong></td>
-            <td><strong>${bst}</strong></td>
-          </tr>
-
-        </table>
-
-      </div>
 
     `;
   });
