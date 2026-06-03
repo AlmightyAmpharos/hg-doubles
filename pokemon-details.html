@@ -172,15 +172,15 @@ fetch('webdata/pokemon.json')
 
             <img src="${pokemon.sprite}" width="160">
 
-            <div class="type-icons">
-    ${pokemon.type.map(type => {
+           <div class="type-icons">
+    ${[...new Set(pokemon.type)].map(type => {
         const formatted = formatType(type);
 
         return `
             <img
                 src="webimages/types/${formatted}.png"
                 alt="${formatted}"
-                height="24">
+                height="44">
         `;
     }).join('')}
 </div>
