@@ -45,12 +45,12 @@ fetch('webdata/pokemon.json')
     const div = document.createElement('div');
 
     div.innerHTML = `
-      <img src="${pokemon.sprite}" width="40">
+  <img src="${pokemon.sprite}" width="40">
 
-      <a href="pokemon-details.html?id=${pokemon.id}">
-        ${pokemon.id}. ${pokemon.name}
-      </a>
-    `;
+  <a href="pokemon-details.html?id=${pokemon.id}">
+    ${pokemon.name}
+  </a>
+`;
 
     list.appendChild(div);
   });
