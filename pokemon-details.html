@@ -48,7 +48,7 @@
 
     .stat-row {
         display: grid;
-        grid-template-columns: 90px 1fr 40px;
+        grid-template-columns: 90px 60px 1fr;
         align-items: center;
         margin: 6px 0;
         gap: 10px;
@@ -60,14 +60,14 @@
 
     .stat-bar-bg {
         background: #eee;
-        height: 10px;
+        height: 14px;
         width: 100%;
-        border-radius: 5px;
+        border-radius: 6px;
     }
 
     .stat-bar-fill {
-        height: 10px;
-        border-radius: 5px;
+        height: 14px;
+        border-radius: 6px;
     }
 
     .stat-value {
@@ -109,17 +109,19 @@ function renderStat(label, value) {
     const color = getStatColor(value);
 
     return `
-        <div class="stat-row">
-            <div class="stat-label">${label}</div>
+    <div class="stat-row">
 
-            <div class="stat-bar-bg">
-                <div class="stat-bar-fill"
-                     style="width:${percent}%; background:${color};"></div>
-            </div>
+        <div class="stat-label">${label}</div>
 
-            <div class="stat-value">${value}</div>
+        <div class="stat-value">${value}</div>
+
+        <div class="stat-bar-bg">
+            <div class="stat-bar-fill"
+                 style="width:${percent}%; background:${color};"></div>
         </div>
-    `;
+
+    </div>
+`;
 }
 
 /* -------------------------
@@ -213,11 +215,11 @@ fetch('webdata/pokemon.json')
             <div class="stats-container">
 
                 ${renderStat("HP", pokemon.hp)}
-                ${renderStat("Attack", pokemon.attack)}
-                ${renderStat("Defense", pokemon.defense)}
-                ${renderStat("Speed", pokemon.speed)}
-                ${renderStat("Sp. Atk", pokemon.spAttack)}
-                ${renderStat("Sp. Def", pokemon.spDefense)}
+                ${renderStat("ATK", pokemon.attack)}
+                ${renderStat("DEF", pokemon.defense)}
+                ${renderStat("SPA", pokemon.spAttack)}
+                ${renderStat("SPD", pokemon.spDefense)}
+                ${renderStat("SPE", pokemon.speed)}
 
                 <div class="bst">
                     <strong>BST:</strong> ${bst}
