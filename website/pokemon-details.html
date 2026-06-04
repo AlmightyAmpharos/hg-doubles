@@ -37,6 +37,16 @@
         position: relative;
     }
 
+    .ability-name {
+        margin-top: 6px;
+    }
+
+    .ability-hover {
+        position: relative;
+        display: inline-block;
+        cursor: help;
+    }
+
     /* Tooltip styling */
     .ability-tooltip {
         position: absolute;
@@ -324,13 +334,12 @@ Promise.all([
         const desc = getAbilityDesc(raw);
 
         return `
-            <div class="ability-column">
-                <h3>${name}</h3>
-
+            <span class="ability-hover">
+                ${name}
                 <div class="ability-tooltip">
                     ${desc}
                 </div>
-            </div>
+            </span>
         `;
     }
 
@@ -371,11 +380,28 @@ Promise.all([
 
         </div>
 
-        <div class="ability-box">
+       <div class="ability-box">
 
-            ${abilityHTML(pokemon.ability1)}
-            ${abilityHTML(pokemon.ability2)}
-            ${abilityHTML(pokemon.hiddenAbility)}
+            <div class="ability-column">
+                <h3>Ability 1</h3>
+                <div class="ability-name">
+                    ${abilityHTML(pokemon.ability1)}
+                </div>
+            </div>
+
+            <div class="ability-column">
+                <h3>Ability 2</h3>
+                <div class="ability-name">
+                    ${abilityHTML(pokemon.ability2)}
+                </div>
+            </div>
+
+            <div class="ability-column">
+                <h3>Hidden Ability</h3>
+                <div class="ability-name">
+                    ${abilityHTML(pokemon.hiddenAbility)}
+                </div>
+            </div>
 
         </div>
 
