@@ -5,52 +5,106 @@
 
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
+            display: flex;
+            height: 100vh;
         }
 
-        .layout {
+        /* LEFT PANEL */
+
+        .left {
+            width: 520px;
+            border-right: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .search input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+        }
+
+        .header-row {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr 2fr;
+            padding: 8px;
+            font-size: 12px;
+            font-weight: bold;
+            background: #f3f3f3;
+            border-bottom: 1px solid #ccc;
         }
 
-        /* LEFT PANEL (Abilities list) */
-        .abilities-panel {
-            border: 1px solid #ccc;
-            padding: 15px;
-            height: 80vh;
+        .ability-list {
             overflow-y: auto;
+            flex: 1;
         }
 
         .ability-item {
-            border-bottom: 1px solid #eee;
-            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 8px;
             cursor: pointer;
+            font-size: 13px;
+            align-items: start;
+        }
+
+        .ability-item:nth-child(even) {
+            background: #f7f7f7;
+        }
+
+        .ability-item:nth-child(odd) {
+            background: #ffffff;
         }
 
         .ability-item:hover {
-            background: #f6f6f6;
+            background: #eaf3ff;
+        }
+
+        .ability-item.active {
+            background: #d6e8ff !important;
         }
 
         .ability-name {
             font-weight: bold;
-            margin-bottom: 5px;
+            padding-right: 10px;
         }
 
         .ability-desc {
-            font-size: 13px;
             color: #444;
+            font-size: 12px;
+            line-height: 1.3;
         }
 
-        /* RIGHT PANEL (Pokémon list) */
-        .pokemon-panel {
-            border: 1px solid #ccc;
-            padding: 15px;
-            height: 80vh;
+        /* RIGHT PANEL */
+
+        .right {
+            flex: 1;
+            padding: 20px;
             overflow-y: auto;
+        }
+
+        .header {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        .pokemon-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .pokemon-row {
@@ -58,17 +112,17 @@
             align-items: center;
             gap: 10px;
             padding: 6px 0;
-            border-bottom: 1px solid #eee;
         }
 
         .pokemon-row img {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
+            image-rendering: pixelated;
         }
 
         .pokemon-row a {
             text-decoration: none;
-            color: #333;
+            color: #222;
             font-weight: bold;
         }
 
@@ -76,54 +130,35 @@
             text-decoration: underline;
         }
 
-        .panel-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
     </style>
 </head>
 
 <body>
 
-<h1>Abilities</h1>
+<div class="left">
 
-<div class="layout">
-
-    <!-- LEFT: ABILITIES -->
-    <div class="abilities-panel">
-        <div class="panel-title">Ability List</div>
-        <div id="ability-list"></div>
+    <div class="search">
+        <input id="search" placeholder="Search abilities...">
     </div>
 
-    <!-- RIGHT: POKÉMON -->
-    <div class="pokemon-panel">
-        <div class="panel-title">Pokémon with Ability</div>
-        <div id="pokemon-list">Select an ability</div>
+    <div class="header-row">
+        <div>Ability</div>
+        <div>Description</div>
     </div>
 
+    <div class="ability-list" id="abilityList"></div>
+
+</div>
+
+<div class="right" id="abilityDetails">
+    <h2>Select an ability</h2>
 </div>
 
 <script>
 
-let abilitiesData = [];
+let abilities = [];
 let pokemonData = [];
-
-/* -----------------------------
-   HELPERS
-------------------------------*/
-
-function formatAbilityName(name) {
-    return name.replace(/_/g, " ");
-}
-
-function getSpriteKey(pokemon) {
-    return (pokemon.spriteKey || pokemon.name || "").toLowerCase();
-}
-
-function getPokemonByName(name) {
-    return pokemonData.find(p => p.name === name);
-}
+let selectedAbility = null;
 
 /* -----------------------------
    LOAD DATA
@@ -132,67 +167,146 @@ function getPokemonByName(name) {
 Promise.all([
     fetch("webdata/abilities.json").then(r => r.json()),
     fetch("webdata/pokemon.json").then(r => r.json())
-]).then(([abilities, pokemon]) => {
+])
+.then(([abilityData, pokemon]) => {
 
-    abilitiesData = abilities;
+    abilities = abilityData;
     pokemonData = pokemon;
 
-    renderAbilities();
+    renderList();
 });
 
 /* -----------------------------
-   RENDER ABILITIES
+   HELPERS
 ------------------------------*/
 
-function renderAbilities() {
-    const container = document.getElementById("ability-list");
+function getPokemonByName(name) {
+    return pokemonData.find(p => p.name === name);
+}
 
-    container.innerHTML = abilitiesData.map(ability => `
-        <div class="ability-item" onclick="selectAbility(${ability.id})">
-            <div class="ability-name">${ability.name}</div>
-            <div class="ability-desc">${ability.description || ""}</div>
-        </div>
-    `).join("");
+function getSpriteKey(pokemon) {
+    return (pokemon.spriteKey || pokemon.name || "")
+        .toLowerCase();
 }
 
 /* -----------------------------
-   SELECT ABILITY
+   LEFT PANEL
 ------------------------------*/
 
-function selectAbility(id) {
-    const ability = abilitiesData.find(a => a.id === id);
-    const container = document.getElementById("pokemon-list");
+function renderList() {
 
-    if (!ability || !ability.pokemon) {
-        container.innerHTML = "No Pokémon found.";
-        return;
-    }
+    const search = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
 
-    container.innerHTML = ability.pokemon.map(name => {
-        const p = getPokemonByName(name);
+    const filtered = abilities.filter(a =>
+        a.name.toLowerCase().includes(search)
+    );
 
-        if (!p) {
-            return `
-                <div class="pokemon-row">
-                    <span>${name}</span>
-                </div>
-            `;
+    const list = document.getElementById("abilityList");
+
+    list.innerHTML = "";
+
+    filtered.forEach(ability => {
+
+        const div = document.createElement("div");
+
+        div.className = "ability-item";
+
+        if (
+            selectedAbility &&
+            selectedAbility.id === ability.id
+        ) {
+            div.classList.add("active");
         }
 
-        const key = getSpriteKey(p);
+        div.innerHTML = `
+            <div class="ability-name">
+                ${ability.name}
+            </div>
 
-        return `
-            <div class="pokemon-row">
-                <img src="webimages/sprites/${key}.png"
-                     onerror="this.src='webimages/sprites/missingno.png'">
-
-                <a href="pokemon-details.html?id=${p.id}">
-                    ${p.name}
-                </a>
+            <div class="ability-desc">
+                ${ability.description || ""}
             </div>
         `;
-    }).join("");
+
+        div.onclick = () => {
+            selectedAbility = ability;
+            renderList();
+            renderDetails();
+        };
+
+        list.appendChild(div);
+    });
 }
+
+/* -----------------------------
+   RIGHT PANEL
+------------------------------*/
+
+function renderDetails() {
+
+    if (!selectedAbility) return;
+
+    const pokemonHTML = selectedAbility.pokemon
+        .map(name => {
+
+            const p = getPokemonByName(name);
+
+            if (!p) {
+                return `
+                    <div class="pokemon-row">
+                        ${name}
+                    </div>
+                `;
+            }
+
+            const spriteKey = getSpriteKey(p);
+
+            return `
+                <div class="pokemon-row">
+
+                    <img
+                        src="webimages/sprites/${spriteKey}.png"
+                        onerror="this.src='webimages/sprites/missingno.png'"
+                    >
+
+                    <a href="pokemon-details.html?id=${p.id}">
+                        ${p.name}
+                    </a>
+
+                </div>
+            `;
+        })
+        .join("");
+
+    document.getElementById("abilityDetails").innerHTML = `
+
+        <div class="header">
+            ${selectedAbility.name}
+        </div>
+
+        <div class="description">
+            ${selectedAbility.description || ""}
+        </div>
+
+        <div class="pokemon-title">
+            Pokémon with this Ability
+        </div>
+
+        ${pokemonHTML}
+
+    `;
+}
+
+/* -----------------------------
+   EVENTS
+------------------------------*/
+
+document
+    .getElementById("search")
+    .addEventListener("input", renderList);
 
 </script>
 
