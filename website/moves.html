@@ -5,15 +5,16 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
+            font-family: Arial, sans-serif;
             display: flex;
             height: 100vh;
         }
 
-        /* LEFT PANEL */
+        /* ---------------- LEFT PANEL ---------------- */
+
         .left {
-            width: 320px;
+            width: 420px; /* wider */
             border-right: 1px solid #ccc;
             display: flex;
             flex-direction: column;
@@ -27,7 +28,19 @@
         .search input {
             width: 100%;
             padding: 8px;
-            font-size: 14px;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        select, input {
+            padding: 6px;
+            font-size: 12px;
         }
 
         .move-list {
@@ -36,35 +49,49 @@
         }
 
         .move-item {
-            padding: 8px 10px;
-            cursor: pointer;
+            display: grid;
+            grid-template-columns: 1fr auto auto auto auto auto;
+            gap: 8px;
+            padding: 8px;
             border-bottom: 1px solid #eee;
+            align-items: center;
+            cursor: pointer;
         }
 
         .move-item:hover {
-            background: #f5f5f5;
+            background: #f6f6f6;
         }
 
         .move-item.active {
             background: #e6f0ff;
         }
 
-        /* RIGHT PANEL */
+        .icon {
+            height: 20px;
+        }
+
+        .small {
+            font-size: 12px;
+            color: #444;
+        }
+
+        /* ---------------- RIGHT PANEL ---------------- */
+
         .right {
             flex: 1;
             padding: 20px;
         }
 
         .header {
-            font-size: 26px;
+            font-size: 28px;
             margin-bottom: 10px;
         }
 
         .icons {
             display: flex;
             gap: 10px;
-            margin-bottom: 20px;
             align-items: center;
+            margin-bottom: 15px;
         }
 
         .icons img {
@@ -87,26 +114,53 @@
             color: #111;
         }
 
-        .section {
-            margin-bottom: 20px;
+        .flags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
         }
+
+        .flag {
+            font-size: 12px;
+            padding: 3px 6px;
+            border-radius: 4px;
+            background: #eee;
+        }
+
+        .flag.contact { background: #d9f2ff; }
+        .flag.protect { background: #ffe0e0; }
+        .flag.mirror { background: #f3e5ff; }
+        .flag.sound { background: #e6ffe6; }
 
         .desc {
             white-space: pre-wrap;
+            margin-top: 10px;
             line-height: 1.4;
-            max-width: 700px;
         }
-
     </style>
 </head>
 
 <body>
 
 <div class="left">
+
     <div class="search">
         <input id="search" placeholder="Search moves...">
     </div>
-    <div id="moveList" class="move-list"></div>
+
+    <div class="filters">
+        <select id="typeFilter"><option value="">Type</option></select>
+        <select id="catFilter">
+            <option value="">Category</option>
+            <option value="Physical">Physical</option>
+            <option value="Special">Special</option>
+            <option value="Status">Status</option>
+        </select>
+    </div>
+
+    <div class="move-list" id="moveList"></div>
+
 </div>
 
 <div class="right" id="moveDetails">
@@ -119,52 +173,82 @@ let moves = [];
 let selected = null;
 
 fetch("webdata/moves.json")
-    .then(res => res.json())
+    .then(r => r.json())
     .then(data => {
         moves = data;
+        populateFilters();
         renderList();
     });
 
-/* -------------------------
-   ICON HELPERS
---------------------------*/
+/* ---------------- ICON HELPERS ---------------- */
 
 function typeIcon(type) {
-    return `<img src="webimages/types/${type}.png" alt="${type}">`;
+    if (!type) return "";
+    return `<img class="icon" src="webimages/types/${type}.png">`;
 }
 
 function categoryIcon(cat) {
     if (!cat) return "";
-
-    const file = cat.toLowerCase(); // Physical.png, Special.png, Status.png
-    return `<img src="webimages/categories/${file}.png">`;
+    const formatted = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
+    return `<img class="icon" src="webimages/categories/${formatted}.png">`;
 }
 
-/* -------------------------
-   LEFT LIST
---------------------------*/
+/* ---------------- FILTERS ---------------- */
+
+function populateFilters() {
+
+    const types = new Set();
+
+    moves.forEach(m => {
+        if (m.type) types.add(m.type);
+    });
+
+    const typeFilter = document.getElementById("typeFilter");
+
+    [...types].sort().forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t;
+        opt.textContent = t;
+        typeFilter.appendChild(opt);
+    });
+}
+
+/* ---------------- LEFT LIST ---------------- */
 
 function renderList() {
 
-    const filter = document.getElementById("search").value.toLowerCase();
-    const list = document.getElementById("moveList");
+    const search = document.getElementById("search").value.toLowerCase();
+    const type = document.getElementById("typeFilter").value;
+    const cat = document.getElementById("catFilter").value;
 
+    const list = document.getElementById("moveList");
     list.innerHTML = "";
 
     moves
-        .filter(m => m.name.toLowerCase().includes(filter))
+        .filter(m =>
+            (!search || m.name.toLowerCase().includes(search)) &&
+            (!type || m.type === type) &&
+            (!cat || m.pss === cat)
+        )
         .forEach(m => {
 
             const div = document.createElement("div");
-
             div.className = "move-item";
-            div.textContent = m.name;
+
+            div.innerHTML = `
+                <div>${m.name}</div>
+                ${typeIcon(m.type)}
+                ${categoryIcon(m.pss)}
+                <div class="small">${m.basepower ?? "-"}</div>
+                <div class="small">${m.accuracy ?? "-"}</div>
+                <div class="small">${m.pp ?? "-"}</div>
+            `;
 
             div.onclick = () => {
                 selected = m;
                 renderDetails();
                 document.querySelectorAll(".move-item")
-                    .forEach(el => el.classList.remove("active"));
+                    .forEach(x => x.classList.remove("active"));
                 div.classList.add("active");
             };
 
@@ -172,12 +256,19 @@ function renderList() {
         });
 }
 
-document.getElementById("search")
-    .addEventListener("input", renderList);
+/* ---------------- RIGHT PANEL ---------------- */
 
-/* -------------------------
-   RIGHT DETAILS PANEL
---------------------------*/
+function renderFlags(flags) {
+    if (!flags) return "";
+
+    return flags.split("|").map(f => {
+        const clean = f.trim()
+            .replace("FLAG_", "")
+            .toLowerCase();
+
+        return `<span class="flag ${clean}">${clean}</span>`;
+    }).join("");
+}
 
 function renderDetails() {
 
@@ -185,41 +276,35 @@ function renderDetails() {
 
     document.getElementById("moveDetails").innerHTML = `
 
-        <div class="section">
-            <div class="header">${selected.name}</div>
+        <div class="header">${selected.name}</div>
 
-            <div class="icons">
-                ${typeIcon(selected.type)}
-                ${categoryIcon(selected.pss)}
-            </div>
+        <div class="icons">
+            ${typeIcon(selected.type)}
+            ${categoryIcon(selected.pss)}
         </div>
 
-        <div class="section">
-            <div class="grid">
-                <div class="label">Power</div>
-                <div class="value">${selected.basepower ?? "-"}</div>
-
-                <div class="label">Accuracy</div>
-                <div class="value">${selected.accuracy ?? "-"}</div>
-
-                <div class="label">PP</div>
-                <div class="value">${selected.pp ?? "-"}</div>
-
-                <div class="label">Target</div>
-                <div class="value">${selected.target ?? "-"}</div>
-
-                <div class="label">Effect</div>
-                <div class="value">${selected.battleeffect ?? "-"}</div>
-            </div>
+        <div class="grid">
+            <div class="label">Power</div><div class="value">${selected.basepower ?? "-"}</div>
+            <div class="label">Accuracy</div><div class="value">${selected.accuracy ?? "-"}</div>
+            <div class="label">PP</div><div class="value">${selected.pp ?? "-"}</div>
+            <div class="label">Target</div><div class="value">${selected.target ?? "-"}</div>
+            <div class="label">Effect</div><div class="value">${selected.battleeffect ?? "-"}</div>
         </div>
 
-        <div class="section">
-            <div class="label">Description</div>
-            <div class="desc">${selected.description || ""}</div>
+        <div class="flags">
+            ${renderFlags(selected.flags)}
         </div>
+
+        <div class="desc">${selected.description || ""}</div>
 
     `;
 }
+
+/* ---------------- EVENTS ---------------- */
+
+document.getElementById("search").addEventListener("input", renderList);
+document.getElementById("typeFilter").addEventListener("change", renderList);
+document.getElementById("catFilter").addEventListener("change", renderList);
 
 </script>
 
