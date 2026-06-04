@@ -4,111 +4,311 @@
     <title>Pokédex</title>
 
     <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-}
-
-#pokemon-list div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-#pokemon-list img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-    </style>
-
-</head>
-<body>
-
-<h1>Pokédex</h1>
-
-<input
-  id="search"
-  type="text"
-  placeholder="Search Pokémon">
-
-<div id="pokemon-list"></div>
-
-<script>
-fetch('webdata/pokemon.json')
-  .then(response => response.json())
-  .then(data => {
-
-    const list = document.getElementById('pokemon-list');
-    const search = document.getElementById('search');
-
-    const SPRITE_BASE = "webimages/sprites/";
-
-    function createSpriteImg(pokemon) {
-        const img = document.createElement("img");
-
-        const key = (pokemon.spriteKey || pokemon.name || "")
-            .toLowerCase();
-
-        const candidates = [
-            `${key}.png`,
-            `${key}_male.png`,
-            `${key}_female.png`
-        ];
-
-        let i = 0;
-
-        function tryNext() {
-            if (i >= candidates.length) {
-                img.src = `${SPRITE_BASE}missingno.png`;
-                return;
-            }
-
-            img.src = `${SPRITE_BASE}${candidates[i]}`;
-
-            img.onerror = () => {
-                i++;
-                tryNext();
-            };
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
         }
 
-        tryNext();
+        /* LEFT PANEL */
+        .left {
+            width: 360px;
+            border-right: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+        }
 
-        return img;
+        .search {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .search input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+        }
+
+        .list {
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            cursor: pointer;
+        }
+
+        .item:nth-child(even) { background: #f7f7f7; }
+        .item:nth-child(odd) { background: #ffffff; }
+        .item:hover { background: #eaf3ff; }
+        .item.active { background: #d6e8ff !important; }
+
+        .item img {
+            width: 48px;
+            height: 48px;
+            image-rendering: pixelated;
+        }
+
+        /* RIGHT PANEL */
+        .right {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .placeholder {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* reuse clean Pokémon detail styling */
+        .pokemon-header {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .type-icons img {
+            margin: 0 2px;
+        }
+
+        .stats-box, .extra-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .ability-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .ability-column {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: 40px 40px 1fr;
+            align-items: center;
+            margin: 6px 0;
+            gap: 8px;
+        }
+
+        .stat-bar-bg {
+            background: #eee;
+            height: 14px;
+            border-radius: 6px;
+        }
+
+        .stat-bar-fill {
+            height: 14px;
+            border-radius: 6px;
+        }
+
+        .stat-value {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="left">
+    <div class="search">
+        <input id="search" placeholder="Search Pokémon...">
+    </div>
+    <div class="list" id="list"></div>
+</div>
+
+<div class="right" id="details">
+    <div class="placeholder">Select a Pokémon</div>
+</div>
+
+<script>
+
+let pokemonData = [];
+let selected = null;
+
+/* -------------------------
+   LOAD DATA
+--------------------------*/
+
+fetch("webdata/pokemon.json")
+    .then(r => r.json())
+    .then(data => {
+        pokemonData = data;
+        renderList();
+    });
+
+/* -------------------------
+   SPRITE LOADER
+--------------------------*/
+
+function getSprite(pokemon) {
+    const key = (pokemon.spriteKey || pokemon.name || "").toLowerCase();
+
+    const candidates = [
+        `webimages/sprites/${key}.png`,
+        `webimages/sprites/${key}_male.png`,
+        `webimages/sprites/${key}_female.png`
+    ];
+
+    const img = document.createElement("img");
+
+    let i = 0;
+
+    function tryNext() {
+        if (i >= candidates.length) {
+            img.src = "webimages/sprites/missingno.png";
+            return;
+        }
+
+        img.src = candidates[i];
+
+        img.onerror = () => {
+            i++;
+            tryNext();
+        };
     }
 
-    function renderPokemon(filter = '') {
-        list.innerHTML = '';
+    tryNext();
 
-        data
-        .filter(pokemon =>
-            pokemon.name.toLowerCase().includes(filter.toLowerCase())
-        )
-        .forEach(pokemon => {
+    return img;
+}
 
-            const div = document.createElement('div');
+/* -------------------------
+   LIST
+--------------------------*/
 
-            const img = createSpriteImg(pokemon);
+function renderList() {
+    const filter = document.getElementById("search").value.toLowerCase();
+    const list = document.getElementById("list");
 
-            const link = document.createElement("a");
-            link.href = `pokemon-details.html?id=${pokemon.id}`;
-            link.textContent = pokemon.name;
+    list.innerHTML = "";
+
+    pokemonData
+        .filter(p => p.name.toLowerCase().includes(filter))
+        .forEach(p => {
+
+            const div = document.createElement("div");
+            div.className = "item";
+
+            const img = getSprite(p);
+
+            const name = document.createElement("div");
+            name.textContent = p.name;
 
             div.appendChild(img);
-            div.appendChild(link);
+            div.appendChild(name);
+
+            div.onclick = () => {
+                selected = p;
+                renderDetails();
+            };
 
             list.appendChild(div);
         });
-    }
+}
 
-    renderPokemon();
+/* -------------------------
+   DETAILS
+--------------------------*/
 
-    search.addEventListener('input', () => {
-        renderPokemon(search.value);
+function statRow(label, value) {
+    const percent = Math.min(value / 255, 1) * 100;
+
+    return `
+        <div class="stat-row">
+            <div><b>${label}</b></div>
+            <div class="stat-value">${value}</div>
+            <div class="stat-bar-bg">
+                <div class="stat-bar-fill" style="width:${percent}%"></div>
+            </div>
+        </div>
+    `;
+}
+
+function renderDetails() {
+    const p = selected;
+    if (!p) return;
+
+    const bst =
+        p.hp + p.attack + p.defense +
+        p.spAttack + p.spDefense + p.speed;
+
+    const img = getSprite(p);
+
+    const container = document.getElementById("details");
+    container.innerHTML = "";
+
+    const header = document.createElement("div");
+    header.className = "pokemon-header";
+
+    const title = document.createElement("h1");
+    title.textContent = p.name;
+
+    header.appendChild(title);
+    header.appendChild(img);
+
+    const types = document.createElement("div");
+    types.className = "type-icons";
+
+    (p.type || []).forEach(t => {
+        const timg = document.createElement("img");
+        timg.src = `webimages/types/${t.replace("TYPE_", "").toLowerCase()}.png`;
+        timg.height = 40;
+        types.appendChild(timg);
     });
 
-  });
+    header.appendChild(types);
+
+    const stats = document.createElement("div");
+    stats.className = "stats-box";
+
+    stats.innerHTML = `
+        <h2>Base Stats</h2>
+        ${statRow("HP", p.hp)}
+        ${statRow("ATK", p.attack)}
+        ${statRow("DEF", p.defense)}
+        ${statRow("SPA", p.spAttack)}
+        ${statRow("SPD", p.spDefense)}
+        ${statRow("SPE", p.speed)}
+
+        <div style="margin-top:10px"><b>BST:</b> ${bst}</div>
+    `;
+
+    const ability = document.createElement("div");
+    ability.className = "extra-box";
+
+    ability.innerHTML = `
+        <h2>Abilities</h2>
+        <p><b>Ability 1:</b> ${p.ability1 || "-"}</p>
+        <p><b>Ability 2:</b> ${p.ability2 || "-"}</p>
+        <p><b>Hidden:</b> ${p.hiddenAbility || "-"}</p>
+    `;
+
+    container.appendChild(header);
+    container.appendChild(stats);
+    container.appendChild(ability);
+}
+
+/* -------------------------
+   EVENTS
+--------------------------*/
+
+document.getElementById("search").addEventListener("input", renderList);
+
 </script>
 
 </body>
