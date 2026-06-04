@@ -39,6 +39,13 @@
     .stats-box {
         border: 1px solid #ccc;
         padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .extra-box {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
     }
 
     .stats-container {
@@ -79,6 +86,40 @@
         text-align: right;
     }
 
+    /* -------------------------
+       GENDER BAR
+    --------------------------*/
+
+    .gender-bar {
+        height: 16px;
+        width: 100%;
+        display: flex;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+    }
+
+    .gender-male {
+        background: #4da3ff;
+    }
+
+    .gender-female {
+        background: #ff6fb1;
+    }
+
+    .gender-none {
+        background: #777;
+        width: 100%;
+    }
+
+    .gender-label {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        margin-top: 6px;
+    }
+
     </style>
 
 </head>
@@ -110,16 +151,12 @@ function renderStat(label, value) {
 
     return `
     <div class="stat-row">
-
         <div class="stat-label">${label}</div>
-
         <div class="stat-value">${value}</div>
-
         <div class="stat-bar-bg">
             <div class="stat-bar-fill"
                  style="width:${percent}%; background:${color};"></div>
         </div>
-
     </div>
 `;
 }
@@ -147,6 +184,48 @@ function formatType(raw) {
         .replace(/\b\w/g, c => c.toUpperCase());
 }
 
+function formatDex(text) {
+    if (!text) return "";
+
+    return text
+        .replace(/\\n/g, "\n")
+        .split("\n")
+        .map(l => `<p>${l.trim()}</p>`)
+        .join("");
+}
+
+/* -------------------------
+   GENDER RATIO
+--------------------------*/
+
+function renderGenderRatio(ratio) {
+    if (ratio === null || ratio === undefined) {
+        return `
+            <div class="gender-bar">
+                <div class="gender-none"></div>
+            </div>
+            <div class="gender-label">
+                <span>〇 Genderless</span>
+            </div>
+        `;
+    }
+
+    const female = (ratio / 254) * 100;
+    const male = 100 - female;
+
+    return `
+        <div class="gender-bar">
+            <div class="gender-male" style="width:${male}%"></div>
+            <div class="gender-female" style="width:${female}%"></div>
+        </div>
+
+        <div class="gender-label">
+            <span>♂ ${male.toFixed(1)}%</span>
+            <span>♀ ${female.toFixed(1)}%</span>
+        </div>
+    `;
+}
+
 /* -------------------------
    LOAD DATA
 --------------------------*/
@@ -163,8 +242,7 @@ fetch('webdata/pokemon.json')
         return;
     }
 
-    const key = (pokemon.spriteKey || pokemon.name || "")
-        .toLowerCase();
+    const key = (pokemon.spriteKey || pokemon.name || "").toLowerCase();
 
     const spriteCandidates = [
         `webimages/sprites/${key}.png`,
@@ -188,7 +266,7 @@ fetch('webdata/pokemon.json')
 
             <img id="pokemon-sprite" width="160">
 
-           <div class="type-icons">
+            <div class="type-icons">
             ${[...new Set(pokemon.type)].map(type => {
                 const formatted = formatType(type);
 
@@ -240,13 +318,22 @@ fetch('webdata/pokemon.json')
                 </div>
 
             </div>
+        </div>
 
+        <!-- GENDER + DEX BOX -->
+        <div class="extra-box">
+
+            <h2>Gender Ratio</h2>
+            ${renderGenderRatio(pokemon.genderRatio)}
+
+            <h2 style="margin-top:20px;">Pokédex Entry</h2>
+            ${formatDex(pokemon.mondexentry)}
         </div>
 
     `;
 
     /* -------------------------
-       SPRITE LOADER (FIXED)
+       SPRITE LOADER
     --------------------------*/
 
     const img = document.getElementById("pokemon-sprite");
