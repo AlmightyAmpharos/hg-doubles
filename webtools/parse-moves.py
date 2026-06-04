@@ -130,27 +130,39 @@ for line in lines:
 
         raw = line.split(" ", 1)[1].strip()
 
+        chosen = raw
 
         if "?" in raw and ":" in raw:
 
-            # split ternary
             parts = raw.split("?")
             true_false = parts[1].split(":")
 
             true_branch = true_false[0].strip()
             false_branch = true_false[1].strip()
 
-            # prefer FAIRY if present
+            # Prefer FAIRY if present
             chosen = true_branch if "FAIRY" in true_branch else false_branch
 
-        else:
-            chosen = raw
+        # remove TYPE_ prefix
+        chosen = chosen.replace("TYPE_", "")
 
-        # cleanup TYPE_ prefix
-        chosen = chosen.replace("TYPE_", "").strip()
+        # remove parentheses if any remain
         chosen = chosen.replace("(", "").replace(")", "")
 
-        current["type"] = chosen
+        # handle possible multiple types (future-proof)
+        type_parts = [t.strip() for t in chosen.split(",") if t.strip()]
+
+        formatted_types = []
+
+        for t in type_parts:
+
+            # normalize case: FIRE → Fire, WATER → Water
+            t_clean = t.lower().capitalize()
+
+            formatted_types.append(t_clean)
+
+        # store as string or list depending on count
+        current["type"] = formatted_types[0] if len(formatted_types) == 1 else formatted_types
 
     # -------------------------------------------------
     # TARGET

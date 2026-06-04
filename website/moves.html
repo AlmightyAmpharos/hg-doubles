@@ -1,206 +1,225 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Move Database</title>
+    <title>Move Dex</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-
-        h1 {
-            margin-bottom: 10px;
-        }
-
-        .controls {
+            margin: 0;
             display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
+            height: 100vh;
         }
 
-        input, select {
+        /* LEFT PANEL */
+        .left {
+            width: 320px;
+            border-right: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .search input {
+            width: 100%;
             padding: 8px;
             font-size: 14px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        .move-list {
+            overflow-y: auto;
+            flex: 1;
         }
 
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
+        .move-item {
+            padding: 8px 10px;
             cursor: pointer;
-            background: #f4f4f4;
+            border-bottom: 1px solid #eee;
         }
 
-        tr:hover {
-            background: #f9f9f9;
+        .move-item:hover {
+            background: #f5f5f5;
         }
 
-        .type-badge {
-            padding: 2px 6px;
-            border-radius: 4px;
-            background: #eee;
-            font-size: 12px;
+        .move-item.active {
+            background: #e6f0ff;
         }
+
+        /* RIGHT PANEL */
+        .right {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .icons img {
+            height: 28px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 8px 20px;
+            max-width: 500px;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        .value {
+            color: #111;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .desc {
+            white-space: pre-wrap;
+            line-height: 1.4;
+            max-width: 700px;
+        }
+
     </style>
 </head>
 
 <body>
 
-<h1>Move Database</h1>
-
-<div class="controls">
-
-    <input id="search" placeholder="Search move...">
-
-    <select id="typeFilter">
-        <option value="">All Types</option>
-    </select>
-
-    <select id="categoryFilter">
-        <option value="">All Categories</option>
-        <option value="Physical">Physical</option>
-        <option value="Special">Special</option>
-        <option value="Status">Status</option>
-    </select>
-
-    <select id="targetFilter">
-        <option value="">All Targets</option>
-    </select>
-
+<div class="left">
+    <div class="search">
+        <input id="search" placeholder="Search moves...">
+    </div>
+    <div id="moveList" class="move-list"></div>
 </div>
 
-<table>
-    <thead>
-        <tr>
-            <th data-sort="name">Name</th>
-            <th>Type</th>
-            <th>Category</th>
-            <th data-sort="basepower">Power</th>
-            <th data-sort="accuracy">Acc</th>
-            <th data-sort="pp">PP</th>
-            <th>Target</th>
-        </tr>
-    </thead>
-    <tbody id="moveTable"></tbody>
-</table>
+<div class="right" id="moveDetails">
+    <h2>Select a move</h2>
+</div>
 
 <script>
 
 let moves = [];
-let sortKey = "";
-let sortDir = 1;
+let selected = null;
 
 fetch("webdata/moves.json")
     .then(res => res.json())
     .then(data => {
         moves = data;
-
-        populateFilters();
-        render();
+        renderList();
     });
 
-function populateFilters() {
-    const typeSet = new Set();
-    const targetSet = new Set();
+/* -------------------------
+   ICON HELPERS
+--------------------------*/
 
-    moves.forEach(m => {
-        if (m.type) typeSet.add(m.type);
-        if (m.target) targetSet.add(m.target);
-    });
-
-    const typeFilter = document.getElementById("typeFilter");
-    const targetFilter = document.getElementById("targetFilter");
-
-    [...typeSet].sort().forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t;
-        opt.textContent = t;
-        typeFilter.appendChild(opt);
-    });
-
-    [...targetSet].sort().forEach(t => {
-        const opt = document.createElement("option");
-        opt.value = t;
-        opt.textContent = t;
-        targetFilter.appendChild(opt);
-    });
+function typeIcon(type) {
+    return `<img src="webimages/types/${type}.png" alt="${type}">`;
 }
 
-function render() {
+function categoryIcon(cat) {
+    if (!cat) return "";
 
-    const search = document.getElementById("search").value.toLowerCase();
-    const type = document.getElementById("typeFilter").value;
-    const category = document.getElementById("categoryFilter").value;
-    const target = document.getElementById("targetFilter").value;
+    const file = cat.toLowerCase(); // Physical.png, Special.png, Status.png
+    return `<img src="webimages/categories/${file}.png">`;
+}
 
-    let filtered = moves.filter(m => {
+/* -------------------------
+   LEFT LIST
+--------------------------*/
 
-        return (
-            (!search || m.name.toLowerCase().includes(search)) &&
-            (!type || m.type === type) &&
-            (!category || m.pss === category) &&
-            (!target || m.target === target)
-        );
+function renderList() {
 
-    });
+    const filter = document.getElementById("search").value.toLowerCase();
+    const list = document.getElementById("moveList");
 
-    if (sortKey) {
-        filtered.sort((a, b) => {
-            return (a[sortKey] - b[sortKey]) * sortDir;
+    list.innerHTML = "";
+
+    moves
+        .filter(m => m.name.toLowerCase().includes(filter))
+        .forEach(m => {
+
+            const div = document.createElement("div");
+
+            div.className = "move-item";
+            div.textContent = m.name;
+
+            div.onclick = () => {
+                selected = m;
+                renderDetails();
+                document.querySelectorAll(".move-item")
+                    .forEach(el => el.classList.remove("active"));
+                div.classList.add("active");
+            };
+
+            list.appendChild(div);
         });
-    }
-
-    const tbody = document.getElementById("moveTable");
-    tbody.innerHTML = "";
-
-    filtered.forEach(m => {
-
-        const row = document.createElement("tr");
-
-        row.innerHTML = `
-            <td>${m.name}</td>
-            <td><span class="type-badge">${m.type || ""}</span></td>
-            <td>${m.pss || ""}</td>
-            <td>${m.basepower ?? "-"}</td>
-            <td>${m.accuracy ?? "-"}</td>
-            <td>${m.pp ?? "-"}</td>
-            <td>${m.target || ""}</td>
-        `;
-
-        tbody.appendChild(row);
-    });
 }
 
-document.querySelectorAll("input, select").forEach(el => {
-    el.addEventListener("input", render);
-    el.addEventListener("change", render);
-});
+document.getElementById("search")
+    .addEventListener("input", renderList);
 
-document.querySelectorAll("th[data-sort]").forEach(th => {
-    th.addEventListener("click", () => {
+/* -------------------------
+   RIGHT DETAILS PANEL
+--------------------------*/
 
-        const key = th.dataset.sort;
+function renderDetails() {
 
-        if (sortKey === key) {
-            sortDir *= -1;
-        } else {
-            sortKey = key;
-            sortDir = 1;
-        }
+    if (!selected) return;
 
-        render();
-    });
-});
+    document.getElementById("moveDetails").innerHTML = `
+
+        <div class="section">
+            <div class="header">${selected.name}</div>
+
+            <div class="icons">
+                ${typeIcon(selected.type)}
+                ${categoryIcon(selected.pss)}
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="grid">
+                <div class="label">Power</div>
+                <div class="value">${selected.basepower ?? "-"}</div>
+
+                <div class="label">Accuracy</div>
+                <div class="value">${selected.accuracy ?? "-"}</div>
+
+                <div class="label">PP</div>
+                <div class="value">${selected.pp ?? "-"}</div>
+
+                <div class="label">Target</div>
+                <div class="value">${selected.target ?? "-"}</div>
+
+                <div class="label">Effect</div>
+                <div class="value">${selected.battleeffect ?? "-"}</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="label">Description</div>
+            <div class="desc">${selected.description || ""}</div>
+        </div>
+
+    `;
+}
 
 </script>
 
