@@ -11,10 +11,9 @@
             height: 100vh;
         }
 
-        /* ---------------- LEFT PANEL ---------------- */
-
+        /* LEFT PANEL */
         .left {
-            width: 480px;
+            width: 520px;
             border-right: 1px solid #ccc;
             display: flex;
             flex-direction: column;
@@ -27,7 +26,7 @@
 
         .search input {
             width: 100%;
-            box-sizing: border-box; /* FIX OVERFLOW */
+            box-sizing: border-box;
             padding: 8px;
         }
 
@@ -43,15 +42,25 @@
             padding: 6px;
         }
 
-        /* HEADER ROW (like spreadsheet) */
+        /* HEADER */
         .header-row {
             display: grid;
-            grid-template-columns: 1.5fr 0.8fr 0.8fr 0.6fr 0.6fr 0.5fr;
+            grid-template-columns: 2fr 0.8fr 0.8fr 0.6fr 0.6fr 0.5fr;
             padding: 8px;
             font-size: 12px;
             font-weight: bold;
             background: #f3f3f3;
             border-bottom: 1px solid #ccc;
+            text-align: center;
+            user-select: none;
+        }
+
+        .header-row div {
+            cursor: pointer;
+        }
+
+        .header-row div:first-child {
+            text-align: left;
         }
 
         .move-list {
@@ -59,36 +68,22 @@
             flex: 1;
         }
 
-        /* ROW */
         .move-item {
             display: grid;
-            grid-template-columns: 1.5fr 0.8fr 0.8fr 0.6fr 0.6fr 0.5fr;
+            grid-template-columns: 2fr 0.8fr 0.8fr 0.6fr 0.6fr 0.5fr;
             padding: 8px;
             align-items: center;
             cursor: pointer;
             font-size: 13px;
         }
 
-        /* ZEBRA STRIPING */
-        .move-item:nth-child(even) {
-            background: #f7f7f7;
-        }
-
-        .move-item:nth-child(odd) {
-            background: #ffffff;
-        }
-
-        .move-item:hover {
-            background: #eaf3ff;
-        }
-
-        .move-item.active {
-            background: #d6e8ff !important;
-        }
+        .move-item:nth-child(even) { background: #f7f7f7; }
+        .move-item:nth-child(odd) { background: #ffffff; }
+        .move-item:hover { background: #eaf3ff; }
+        .move-item.active { background: #d6e8ff !important; }
 
         .icon {
             height: 18px;
-            vertical-align: middle;
         }
 
         .small {
@@ -98,10 +93,10 @@
 
         .name {
             text-align: left;
+            padding-left: 4px;
         }
 
-        /* ---------------- RIGHT PANEL ---------------- */
-
+        /* RIGHT PANEL */
         .right {
             flex: 1;
             padding: 20px;
@@ -129,14 +124,8 @@
             max-width: 500px;
         }
 
-        .label {
-            font-weight: bold;
-            color: #444;
-        }
-
-        .value {
-            color: #111;
-        }
+        .label { font-weight: bold; color: #444; }
+        .value { color: #111; }
 
         .flags {
             display: flex;
@@ -152,17 +141,11 @@
             background: #eee;
         }
 
-        .flag.contact { background: #d9f2ff; }
-        .flag.protect { background: #ffe0e0; }
-        .flag.mirror { background: #f3e5ff; }
-        .flag.sound { background: #e6ffe6; }
-
         .desc {
             white-space: pre-wrap;
             margin-top: 10px;
             line-height: 1.4;
         }
-
     </style>
 </head>
 
@@ -182,28 +165,15 @@
             <option value="Special">Special</option>
             <option value="Status">Status</option>
         </select>
-
-        <select id="sortFilter">
-            <option value="">Sort</option>
-            <option value="basepower">Power</option>
-            <option value="accuracy">Accuracy</option>
-            <option value="pp">PP</option>
-            <option value="name">Name</option>
-        </select>
-
-        <select id="sortDir">
-            <option value="desc">Desc</option>
-            <option value="asc">Asc</option>
-        </select>
     </div>
 
     <div class="header-row">
-        <div>Name</div>
-        <div>Type</div>
-        <div>Cat</div>
-        <div>Pow</div>
-        <div>Acc</div>
-        <div>PP</div>
+        <div data-sort="name">Name</div>
+        <div data-sort="type">Type</div>
+        <div data-sort="pss">Cat</div>
+        <div data-sort="basepower">Pow</div>
+        <div data-sort="accuracy">Acc</div>
+        <div data-sort="pp">PP</div>
     </div>
 
     <div class="move-list" id="moveList"></div>
@@ -219,8 +189,12 @@
 let moves = [];
 let selected = null;
 
-/* ---------------- LOAD ---------------- */
+let sortState = {
+    key: "",
+    dir: 1
+};
 
+/* LOAD */
 fetch("webdata/moves.json")
     .then(r => r.json())
     .then(data => {
@@ -229,8 +203,22 @@ fetch("webdata/moves.json")
         renderList();
     });
 
-/* ---------------- ICONS ---------------- */
+/* SAFE MOVE */
+function safeMove(m) {
+    return {
+        name: m.name ?? "Unknown",
+        type: m.type ?? "",
+        pss: m.pss ?? "Status",
+        basepower: m.basepower ?? 0,
+        accuracy: m.accuracy ?? 0,
+        pp: m.pp ?? 0,
+        target: m.target ?? "-",
+        flags: m.flags ?? "",
+        description: m.description ?? ""
+    };
+}
 
+/* ICONS */
 function typeIcon(type) {
     if (!type) return "";
     return `<img class="icon" src="webimages/types/${type}.png">`;
@@ -238,14 +226,11 @@ function typeIcon(type) {
 
 function categoryIcon(cat) {
     if (!cat) return "";
-    const formatted = cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase();
-    return `<img class="icon" src="webimages/categories/${formatted}.png">`;
+    return `<img class="icon" src="webimages/categories/${cat}.png">`;
 }
 
-/* ---------------- FILTERS ---------------- */
-
+/* FILTERS */
 function populateFilters() {
-
     const types = new Set();
 
     moves.forEach(m => {
@@ -262,42 +247,38 @@ function populateFilters() {
     });
 }
 
-/* ---------------- SORT ---------------- */
-
-function getSorted(data) {
-
-    const key = document.getElementById("sortFilter").value;
-    const dir = document.getElementById("sortDir").value === "asc" ? 1 : -1;
-
-    if (!key) return data;
+/* SORT */
+function applySort(data) {
+    if (!sortState.key) return data;
 
     return [...data].sort((a, b) => {
-        const av = a[key] ?? 0;
-        const bv = b[key] ?? 0;
+        const av = a[sortState.key] ?? "";
+        const bv = b[sortState.key] ?? "";
 
         if (typeof av === "string") {
-            return av.localeCompare(bv) * dir;
+            return av.localeCompare(bv) * sortState.dir;
         }
 
-        return (av - bv) * dir;
+        return (av - bv) * sortState.dir;
     });
 }
 
-/* ---------------- LIST ---------------- */
-
+/* LIST */
 function renderList() {
 
     const search = document.getElementById("search").value.toLowerCase();
     const type = document.getElementById("typeFilter").value;
     const cat = document.getElementById("catFilter").value;
 
-    let filtered = moves.filter(m =>
-        (!search || m.name.toLowerCase().includes(search)) &&
-        (!type || m.type === type) &&
-        (!cat || m.pss === cat)
-    );
+    let filtered = moves
+        .map(safeMove)
+        .filter(m =>
+            (!search || m.name.toLowerCase().includes(search)) &&
+            (!type || m.type === type) &&
+            (!cat || m.pss === cat)
+        );
 
-    filtered = getSorted(filtered);
+    filtered = applySort(filtered);
 
     const list = document.getElementById("moveList");
     list.innerHTML = "";
@@ -311,9 +292,9 @@ function renderList() {
             <div class="name">${m.name}</div>
             <div class="small">${typeIcon(m.type)}</div>
             <div class="small">${categoryIcon(m.pss)}</div>
-            <div class="small">${m.basepower ?? "-"}</div>
-            <div class="small">${m.accuracy ?? "-"}</div>
-            <div class="small">${m.pp ?? "-"}</div>
+            <div class="small">${m.basepower}</div>
+            <div class="small">${m.accuracy}</div>
+            <div class="small">${m.pp}</div>
         `;
 
         div.onclick = () => {
@@ -325,53 +306,55 @@ function renderList() {
     });
 }
 
-/* ---------------- DETAILS ---------------- */
-
-function renderFlags(flags) {
-    if (!flags) return "";
-
-    return flags.split("|").map(f => {
-        const clean = f.replace("FLAG_", "").toLowerCase();
-        return `<span class="flag">${clean}</span>`;
-    }).join("");
-}
-
+/* DETAILS */
 function renderDetails() {
-
-    if (!selected) return;
+    const m = safeMove(selected);
 
     document.getElementById("moveDetails").innerHTML = `
-
-        <div class="header">${selected.name}</div>
+        <div class="header">${m.name}</div>
 
         <div class="icons">
-            ${typeIcon(selected.type)}
-            ${categoryIcon(selected.pss)}
+            ${typeIcon(m.type)}
+            ${categoryIcon(m.pss)}
         </div>
 
         <div class="grid">
-            <div class="label">Power</div><div class="value">${selected.basepower ?? "-"}</div>
-            <div class="label">Accuracy</div><div class="value">${selected.accuracy ?? "-"}</div>
-            <div class="label">PP</div><div class="value">${selected.pp ?? "-"}</div>
-            <div class="label">Target</div><div class="value">${selected.target ?? "-"}</div>
+            <div class="label">Power</div><div class="value">${m.basepower}</div>
+            <div class="label">Accuracy</div><div class="value">${m.accuracy}</div>
+            <div class="label">PP</div><div class="value">${m.pp}</div>
+            <div class="label">Target</div><div class="value">${m.target}</div>
         </div>
 
         <div class="flags">
-            ${renderFlags(selected.flags)}
+            ${(m.flags || "").split("|").map(f =>
+                `<span class="flag">${f.replace("FLAG_", "").toLowerCase()}</span>`
+            ).join("")}
         </div>
 
-        <div class="desc">${selected.description || ""}</div>
-
+        <div class="desc">${m.description}</div>
     `;
 }
 
-/* ---------------- EVENTS ---------------- */
-
+/* EVENTS */
 document.getElementById("search").addEventListener("input", renderList);
 document.getElementById("typeFilter").addEventListener("change", renderList);
 document.getElementById("catFilter").addEventListener("change", renderList);
-document.getElementById("sortFilter").addEventListener("change", renderList);
-document.getElementById("sortDir").addEventListener("change", renderList);
+
+/* CLICK SORT HEADERS */
+document.querySelectorAll(".header-row div").forEach(el => {
+    el.addEventListener("click", () => {
+        const key = el.dataset.sort;
+
+        if (sortState.key === key) {
+            sortState.dir *= -1;
+        } else {
+            sortState.key = key;
+            sortState.dir = 1;
+        }
+
+        renderList();
+    });
+});
 
 </script>
 

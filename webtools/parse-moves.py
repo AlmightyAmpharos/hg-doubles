@@ -7,24 +7,15 @@ OUTPUT_FILE = "./website/webdata/moves.json"
 moves = {}
 
 # -------------------------------------------------
-# HELPERS (resilient parsing core)
+# HELPERS
 # -------------------------------------------------
 
 def extract_int(line):
-    """
-    Extract first integer safely from a line.
-    Ignores any trailing macros like FLAG_* etc.
-    """
     match = re.search(r"-?\d+", line)
     return int(match.group()) if match else None
 
 
 def extract_token(line, prefix):
-    """
-    Extract a token after a keyword, stripping prefixes.
-    Example:
-        battleeffect MOVE_EFFECT_HIT -> HIT
-    """
     parts = line.split()
     if len(parts) < 2:
         return None
@@ -32,10 +23,6 @@ def extract_token(line, prefix):
 
 
 def clean_flags(line):
-    """
-    Extract all FLAG_* tokens safely.
-    Ignores everything else on line.
-    """
     return [
         f.replace("FLAG_", "")
         for f in line.split()
@@ -58,6 +45,31 @@ def format_pss(value):
 
 
 # -------------------------------------------------
+# NORMALIZATION (NEW UI RULES MOVED HERE)
+# -------------------------------------------------
+
+def normalize_move(move):
+    """
+    Converts raw engine values into UI-ready values.
+    """
+
+    # POWER
+    if move.get("basepower") == 0:
+        move["basepower"] = "-"
+
+    # ACCURACY
+    acc = move.get("accuracy")
+
+    if acc == 0:
+        if move.get("pss") == "Status":
+            move["accuracy"] = "-"
+        else:
+            move["accuracy"] = "∞"
+
+    return move
+
+
+# -------------------------------------------------
 # PARSE FILE
 # -------------------------------------------------
 
@@ -65,7 +77,6 @@ with open(INPUT_FILE, "r", encoding="utf-8") as f:
     lines = f.readlines()
 
 current = None
-
 
 for line in lines:
     line = line.strip()
@@ -133,35 +144,24 @@ for line in lines:
         chosen = raw
 
         if "?" in raw and ":" in raw:
-
             parts = raw.split("?")
             true_false = parts[1].split(":")
 
             true_branch = true_false[0].strip()
             false_branch = true_false[1].strip()
 
-            # Prefer FAIRY if present
             chosen = true_branch if "FAIRY" in true_branch else false_branch
 
-        # remove TYPE_ prefix
         chosen = chosen.replace("TYPE_", "")
-
-        # remove parentheses if any remain
         chosen = chosen.replace("(", "").replace(")", "")
 
-        # handle possible multiple types (future-proof)
         type_parts = [t.strip() for t in chosen.split(",") if t.strip()]
 
         formatted_types = []
 
         for t in type_parts:
+            formatted_types.append(t.lower().capitalize())
 
-            # normalize case: FIRE → Fire, WATER → Water
-            t_clean = t.lower().capitalize()
-
-            formatted_types.append(t_clean)
-
-        # store as string or list depending on count
         current["type"] = formatted_types[0] if len(formatted_types) == 1 else formatted_types
 
     # -------------------------------------------------
@@ -174,13 +174,13 @@ for line in lines:
         )
 
     # -------------------------------------------------
-    # FLAGS (SAFE, NEVER BREAKS)
+    # FLAGS
     # -------------------------------------------------
     elif line.startswith("flags") and current:
         current["flags"] = clean_flags(line)
 
     # -------------------------------------------------
-    # SIMPLE INT FIELDS (CRASH-PROOF)
+    # INT FIELDS
     # -------------------------------------------------
     elif line.startswith("basepower") and current:
         current["basepower"] = extract_int(line)
@@ -216,7 +216,7 @@ for line in lines:
         )
 
     # -------------------------------------------------
-    # DESCRIPTION (ROBUST + MULTILINE SAFE)
+    # DESCRIPTION
     # -------------------------------------------------
     elif line.startswith("movedescription") and current:
 
@@ -226,12 +226,19 @@ for line in lines:
             move_id = match.group(1)
             text = match.group(2)
 
-            # normalize hg-engine newline format
             text = text.replace("\\n", " ")
             text = re.sub(r"\s+", " ", text).strip()
 
             if move_id in moves:
                 moves[move_id]["description"] = text
+
+
+# -------------------------------------------------
+# FINAL NORMALIZATION PASS (IMPORTANT)
+# -------------------------------------------------
+
+for move in moves.values():
+    normalize_move(move)
 
 
 # -------------------------------------------------
