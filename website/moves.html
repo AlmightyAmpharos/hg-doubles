@@ -213,7 +213,7 @@ function safeMove(m) {
         accuracy: m.accuracy ?? 0,
         pp: m.pp ?? 0,
         target: m.target ?? "-",
-        flags: m.flags ?? "",
+        flags: m.flags ?? [],
         description: m.description ?? ""
     };
 }
@@ -326,9 +326,31 @@ function renderDetails() {
         </div>
 
         <div class="flags">
-            ${(m.flags || "").split("|").map(f =>
-                `<span class="flag">${f.replace("FLAG_", "").toLowerCase()}</span>`
-            ).join("")}
+            ${(Array.isArray(m.flags) ? m.flags : []).map(flag => {
+
+                const clean = flag.toLowerCase();
+
+                let cssClass = "";
+
+                if (clean.includes("contact")) {
+                    cssClass = "contact";
+                }
+                else if (clean.includes("protect")) {
+                    cssClass = "protect";
+                }
+                else if (clean.includes("mirror")) {
+                    cssClass = "mirror";
+                }
+                else if (clean.includes("sound")) {
+                    cssClass = "sound";
+                }
+
+                return `
+                    <span class="flag ${cssClass}">
+                        ${flag}
+                    </span>
+                `;
+            }).join("")}
         </div>
 
         <div class="desc">${m.description}</div>
