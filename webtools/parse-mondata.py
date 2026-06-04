@@ -4,47 +4,63 @@ import json
 INPUT_FILE = "./armips/data/mondata.s"
 OUTPUT_FILE = "./website/webdata/pokemon.json"
 
+
+def build_display_name(species_id, raw_name):
+    """
+    Forms in mondata.s often use:
+        "-----"
+
+    Convert:
+        SPECIES_ARCANINE_HISUIAN
+    into:
+        Arcanine Hisuian
+    """
+
+    if raw_name != "-----":
+        return raw_name
+
+    parts = species_id.replace("SPECIES_", "").split("_")
+
+    return " ".join(word.capitalize() for word in parts)
+
+
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
     lines = f.readlines()
 
 pokemon_list = []
 current = None
 
-
-def build_sprite_key(raw_name: str):
-    """
-    Converts SPECIES_RAICHU_ALOLAN → raichu_alolan
-    Converts SPECIES_BULBASAUR → bulbasaur
-    """
-
-    name = raw_name.replace("SPECIES_", "").lower()
-    parts = name.split("_")
-
-    base = parts[0]
-    form = "_".join(parts[1:]) if len(parts) > 1 else None
-
-    if form:
-        return f"{base}_{form}"
-    return base
-
-
 for line in lines:
     line = line.strip()
 
     # -------------------------
-    # START POKEMON BLOCK
+    # Start of Pokémon block
     # -------------------------
+
     if line.startswith("mondata"):
+
         match = re.search(r'mondata\s+(\w+),\s*"(.+?)"', line)
 
         if match:
-            raw_name = match.group(1)
-            display_name = match.group(2)
+
+            species_id = match.group(1)
+            raw_name = match.group(2)
+
+            display_name = build_display_name(
+                species_id,
+                raw_name
+            )
+
+            sprite_key = (
+                species_id
+                .replace("SPECIES_", "")
+                .lower()
+            )
 
             current = {
-                "id": raw_name,
+                "id": species_id,
                 "name": display_name,
-                "spriteKey": build_sprite_key(raw_name),
+                "spriteKey": sprite_key,
                 "type": [],
                 "ability1": None,
                 "ability2": None,
@@ -52,9 +68,11 @@ for line in lines:
             }
 
     # -------------------------
-    # BASE STATS
+    # Base Stats
     # -------------------------
+
     elif line.startswith("basestats") and current:
+
         stats = list(map(int, re.findall(r"\d+", line)))
 
         current["hp"] = stats[0]
@@ -65,35 +83,59 @@ for line in lines:
         current["spDefense"] = stats[5]
 
     # -------------------------
-    # TYPES
+    # Types
     # -------------------------
+
     elif line.startswith("types") and current:
+
         parts = line.replace("types", "").strip().split(",")
-        current["type"] = [p.strip() for p in parts if p.strip()]
+
+        current["type"] = [
+            p.strip()
+            for p in parts
+        ]
 
     # -------------------------
-    # ABILITIES
+    # Abilities
     # -------------------------
+
     elif line.startswith("abilities") and current:
+
         parts = line.replace("abilities", "").strip().split(",")
 
         if len(parts) > 0:
             current["ability1"] = parts[0].strip()
+
         if len(parts) > 1:
             current["ability2"] = parts[1].strip()
+
         if len(parts) > 2:
             current["hiddenAbility"] = parts[2].strip()
 
     # -------------------------
-    # END BLOCK
+    # End of Pokémon block
     # -------------------------
+
     elif line == "" and current and "hp" in current:
+
         pokemon_list.append(current)
         current = None
 
+# Catch final Pokémon if file doesn't end with blank line
+if current and "hp" in current:
+    pokemon_list.append(current)
 
+# -------------------------
 # Save JSON
-with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-    json.dump(pokemon_list, f, indent=2)
+# -------------------------
 
-print(f"Exported {len(pokemon_list)} Pokémon to {OUTPUT_FILE}")
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(
+        pokemon_list,
+        f,
+        indent=2
+    )
+
+print(
+    f"Exported {len(pokemon_list)} Pokémon to {OUTPUT_FILE}"
+)

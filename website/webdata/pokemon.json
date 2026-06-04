@@ -1,7 +1,7 @@
 [
   {
     "id": "SPECIES_NONE",
-    "name": "-----",
+    "name": "None",
     "spriteKey": "none",
     "type": [
       "TYPE_NORMAL",
@@ -8929,7 +8929,7 @@
   },
   {
     "id": "SPECIES_DEOXYS_ATTACK",
-    "name": "-----",
+    "name": "Deoxys Attack",
     "spriteKey": "deoxys_attack",
     "type": [
       "TYPE_PSYCHIC",
@@ -8947,7 +8947,7 @@
   },
   {
     "id": "SPECIES_DEOXYS_DEFENSE",
-    "name": "-----",
+    "name": "Deoxys Defense",
     "spriteKey": "deoxys_defense",
     "type": [
       "TYPE_PSYCHIC",
@@ -8965,7 +8965,7 @@
   },
   {
     "id": "SPECIES_DEOXYS_SPEED",
-    "name": "-----",
+    "name": "Deoxys Speed",
     "spriteKey": "deoxys_speed",
     "type": [
       "TYPE_PSYCHIC",
@@ -8983,7 +8983,7 @@
   },
   {
     "id": "SPECIES_WORMADAM_SANDY",
-    "name": "-----",
+    "name": "Wormadam Sandy",
     "spriteKey": "wormadam_sandy",
     "type": [
       "TYPE_BUG",
@@ -9001,7 +9001,7 @@
   },
   {
     "id": "SPECIES_WORMADAM_TRASHY",
-    "name": "-----",
+    "name": "Wormadam Trashy",
     "spriteKey": "wormadam_trashy",
     "type": [
       "TYPE_BUG",
@@ -9019,7 +9019,7 @@
   },
   {
     "id": "SPECIES_GIRATINA_ORIGIN",
-    "name": "-----",
+    "name": "Giratina Origin",
     "spriteKey": "giratina_origin",
     "type": [
       "TYPE_GHOST",
@@ -9037,7 +9037,7 @@
   },
   {
     "id": "SPECIES_SHAYMIN_SKY",
-    "name": "-----",
+    "name": "Shaymin Sky",
     "spriteKey": "shaymin_sky",
     "type": [
       "TYPE_GRASS",
@@ -9055,7 +9055,7 @@
   },
   {
     "id": "SPECIES_ROTOM_HEAT",
-    "name": "-----",
+    "name": "Rotom Heat",
     "spriteKey": "rotom_heat",
     "type": [
       "TYPE_ELECTRIC",
@@ -9073,7 +9073,7 @@
   },
   {
     "id": "SPECIES_ROTOM_WASH",
-    "name": "-----",
+    "name": "Rotom Wash",
     "spriteKey": "rotom_wash",
     "type": [
       "TYPE_ELECTRIC",
@@ -9091,7 +9091,7 @@
   },
   {
     "id": "SPECIES_ROTOM_FROST",
-    "name": "-----",
+    "name": "Rotom Frost",
     "spriteKey": "rotom_frost",
     "type": [
       "TYPE_ELECTRIC",
@@ -9109,7 +9109,7 @@
   },
   {
     "id": "SPECIES_ROTOM_FAN",
-    "name": "-----",
+    "name": "Rotom Fan",
     "spriteKey": "rotom_fan",
     "type": [
       "TYPE_ELECTRIC",
@@ -9127,7 +9127,7 @@
   },
   {
     "id": "SPECIES_ROTOM_MOW",
-    "name": "-----",
+    "name": "Rotom Mow",
     "spriteKey": "rotom_mow",
     "type": [
       "TYPE_ELECTRIC",
@@ -9145,7 +9145,7 @@
   },
   {
     "id": "SPECIES_508",
-    "name": "-----",
+    "name": "508",
     "spriteKey": "508",
     "type": [
       "TYPE_NORMAL",
@@ -9163,7 +9163,7 @@
   },
   {
     "id": "SPECIES_509",
-    "name": "-----",
+    "name": "509",
     "spriteKey": "509",
     "type": [
       "TYPE_NORMAL",
@@ -9181,7 +9181,7 @@
   },
   {
     "id": "SPECIES_510",
-    "name": "-----",
+    "name": "510",
     "spriteKey": "510",
     "type": [
       "TYPE_NORMAL",
@@ -9199,7 +9199,7 @@
   },
   {
     "id": "SPECIES_511",
-    "name": "-----",
+    "name": "511",
     "spriteKey": "511",
     "type": [
       "TYPE_NORMAL",
@@ -9217,7 +9217,7 @@
   },
   {
     "id": "SPECIES_512",
-    "name": "-----",
+    "name": "512",
     "spriteKey": "512",
     "type": [
       "TYPE_NORMAL",
@@ -9235,7 +9235,7 @@
   },
   {
     "id": "SPECIES_513",
-    "name": "-----",
+    "name": "513",
     "spriteKey": "513",
     "type": [
       "TYPE_NORMAL",
@@ -9253,7 +9253,7 @@
   },
   {
     "id": "SPECIES_514",
-    "name": "-----",
+    "name": "514",
     "spriteKey": "514",
     "type": [
       "TYPE_NORMAL",
@@ -9271,7 +9271,7 @@
   },
   {
     "id": "SPECIES_515",
-    "name": "-----",
+    "name": "515",
     "spriteKey": "515",
     "type": [
       "TYPE_NORMAL",
@@ -9289,7 +9289,7 @@
   },
   {
     "id": "SPECIES_516",
-    "name": "-----",
+    "name": "516",
     "spriteKey": "516",
     "type": [
       "TYPE_NORMAL",
@@ -9307,7 +9307,7 @@
   },
   {
     "id": "SPECIES_517",
-    "name": "-----",
+    "name": "517",
     "spriteKey": "517",
     "type": [
       "TYPE_NORMAL",
@@ -9325,7 +9325,7 @@
   },
   {
     "id": "SPECIES_518",
-    "name": "-----",
+    "name": "518",
     "spriteKey": "518",
     "type": [
       "TYPE_NORMAL",
@@ -9343,7 +9343,7 @@
   },
   {
     "id": "SPECIES_519",
-    "name": "-----",
+    "name": "519",
     "spriteKey": "519",
     "type": [
       "TYPE_NORMAL",
@@ -9361,7 +9361,7 @@
   },
   {
     "id": "SPECIES_520",
-    "name": "-----",
+    "name": "520",
     "spriteKey": "520",
     "type": [
       "TYPE_NORMAL",
@@ -9379,7 +9379,7 @@
   },
   {
     "id": "SPECIES_521",
-    "name": "-----",
+    "name": "521",
     "spriteKey": "521",
     "type": [
       "TYPE_NORMAL",
@@ -9397,7 +9397,7 @@
   },
   {
     "id": "SPECIES_522",
-    "name": "-----",
+    "name": "522",
     "spriteKey": "522",
     "type": [
       "TYPE_NORMAL",
@@ -9415,7 +9415,7 @@
   },
   {
     "id": "SPECIES_523",
-    "name": "-----",
+    "name": "523",
     "spriteKey": "523",
     "type": [
       "TYPE_NORMAL",
@@ -9433,7 +9433,7 @@
   },
   {
     "id": "SPECIES_524",
-    "name": "-----",
+    "name": "524",
     "spriteKey": "524",
     "type": [
       "TYPE_NORMAL",
@@ -9451,7 +9451,7 @@
   },
   {
     "id": "SPECIES_525",
-    "name": "-----",
+    "name": "525",
     "spriteKey": "525",
     "type": [
       "TYPE_NORMAL",
@@ -9469,7 +9469,7 @@
   },
   {
     "id": "SPECIES_526",
-    "name": "-----",
+    "name": "526",
     "spriteKey": "526",
     "type": [
       "TYPE_NORMAL",
@@ -9487,7 +9487,7 @@
   },
   {
     "id": "SPECIES_527",
-    "name": "-----",
+    "name": "527",
     "spriteKey": "527",
     "type": [
       "TYPE_NORMAL",
@@ -9505,7 +9505,7 @@
   },
   {
     "id": "SPECIES_528",
-    "name": "-----",
+    "name": "528",
     "spriteKey": "528",
     "type": [
       "TYPE_NORMAL",
@@ -9523,7 +9523,7 @@
   },
   {
     "id": "SPECIES_529",
-    "name": "-----",
+    "name": "529",
     "spriteKey": "529",
     "type": [
       "TYPE_NORMAL",
@@ -9541,7 +9541,7 @@
   },
   {
     "id": "SPECIES_530",
-    "name": "-----",
+    "name": "530",
     "spriteKey": "530",
     "type": [
       "TYPE_NORMAL",
@@ -9559,7 +9559,7 @@
   },
   {
     "id": "SPECIES_531",
-    "name": "-----",
+    "name": "531",
     "spriteKey": "531",
     "type": [
       "TYPE_NORMAL",
@@ -9577,7 +9577,7 @@
   },
   {
     "id": "SPECIES_532",
-    "name": "-----",
+    "name": "532",
     "spriteKey": "532",
     "type": [
       "TYPE_NORMAL",
@@ -9595,7 +9595,7 @@
   },
   {
     "id": "SPECIES_533",
-    "name": "-----",
+    "name": "533",
     "spriteKey": "533",
     "type": [
       "TYPE_NORMAL",
@@ -9613,7 +9613,7 @@
   },
   {
     "id": "SPECIES_534",
-    "name": "-----",
+    "name": "534",
     "spriteKey": "534",
     "type": [
       "TYPE_NORMAL",
@@ -9631,7 +9631,7 @@
   },
   {
     "id": "SPECIES_535",
-    "name": "-----",
+    "name": "535",
     "spriteKey": "535",
     "type": [
       "TYPE_NORMAL",
@@ -9649,7 +9649,7 @@
   },
   {
     "id": "SPECIES_536",
-    "name": "-----",
+    "name": "536",
     "spriteKey": "536",
     "type": [
       "TYPE_NORMAL",
@@ -9667,7 +9667,7 @@
   },
   {
     "id": "SPECIES_537",
-    "name": "-----",
+    "name": "537",
     "spriteKey": "537",
     "type": [
       "TYPE_NORMAL",
@@ -9685,7 +9685,7 @@
   },
   {
     "id": "SPECIES_538",
-    "name": "-----",
+    "name": "538",
     "spriteKey": "538",
     "type": [
       "TYPE_NORMAL",
@@ -9703,7 +9703,7 @@
   },
   {
     "id": "SPECIES_539",
-    "name": "-----",
+    "name": "539",
     "spriteKey": "539",
     "type": [
       "TYPE_NORMAL",
@@ -9721,7 +9721,7 @@
   },
   {
     "id": "SPECIES_540",
-    "name": "-----",
+    "name": "540",
     "spriteKey": "540",
     "type": [
       "TYPE_NORMAL",
@@ -9739,7 +9739,7 @@
   },
   {
     "id": "SPECIES_541",
-    "name": "-----",
+    "name": "541",
     "spriteKey": "541",
     "type": [
       "TYPE_NORMAL",
@@ -9757,7 +9757,7 @@
   },
   {
     "id": "SPECIES_542",
-    "name": "-----",
+    "name": "542",
     "spriteKey": "542",
     "type": [
       "TYPE_NORMAL",
@@ -9775,7 +9775,7 @@
   },
   {
     "id": "SPECIES_543",
-    "name": "-----",
+    "name": "543",
     "spriteKey": "543",
     "type": [
       "TYPE_NORMAL",
@@ -19369,7 +19369,7 @@
   },
   {
     "id": "SPECIES_MEGA_VENUSAUR",
-    "name": "-----",
+    "name": "Mega Venusaur",
     "spriteKey": "mega_venusaur",
     "type": [
       "TYPE_GRASS",
@@ -19387,7 +19387,7 @@
   },
   {
     "id": "SPECIES_MEGA_CHARIZARD_X",
-    "name": "-----",
+    "name": "Mega Charizard X",
     "spriteKey": "mega_charizard_x",
     "type": [
       "TYPE_FIRE",
@@ -19405,7 +19405,7 @@
   },
   {
     "id": "SPECIES_MEGA_CHARIZARD_Y",
-    "name": "-----",
+    "name": "Mega Charizard Y",
     "spriteKey": "mega_charizard_y",
     "type": [
       "TYPE_FIRE",
@@ -19423,7 +19423,7 @@
   },
   {
     "id": "SPECIES_MEGA_BLASTOISE",
-    "name": "-----",
+    "name": "Mega Blastoise",
     "spriteKey": "mega_blastoise",
     "type": [
       "TYPE_WATER",
@@ -19441,7 +19441,7 @@
   },
   {
     "id": "SPECIES_MEGA_BEEDRILL",
-    "name": "-----",
+    "name": "Mega Beedrill",
     "spriteKey": "mega_beedrill",
     "type": [
       "TYPE_BUG",
@@ -19459,7 +19459,7 @@
   },
   {
     "id": "SPECIES_MEGA_PIDGEOT",
-    "name": "-----",
+    "name": "Mega Pidgeot",
     "spriteKey": "mega_pidgeot",
     "type": [
       "TYPE_NORMAL",
@@ -19477,7 +19477,7 @@
   },
   {
     "id": "SPECIES_MEGA_ALAKAZAM",
-    "name": "-----",
+    "name": "Mega Alakazam",
     "spriteKey": "mega_alakazam",
     "type": [
       "TYPE_PSYCHIC",
@@ -19495,7 +19495,7 @@
   },
   {
     "id": "SPECIES_MEGA_SLOWBRO",
-    "name": "-----",
+    "name": "Mega Slowbro",
     "spriteKey": "mega_slowbro",
     "type": [
       "TYPE_WATER",
@@ -19513,7 +19513,7 @@
   },
   {
     "id": "SPECIES_MEGA_GENGAR",
-    "name": "-----",
+    "name": "Mega Gengar",
     "spriteKey": "mega_gengar",
     "type": [
       "TYPE_GHOST",
@@ -19531,7 +19531,7 @@
   },
   {
     "id": "SPECIES_MEGA_KANGASKHAN",
-    "name": "-----",
+    "name": "Mega Kangaskhan",
     "spriteKey": "mega_kangaskhan",
     "type": [
       "TYPE_NORMAL",
@@ -19549,7 +19549,7 @@
   },
   {
     "id": "SPECIES_MEGA_PINSIR",
-    "name": "-----",
+    "name": "Mega Pinsir",
     "spriteKey": "mega_pinsir",
     "type": [
       "TYPE_BUG",
@@ -19567,7 +19567,7 @@
   },
   {
     "id": "SPECIES_MEGA_GYARADOS",
-    "name": "-----",
+    "name": "Mega Gyarados",
     "spriteKey": "mega_gyarados",
     "type": [
       "TYPE_WATER",
@@ -19585,7 +19585,7 @@
   },
   {
     "id": "SPECIES_MEGA_AERODACTYL",
-    "name": "-----",
+    "name": "Mega Aerodactyl",
     "spriteKey": "mega_aerodactyl",
     "type": [
       "TYPE_ROCK",
@@ -19603,7 +19603,7 @@
   },
   {
     "id": "SPECIES_MEGA_MEWTWO_X",
-    "name": "-----",
+    "name": "Mega Mewtwo X",
     "spriteKey": "mega_mewtwo_x",
     "type": [
       "TYPE_PSYCHIC",
@@ -19621,7 +19621,7 @@
   },
   {
     "id": "SPECIES_MEGA_MEWTWO_Y",
-    "name": "-----",
+    "name": "Mega Mewtwo Y",
     "spriteKey": "mega_mewtwo_y",
     "type": [
       "TYPE_PSYCHIC",
@@ -19639,7 +19639,7 @@
   },
   {
     "id": "SPECIES_MEGA_AMPHAROS",
-    "name": "-----",
+    "name": "Mega Ampharos",
     "spriteKey": "mega_ampharos",
     "type": [
       "TYPE_ELECTRIC",
@@ -19657,7 +19657,7 @@
   },
   {
     "id": "SPECIES_MEGA_STEELIX",
-    "name": "-----",
+    "name": "Mega Steelix",
     "spriteKey": "mega_steelix",
     "type": [
       "TYPE_STEEL",
@@ -19675,7 +19675,7 @@
   },
   {
     "id": "SPECIES_MEGA_SCIZOR",
-    "name": "-----",
+    "name": "Mega Scizor",
     "spriteKey": "mega_scizor",
     "type": [
       "TYPE_BUG",
@@ -19693,7 +19693,7 @@
   },
   {
     "id": "SPECIES_MEGA_HERACROSS",
-    "name": "-----",
+    "name": "Mega Heracross",
     "spriteKey": "mega_heracross",
     "type": [
       "TYPE_BUG",
@@ -19711,7 +19711,7 @@
   },
   {
     "id": "SPECIES_MEGA_HOUNDOOM",
-    "name": "-----",
+    "name": "Mega Houndoom",
     "spriteKey": "mega_houndoom",
     "type": [
       "TYPE_DARK",
@@ -19729,7 +19729,7 @@
   },
   {
     "id": "SPECIES_MEGA_TYRANITAR",
-    "name": "-----",
+    "name": "Mega Tyranitar",
     "spriteKey": "mega_tyranitar",
     "type": [
       "TYPE_ROCK",
@@ -19747,7 +19747,7 @@
   },
   {
     "id": "SPECIES_MEGA_SCEPTILE",
-    "name": "-----",
+    "name": "Mega Sceptile",
     "spriteKey": "mega_sceptile",
     "type": [
       "TYPE_GRASS",
@@ -19765,7 +19765,7 @@
   },
   {
     "id": "SPECIES_MEGA_BLAZIKEN",
-    "name": "-----",
+    "name": "Mega Blaziken",
     "spriteKey": "mega_blaziken",
     "type": [
       "TYPE_FIRE",
@@ -19783,7 +19783,7 @@
   },
   {
     "id": "SPECIES_MEGA_SWAMPERT",
-    "name": "-----",
+    "name": "Mega Swampert",
     "spriteKey": "mega_swampert",
     "type": [
       "TYPE_WATER",
@@ -19801,7 +19801,7 @@
   },
   {
     "id": "SPECIES_MEGA_GARDEVOIR",
-    "name": "-----",
+    "name": "Mega Gardevoir",
     "spriteKey": "mega_gardevoir",
     "type": [
       "TYPE_PSYCHIC",
@@ -19819,7 +19819,7 @@
   },
   {
     "id": "SPECIES_MEGA_SABLEYE",
-    "name": "-----",
+    "name": "Mega Sableye",
     "spriteKey": "mega_sableye",
     "type": [
       "TYPE_DARK",
@@ -19837,7 +19837,7 @@
   },
   {
     "id": "SPECIES_MEGA_MAWILE",
-    "name": "-----",
+    "name": "Mega Mawile",
     "spriteKey": "mega_mawile",
     "type": [
       "TYPE_STEEL",
@@ -19855,7 +19855,7 @@
   },
   {
     "id": "SPECIES_MEGA_AGGRON",
-    "name": "-----",
+    "name": "Mega Aggron",
     "spriteKey": "mega_aggron",
     "type": [
       "TYPE_STEEL",
@@ -19873,7 +19873,7 @@
   },
   {
     "id": "SPECIES_MEGA_MEDICHAM",
-    "name": "-----",
+    "name": "Mega Medicham",
     "spriteKey": "mega_medicham",
     "type": [
       "TYPE_FIGHTING",
@@ -19891,7 +19891,7 @@
   },
   {
     "id": "SPECIES_MEGA_MANECTRIC",
-    "name": "-----",
+    "name": "Mega Manectric",
     "spriteKey": "mega_manectric",
     "type": [
       "TYPE_ELECTRIC",
@@ -19909,7 +19909,7 @@
   },
   {
     "id": "SPECIES_MEGA_SHARPEDO",
-    "name": "-----",
+    "name": "Mega Sharpedo",
     "spriteKey": "mega_sharpedo",
     "type": [
       "TYPE_WATER",
@@ -19927,7 +19927,7 @@
   },
   {
     "id": "SPECIES_MEGA_CAMERUPT",
-    "name": "-----",
+    "name": "Mega Camerupt",
     "spriteKey": "mega_camerupt",
     "type": [
       "TYPE_FIRE",
@@ -19945,7 +19945,7 @@
   },
   {
     "id": "SPECIES_MEGA_ALTARIA",
-    "name": "-----",
+    "name": "Mega Altaria",
     "spriteKey": "mega_altaria",
     "type": [
       "TYPE_FLYING",
@@ -19963,7 +19963,7 @@
   },
   {
     "id": "SPECIES_MEGA_BANETTE",
-    "name": "-----",
+    "name": "Mega Banette",
     "spriteKey": "mega_banette",
     "type": [
       "TYPE_GHOST",
@@ -19981,7 +19981,7 @@
   },
   {
     "id": "SPECIES_MEGA_ABSOL",
-    "name": "-----",
+    "name": "Mega Absol",
     "spriteKey": "mega_absol",
     "type": [
       "TYPE_DARK",
@@ -19999,7 +19999,7 @@
   },
   {
     "id": "SPECIES_MEGA_GLALIE",
-    "name": "-----",
+    "name": "Mega Glalie",
     "spriteKey": "mega_glalie",
     "type": [
       "TYPE_ICE",
@@ -20017,7 +20017,7 @@
   },
   {
     "id": "SPECIES_MEGA_SALAMENCE",
-    "name": "-----",
+    "name": "Mega Salamence",
     "spriteKey": "mega_salamence",
     "type": [
       "TYPE_DRAGON",
@@ -20035,7 +20035,7 @@
   },
   {
     "id": "SPECIES_MEGA_METAGROSS",
-    "name": "-----",
+    "name": "Mega Metagross",
     "spriteKey": "mega_metagross",
     "type": [
       "TYPE_STEEL",
@@ -20053,7 +20053,7 @@
   },
   {
     "id": "SPECIES_MEGA_LATIAS",
-    "name": "-----",
+    "name": "Mega Latias",
     "spriteKey": "mega_latias",
     "type": [
       "TYPE_DRAGON",
@@ -20071,7 +20071,7 @@
   },
   {
     "id": "SPECIES_MEGA_LATIOS",
-    "name": "-----",
+    "name": "Mega Latios",
     "spriteKey": "mega_latios",
     "type": [
       "TYPE_DRAGON",
@@ -20089,7 +20089,7 @@
   },
   {
     "id": "SPECIES_MEGA_RAYQUAZA",
-    "name": "-----",
+    "name": "Mega Rayquaza",
     "spriteKey": "mega_rayquaza",
     "type": [
       "TYPE_DRAGON",
@@ -20107,7 +20107,7 @@
   },
   {
     "id": "SPECIES_MEGA_LOPUNNY",
-    "name": "-----",
+    "name": "Mega Lopunny",
     "spriteKey": "mega_lopunny",
     "type": [
       "TYPE_NORMAL",
@@ -20125,7 +20125,7 @@
   },
   {
     "id": "SPECIES_MEGA_GARCHOMP",
-    "name": "-----",
+    "name": "Mega Garchomp",
     "spriteKey": "mega_garchomp",
     "type": [
       "TYPE_DRAGON",
@@ -20143,7 +20143,7 @@
   },
   {
     "id": "SPECIES_MEGA_LUCARIO",
-    "name": "-----",
+    "name": "Mega Lucario",
     "spriteKey": "mega_lucario",
     "type": [
       "TYPE_FIGHTING",
@@ -20161,7 +20161,7 @@
   },
   {
     "id": "SPECIES_MEGA_ABOMASNOW",
-    "name": "-----",
+    "name": "Mega Abomasnow",
     "spriteKey": "mega_abomasnow",
     "type": [
       "TYPE_GRASS",
@@ -20179,7 +20179,7 @@
   },
   {
     "id": "SPECIES_MEGA_GALLADE",
-    "name": "-----",
+    "name": "Mega Gallade",
     "spriteKey": "mega_gallade",
     "type": [
       "TYPE_PSYCHIC",
@@ -20197,7 +20197,7 @@
   },
   {
     "id": "SPECIES_MEGA_AUDINO",
-    "name": "-----",
+    "name": "Mega Audino",
     "spriteKey": "mega_audino",
     "type": [
       "TYPE_NORMAL",
@@ -20215,7 +20215,7 @@
   },
   {
     "id": "SPECIES_MEGA_DIANCIE",
-    "name": "-----",
+    "name": "Mega Diancie",
     "spriteKey": "mega_diancie",
     "type": [
       "TYPE_ROCK",
@@ -20233,7 +20233,7 @@
   },
   {
     "id": "SPECIES_GROUDON_PRIMAL",
-    "name": "-----",
+    "name": "Groudon Primal",
     "spriteKey": "groudon_primal",
     "type": [
       "TYPE_GROUND",
@@ -20251,7 +20251,7 @@
   },
   {
     "id": "SPECIES_KYOGRE_PRIMAL",
-    "name": "-----",
+    "name": "Kyogre Primal",
     "spriteKey": "kyogre_primal",
     "type": [
       "TYPE_WATER",
@@ -20269,7 +20269,7 @@
   },
   {
     "id": "SPECIES_RATTATA_ALOLAN",
-    "name": "-----",
+    "name": "Rattata Alolan",
     "spriteKey": "rattata_alolan",
     "type": [
       "TYPE_DARK",
@@ -20287,7 +20287,7 @@
   },
   {
     "id": "SPECIES_RATICATE_ALOLAN",
-    "name": "-----",
+    "name": "Raticate Alolan",
     "spriteKey": "raticate_alolan",
     "type": [
       "TYPE_DARK",
@@ -20305,7 +20305,7 @@
   },
   {
     "id": "SPECIES_RAICHU_ALOLAN",
-    "name": "-----",
+    "name": "Raichu Alolan",
     "spriteKey": "raichu_alolan",
     "type": [
       "TYPE_ELECTRIC",
@@ -20323,7 +20323,7 @@
   },
   {
     "id": "SPECIES_SANDSHREW_ALOLAN",
-    "name": "-----",
+    "name": "Sandshrew Alolan",
     "spriteKey": "sandshrew_alolan",
     "type": [
       "TYPE_ICE",
@@ -20341,7 +20341,7 @@
   },
   {
     "id": "SPECIES_SANDSLASH_ALOLAN",
-    "name": "-----",
+    "name": "Sandslash Alolan",
     "spriteKey": "sandslash_alolan",
     "type": [
       "TYPE_ICE",
@@ -20359,7 +20359,7 @@
   },
   {
     "id": "SPECIES_VULPIX_ALOLAN",
-    "name": "-----",
+    "name": "Vulpix Alolan",
     "spriteKey": "vulpix_alolan",
     "type": [
       "TYPE_ICE",
@@ -20377,7 +20377,7 @@
   },
   {
     "id": "SPECIES_NINETALES_ALOLAN",
-    "name": "-----",
+    "name": "Ninetales Alolan",
     "spriteKey": "ninetales_alolan",
     "type": [
       "TYPE_ICE",
@@ -20395,7 +20395,7 @@
   },
   {
     "id": "SPECIES_DIGLETT_ALOLAN",
-    "name": "-----",
+    "name": "Diglett Alolan",
     "spriteKey": "diglett_alolan",
     "type": [
       "TYPE_GROUND",
@@ -20413,7 +20413,7 @@
   },
   {
     "id": "SPECIES_DUGTRIO_ALOLAN",
-    "name": "-----",
+    "name": "Dugtrio Alolan",
     "spriteKey": "dugtrio_alolan",
     "type": [
       "TYPE_GROUND",
@@ -20431,7 +20431,7 @@
   },
   {
     "id": "SPECIES_MEOWTH_ALOLAN",
-    "name": "-----",
+    "name": "Meowth Alolan",
     "spriteKey": "meowth_alolan",
     "type": [
       "TYPE_DARK",
@@ -20449,7 +20449,7 @@
   },
   {
     "id": "SPECIES_PERSIAN_ALOLAN",
-    "name": "-----",
+    "name": "Persian Alolan",
     "spriteKey": "persian_alolan",
     "type": [
       "TYPE_DARK",
@@ -20467,7 +20467,7 @@
   },
   {
     "id": "SPECIES_GEODUDE_ALOLAN",
-    "name": "-----",
+    "name": "Geodude Alolan",
     "spriteKey": "geodude_alolan",
     "type": [
       "TYPE_ROCK",
@@ -20485,7 +20485,7 @@
   },
   {
     "id": "SPECIES_GRAVELER_ALOLAN",
-    "name": "-----",
+    "name": "Graveler Alolan",
     "spriteKey": "graveler_alolan",
     "type": [
       "TYPE_ROCK",
@@ -20503,7 +20503,7 @@
   },
   {
     "id": "SPECIES_GOLEM_ALOLAN",
-    "name": "-----",
+    "name": "Golem Alolan",
     "spriteKey": "golem_alolan",
     "type": [
       "TYPE_ROCK",
@@ -20521,7 +20521,7 @@
   },
   {
     "id": "SPECIES_GRIMER_ALOLAN",
-    "name": "-----",
+    "name": "Grimer Alolan",
     "spriteKey": "grimer_alolan",
     "type": [
       "TYPE_POISON",
@@ -20539,7 +20539,7 @@
   },
   {
     "id": "SPECIES_MUK_ALOLAN",
-    "name": "-----",
+    "name": "Muk Alolan",
     "spriteKey": "muk_alolan",
     "type": [
       "TYPE_POISON",
@@ -20557,7 +20557,7 @@
   },
   {
     "id": "SPECIES_EXEGGUTOR_ALOLAN",
-    "name": "-----",
+    "name": "Exeggutor Alolan",
     "spriteKey": "exeggutor_alolan",
     "type": [
       "TYPE_GRASS",
@@ -20575,7 +20575,7 @@
   },
   {
     "id": "SPECIES_MAROWAK_ALOLAN",
-    "name": "-----",
+    "name": "Marowak Alolan",
     "spriteKey": "marowak_alolan",
     "type": [
       "TYPE_FIRE",
@@ -20593,7 +20593,7 @@
   },
   {
     "id": "SPECIES_RATICATE_ALOLAN_LARGE",
-    "name": "-----",
+    "name": "Raticate Alolan Large",
     "spriteKey": "raticate_alolan_large",
     "type": [
       "TYPE_DARK",
@@ -20611,7 +20611,7 @@
   },
   {
     "id": "SPECIES_MAROWAK_ALOLAN_LARGE",
-    "name": "-----",
+    "name": "Marowak Alolan Large",
     "spriteKey": "marowak_alolan_large",
     "type": [
       "TYPE_FIRE",
@@ -20629,7 +20629,7 @@
   },
   {
     "id": "SPECIES_GUMSHOOS_LARGE",
-    "name": "-----",
+    "name": "Gumshoos Large",
     "spriteKey": "gumshoos_large",
     "type": [
       "TYPE_NORMAL",
@@ -20647,7 +20647,7 @@
   },
   {
     "id": "SPECIES_VIKAVOLT_LARGE",
-    "name": "-----",
+    "name": "Vikavolt Large",
     "spriteKey": "vikavolt_large",
     "type": [
       "TYPE_BUG",
@@ -20665,7 +20665,7 @@
   },
   {
     "id": "SPECIES_RIBOMBEE_LARGE",
-    "name": "-----",
+    "name": "Ribombee Large",
     "spriteKey": "ribombee_large",
     "type": [
       "TYPE_BUG",
@@ -20683,7 +20683,7 @@
   },
   {
     "id": "SPECIES_ARAQUANID_LARGE",
-    "name": "-----",
+    "name": "Araquanid Large",
     "spriteKey": "araquanid_large",
     "type": [
       "TYPE_WATER",
@@ -20701,7 +20701,7 @@
   },
   {
     "id": "SPECIES_LURANTIS_LARGE",
-    "name": "-----",
+    "name": "Lurantis Large",
     "spriteKey": "lurantis_large",
     "type": [
       "TYPE_GRASS",
@@ -20719,7 +20719,7 @@
   },
   {
     "id": "SPECIES_SALAZZLE_LARGE",
-    "name": "-----",
+    "name": "Salazzle Large",
     "spriteKey": "salazzle_large",
     "type": [
       "TYPE_POISON",
@@ -20737,7 +20737,7 @@
   },
   {
     "id": "SPECIES_TOGEDEMARU_LARGE",
-    "name": "-----",
+    "name": "Togedemaru Large",
     "spriteKey": "togedemaru_large",
     "type": [
       "TYPE_ELECTRIC",
@@ -20755,7 +20755,7 @@
   },
   {
     "id": "SPECIES_MIMIKYU_LARGE",
-    "name": "-----",
+    "name": "Mimikyu Large",
     "spriteKey": "mimikyu_large",
     "type": [
       "TYPE_GHOST",
@@ -20773,7 +20773,7 @@
   },
   {
     "id": "SPECIES_MIMIKYU_BUSTED_LARGE",
-    "name": "-----",
+    "name": "Mimikyu Busted Large",
     "spriteKey": "mimikyu_busted_large",
     "type": [
       "TYPE_GHOST",
@@ -20791,7 +20791,7 @@
   },
   {
     "id": "SPECIES_KOMMO_O_LARGE",
-    "name": "-----",
+    "name": "Kommo O Large",
     "spriteKey": "kommo_o_large",
     "type": [
       "TYPE_DRAGON",
@@ -20809,7 +20809,7 @@
   },
   {
     "id": "SPECIES_MEOWTH_GALARIAN",
-    "name": "-----",
+    "name": "Meowth Galarian",
     "spriteKey": "meowth_galarian",
     "type": [
       "TYPE_STEEL",
@@ -20827,7 +20827,7 @@
   },
   {
     "id": "SPECIES_PONYTA_GALARIAN",
-    "name": "-----",
+    "name": "Ponyta Galarian",
     "spriteKey": "ponyta_galarian",
     "type": [
       "TYPE_FAIRY",
@@ -20845,7 +20845,7 @@
   },
   {
     "id": "SPECIES_RAPIDASH_GALARIAN",
-    "name": "-----",
+    "name": "Rapidash Galarian",
     "spriteKey": "rapidash_galarian",
     "type": [
       "TYPE_FAIRY",
@@ -20863,7 +20863,7 @@
   },
   {
     "id": "SPECIES_SLOWPOKE_GALARIAN",
-    "name": "-----",
+    "name": "Slowpoke Galarian",
     "spriteKey": "slowpoke_galarian",
     "type": [
       "TYPE_PSYCHIC",
@@ -20881,7 +20881,7 @@
   },
   {
     "id": "SPECIES_SLOWBRO_GALARIAN",
-    "name": "-----",
+    "name": "Slowbro Galarian",
     "spriteKey": "slowbro_galarian",
     "type": [
       "TYPE_POISON",
@@ -20899,7 +20899,7 @@
   },
   {
     "id": "SPECIES_FARFETCHD_GALARIAN",
-    "name": "-----",
+    "name": "Farfetchd Galarian",
     "spriteKey": "farfetchd_galarian",
     "type": [
       "TYPE_FIGHTING",
@@ -20917,7 +20917,7 @@
   },
   {
     "id": "SPECIES_WEEZING_GALARIAN",
-    "name": "-----",
+    "name": "Weezing Galarian",
     "spriteKey": "weezing_galarian",
     "type": [
       "TYPE_POISON",
@@ -20935,7 +20935,7 @@
   },
   {
     "id": "SPECIES_MR_MIME_GALARIAN",
-    "name": "-----",
+    "name": "Mr Mime Galarian",
     "spriteKey": "mr_mime_galarian",
     "type": [
       "TYPE_ICE",
@@ -20953,7 +20953,7 @@
   },
   {
     "id": "SPECIES_ARTICUNO_GALARIAN",
-    "name": "-----",
+    "name": "Articuno Galarian",
     "spriteKey": "articuno_galarian",
     "type": [
       "TYPE_PSYCHIC",
@@ -20971,7 +20971,7 @@
   },
   {
     "id": "SPECIES_ZAPDOS_GALARIAN",
-    "name": "-----",
+    "name": "Zapdos Galarian",
     "spriteKey": "zapdos_galarian",
     "type": [
       "TYPE_FIGHTING",
@@ -20989,7 +20989,7 @@
   },
   {
     "id": "SPECIES_MOLTRES_GALARIAN",
-    "name": "-----",
+    "name": "Moltres Galarian",
     "spriteKey": "moltres_galarian",
     "type": [
       "TYPE_DARK",
@@ -21007,7 +21007,7 @@
   },
   {
     "id": "SPECIES_SLOWKING_GALARIAN",
-    "name": "-----",
+    "name": "Slowking Galarian",
     "spriteKey": "slowking_galarian",
     "type": [
       "TYPE_POISON",
@@ -21025,7 +21025,7 @@
   },
   {
     "id": "SPECIES_CORSOLA_GALARIAN",
-    "name": "-----",
+    "name": "Corsola Galarian",
     "spriteKey": "corsola_galarian",
     "type": [
       "TYPE_GHOST",
@@ -21043,7 +21043,7 @@
   },
   {
     "id": "SPECIES_ZIGZAGOON_GALARIAN",
-    "name": "-----",
+    "name": "Zigzagoon Galarian",
     "spriteKey": "zigzagoon_galarian",
     "type": [
       "TYPE_DARK",
@@ -21061,7 +21061,7 @@
   },
   {
     "id": "SPECIES_LINOONE_GALARIAN",
-    "name": "-----",
+    "name": "Linoone Galarian",
     "spriteKey": "linoone_galarian",
     "type": [
       "TYPE_DARK",
@@ -21079,7 +21079,7 @@
   },
   {
     "id": "SPECIES_DARUMAKA_GALARIAN",
-    "name": "-----",
+    "name": "Darumaka Galarian",
     "spriteKey": "darumaka_galarian",
     "type": [
       "TYPE_ICE",
@@ -21097,7 +21097,7 @@
   },
   {
     "id": "SPECIES_DARMANITAN_GALARIAN",
-    "name": "-----",
+    "name": "Darmanitan Galarian",
     "spriteKey": "darmanitan_galarian",
     "type": [
       "TYPE_ICE",
@@ -21115,7 +21115,7 @@
   },
   {
     "id": "SPECIES_YAMASK_GALARIAN",
-    "name": "-----",
+    "name": "Yamask Galarian",
     "spriteKey": "yamask_galarian",
     "type": [
       "TYPE_GROUND",
@@ -21133,7 +21133,7 @@
   },
   {
     "id": "SPECIES_STUNFISK_GALARIAN",
-    "name": "-----",
+    "name": "Stunfisk Galarian",
     "spriteKey": "stunfisk_galarian",
     "type": [
       "TYPE_GROUND",
@@ -21151,7 +21151,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_COSPLAY",
-    "name": "-----",
+    "name": "Pikachu Cosplay",
     "spriteKey": "pikachu_cosplay",
     "type": [
       "TYPE_ELECTRIC",
@@ -21169,7 +21169,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_ROCK_STAR",
-    "name": "-----",
+    "name": "Pikachu Rock Star",
     "spriteKey": "pikachu_rock_star",
     "type": [
       "TYPE_ELECTRIC",
@@ -21187,7 +21187,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_BELLE",
-    "name": "-----",
+    "name": "Pikachu Belle",
     "spriteKey": "pikachu_belle",
     "type": [
       "TYPE_ELECTRIC",
@@ -21205,7 +21205,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_POP_STAR",
-    "name": "-----",
+    "name": "Pikachu Pop Star",
     "spriteKey": "pikachu_pop_star",
     "type": [
       "TYPE_ELECTRIC",
@@ -21223,7 +21223,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_PH_D",
-    "name": "-----",
+    "name": "Pikachu Ph D",
     "spriteKey": "pikachu_ph_d",
     "type": [
       "TYPE_ELECTRIC",
@@ -21241,7 +21241,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_LIBRE",
-    "name": "-----",
+    "name": "Pikachu Libre",
     "spriteKey": "pikachu_libre",
     "type": [
       "TYPE_ELECTRIC",
@@ -21259,7 +21259,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_ORIGINAL_CAP",
-    "name": "-----",
+    "name": "Pikachu Original Cap",
     "spriteKey": "pikachu_original_cap",
     "type": [
       "TYPE_ELECTRIC",
@@ -21277,7 +21277,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_HOENN_CAP",
-    "name": "-----",
+    "name": "Pikachu Hoenn Cap",
     "spriteKey": "pikachu_hoenn_cap",
     "type": [
       "TYPE_ELECTRIC",
@@ -21295,7 +21295,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_SINNOH_CAP",
-    "name": "-----",
+    "name": "Pikachu Sinnoh Cap",
     "spriteKey": "pikachu_sinnoh_cap",
     "type": [
       "TYPE_ELECTRIC",
@@ -21313,7 +21313,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_UNOVA_CAP",
-    "name": "-----",
+    "name": "Pikachu Unova Cap",
     "spriteKey": "pikachu_unova_cap",
     "type": [
       "TYPE_ELECTRIC",
@@ -21331,7 +21331,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_KALOS_CAP",
-    "name": "-----",
+    "name": "Pikachu Kalos Cap",
     "spriteKey": "pikachu_kalos_cap",
     "type": [
       "TYPE_ELECTRIC",
@@ -21349,7 +21349,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_ALOLA_CAP",
-    "name": "-----",
+    "name": "Pikachu Alola Cap",
     "spriteKey": "pikachu_alola_cap",
     "type": [
       "TYPE_ELECTRIC",
@@ -21367,7 +21367,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_PARTNER_CAP",
-    "name": "-----",
+    "name": "Pikachu Partner Cap",
     "spriteKey": "pikachu_partner_cap",
     "type": [
       "TYPE_ELECTRIC",
@@ -21385,7 +21385,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_WORLD_CAP",
-    "name": "-----",
+    "name": "Pikachu World Cap",
     "spriteKey": "pikachu_world_cap",
     "type": [
       "TYPE_ELECTRIC",
@@ -21403,7 +21403,7 @@
   },
   {
     "id": "SPECIES_CASTFORM_SUNNY",
-    "name": "-----",
+    "name": "Castform Sunny",
     "spriteKey": "castform_sunny",
     "type": [
       "TYPE_FIRE",
@@ -21421,7 +21421,7 @@
   },
   {
     "id": "SPECIES_CASTFORM_RAINY",
-    "name": "-----",
+    "name": "Castform Rainy",
     "spriteKey": "castform_rainy",
     "type": [
       "TYPE_WATER",
@@ -21439,7 +21439,7 @@
   },
   {
     "id": "SPECIES_CASTFORM_SNOWY",
-    "name": "-----",
+    "name": "Castform Snowy",
     "spriteKey": "castform_snowy",
     "type": [
       "TYPE_ICE",
@@ -21457,7 +21457,7 @@
   },
   {
     "id": "SPECIES_CHERRIM_SUNSHINE",
-    "name": "-----",
+    "name": "Cherrim Sunshine",
     "spriteKey": "cherrim_sunshine",
     "type": [
       "TYPE_GRASS",
@@ -21475,7 +21475,7 @@
   },
   {
     "id": "SPECIES_SHELLOS_EAST_SEA",
-    "name": "-----",
+    "name": "Shellos East Sea",
     "spriteKey": "shellos_east_sea",
     "type": [
       "TYPE_WATER",
@@ -21493,7 +21493,7 @@
   },
   {
     "id": "SPECIES_GASTRODON_EAST_SEA",
-    "name": "-----",
+    "name": "Gastrodon East Sea",
     "spriteKey": "gastrodon_east_sea",
     "type": [
       "TYPE_WATER",
@@ -21511,7 +21511,7 @@
   },
   {
     "id": "SPECIES_DIALGA_ORIGIN",
-    "name": "-----",
+    "name": "Dialga Origin",
     "spriteKey": "dialga_origin",
     "type": [
       "TYPE_STEEL",
@@ -21529,7 +21529,7 @@
   },
   {
     "id": "SPECIES_PALKIA_ORIGIN",
-    "name": "-----",
+    "name": "Palkia Origin",
     "spriteKey": "palkia_origin",
     "type": [
       "TYPE_PSYCHIC",
@@ -21547,7 +21547,7 @@
   },
   {
     "id": "SPECIES_BASCULIN_BLUE_STRIPED",
-    "name": "-----",
+    "name": "Basculin Blue Striped",
     "spriteKey": "basculin_blue_striped",
     "type": [
       "TYPE_WATER",
@@ -21565,7 +21565,7 @@
   },
   {
     "id": "SPECIES_BASCULIN_WHITE_STRIPED",
-    "name": "-----",
+    "name": "Basculin White Striped",
     "spriteKey": "basculin_white_striped",
     "type": [
       "TYPE_WATER",
@@ -21583,7 +21583,7 @@
   },
   {
     "id": "SPECIES_DARMANITAN_ZEN_MODE",
-    "name": "-----",
+    "name": "Darmanitan Zen Mode",
     "spriteKey": "darmanitan_zen_mode",
     "type": [
       "TYPE_FIRE",
@@ -21601,7 +21601,7 @@
   },
   {
     "id": "SPECIES_DARMANITAN_ZEN_MODE_GALARIAN",
-    "name": "-----",
+    "name": "Darmanitan Zen Mode Galarian",
     "spriteKey": "darmanitan_zen_mode_galarian",
     "type": [
       "TYPE_ICE",
@@ -21619,7 +21619,7 @@
   },
   {
     "id": "SPECIES_DEERLING_SUMMER",
-    "name": "-----",
+    "name": "Deerling Summer",
     "spriteKey": "deerling_summer",
     "type": [
       "TYPE_NORMAL",
@@ -21637,7 +21637,7 @@
   },
   {
     "id": "SPECIES_DEERLING_AUTUMN",
-    "name": "-----",
+    "name": "Deerling Autumn",
     "spriteKey": "deerling_autumn",
     "type": [
       "TYPE_NORMAL",
@@ -21655,7 +21655,7 @@
   },
   {
     "id": "SPECIES_DEERLING_WINTER",
-    "name": "-----",
+    "name": "Deerling Winter",
     "spriteKey": "deerling_winter",
     "type": [
       "TYPE_NORMAL",
@@ -21673,7 +21673,7 @@
   },
   {
     "id": "SPECIES_SAWSBUCK_SUMMER",
-    "name": "-----",
+    "name": "Sawsbuck Summer",
     "spriteKey": "sawsbuck_summer",
     "type": [
       "TYPE_NORMAL",
@@ -21691,7 +21691,7 @@
   },
   {
     "id": "SPECIES_SAWSBUCK_AUTUMN",
-    "name": "-----",
+    "name": "Sawsbuck Autumn",
     "spriteKey": "sawsbuck_autumn",
     "type": [
       "TYPE_NORMAL",
@@ -21709,7 +21709,7 @@
   },
   {
     "id": "SPECIES_SAWSBUCK_WINTER",
-    "name": "-----",
+    "name": "Sawsbuck Winter",
     "spriteKey": "sawsbuck_winter",
     "type": [
       "TYPE_NORMAL",
@@ -21727,7 +21727,7 @@
   },
   {
     "id": "SPECIES_TORNADUS_THERIAN",
-    "name": "-----",
+    "name": "Tornadus Therian",
     "spriteKey": "tornadus_therian",
     "type": [
       "TYPE_FLYING",
@@ -21745,7 +21745,7 @@
   },
   {
     "id": "SPECIES_THUNDURUS_THERIAN",
-    "name": "-----",
+    "name": "Thundurus Therian",
     "spriteKey": "thundurus_therian",
     "type": [
       "TYPE_ELECTRIC",
@@ -21763,7 +21763,7 @@
   },
   {
     "id": "SPECIES_LANDORUS_THERIAN",
-    "name": "-----",
+    "name": "Landorus Therian",
     "spriteKey": "landorus_therian",
     "type": [
       "TYPE_GROUND",
@@ -21781,7 +21781,7 @@
   },
   {
     "id": "SPECIES_KYUREM_WHITE",
-    "name": "-----",
+    "name": "Kyurem White",
     "spriteKey": "kyurem_white",
     "type": [
       "TYPE_DRAGON",
@@ -21799,7 +21799,7 @@
   },
   {
     "id": "SPECIES_KYUREM_BLACK",
-    "name": "-----",
+    "name": "Kyurem Black",
     "spriteKey": "kyurem_black",
     "type": [
       "TYPE_DRAGON",
@@ -21817,7 +21817,7 @@
   },
   {
     "id": "SPECIES_KELDEO_RESOLUTE",
-    "name": "-----",
+    "name": "Keldeo Resolute",
     "spriteKey": "keldeo_resolute",
     "type": [
       "TYPE_WATER",
@@ -21835,7 +21835,7 @@
   },
   {
     "id": "SPECIES_MELOETTA_PIROUETTE",
-    "name": "-----",
+    "name": "Meloetta Pirouette",
     "spriteKey": "meloetta_pirouette",
     "type": [
       "TYPE_NORMAL",
@@ -21853,7 +21853,7 @@
   },
   {
     "id": "SPECIES_GENESECT_DOUSE_DRIVE",
-    "name": "-----",
+    "name": "Genesect Douse Drive",
     "spriteKey": "genesect_douse_drive",
     "type": [
       "TYPE_BUG",
@@ -21871,7 +21871,7 @@
   },
   {
     "id": "SPECIES_GENESECT_SHOCK_DRIVE",
-    "name": "-----",
+    "name": "Genesect Shock Drive",
     "spriteKey": "genesect_shock_drive",
     "type": [
       "TYPE_BUG",
@@ -21889,7 +21889,7 @@
   },
   {
     "id": "SPECIES_GENESECT_BURN_DRIVE",
-    "name": "-----",
+    "name": "Genesect Burn Drive",
     "spriteKey": "genesect_burn_drive",
     "type": [
       "TYPE_BUG",
@@ -21907,7 +21907,7 @@
   },
   {
     "id": "SPECIES_GENESECT_CHILL_DRIVE",
-    "name": "-----",
+    "name": "Genesect Chill Drive",
     "spriteKey": "genesect_chill_drive",
     "type": [
       "TYPE_BUG",
@@ -21925,7 +21925,7 @@
   },
   {
     "id": "SPECIES_GRENINJA_BATTLE_BOND",
-    "name": "-----",
+    "name": "Greninja Battle Bond",
     "spriteKey": "greninja_battle_bond",
     "type": [
       "TYPE_WATER",
@@ -21943,7 +21943,7 @@
   },
   {
     "id": "SPECIES_GRENINJA_ASH",
-    "name": "-----",
+    "name": "Greninja Ash",
     "spriteKey": "greninja_ash",
     "type": [
       "TYPE_WATER",
@@ -21961,7 +21961,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_POLAR",
-    "name": "-----",
+    "name": "Vivillon Polar",
     "spriteKey": "vivillon_polar",
     "type": [
       "TYPE_BUG",
@@ -21979,7 +21979,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_TUNDRA",
-    "name": "-----",
+    "name": "Vivillon Tundra",
     "spriteKey": "vivillon_tundra",
     "type": [
       "TYPE_BUG",
@@ -21997,7 +21997,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_CONTINENTAL",
-    "name": "-----",
+    "name": "Vivillon Continental",
     "spriteKey": "vivillon_continental",
     "type": [
       "TYPE_BUG",
@@ -22015,7 +22015,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_GARDEN",
-    "name": "-----",
+    "name": "Vivillon Garden",
     "spriteKey": "vivillon_garden",
     "type": [
       "TYPE_BUG",
@@ -22033,7 +22033,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_ELEGANT",
-    "name": "-----",
+    "name": "Vivillon Elegant",
     "spriteKey": "vivillon_elegant",
     "type": [
       "TYPE_BUG",
@@ -22051,7 +22051,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_MEADOW",
-    "name": "-----",
+    "name": "Vivillon Meadow",
     "spriteKey": "vivillon_meadow",
     "type": [
       "TYPE_BUG",
@@ -22069,7 +22069,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_MODERN",
-    "name": "-----",
+    "name": "Vivillon Modern",
     "spriteKey": "vivillon_modern",
     "type": [
       "TYPE_BUG",
@@ -22087,7 +22087,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_MARINE",
-    "name": "-----",
+    "name": "Vivillon Marine",
     "spriteKey": "vivillon_marine",
     "type": [
       "TYPE_BUG",
@@ -22105,7 +22105,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_ARCHIPELAGO",
-    "name": "-----",
+    "name": "Vivillon Archipelago",
     "spriteKey": "vivillon_archipelago",
     "type": [
       "TYPE_BUG",
@@ -22123,7 +22123,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_HIGH_PLAINS",
-    "name": "-----",
+    "name": "Vivillon High Plains",
     "spriteKey": "vivillon_high_plains",
     "type": [
       "TYPE_BUG",
@@ -22141,7 +22141,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_SANDSTORM",
-    "name": "-----",
+    "name": "Vivillon Sandstorm",
     "spriteKey": "vivillon_sandstorm",
     "type": [
       "TYPE_BUG",
@@ -22159,7 +22159,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_RIVER",
-    "name": "-----",
+    "name": "Vivillon River",
     "spriteKey": "vivillon_river",
     "type": [
       "TYPE_BUG",
@@ -22177,7 +22177,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_MONSOON",
-    "name": "-----",
+    "name": "Vivillon Monsoon",
     "spriteKey": "vivillon_monsoon",
     "type": [
       "TYPE_BUG",
@@ -22195,7 +22195,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_SAVANNA",
-    "name": "-----",
+    "name": "Vivillon Savanna",
     "spriteKey": "vivillon_savanna",
     "type": [
       "TYPE_BUG",
@@ -22213,7 +22213,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_SUN",
-    "name": "-----",
+    "name": "Vivillon Sun",
     "spriteKey": "vivillon_sun",
     "type": [
       "TYPE_BUG",
@@ -22231,7 +22231,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_OCEAN",
-    "name": "-----",
+    "name": "Vivillon Ocean",
     "spriteKey": "vivillon_ocean",
     "type": [
       "TYPE_BUG",
@@ -22249,7 +22249,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_JUNGLE",
-    "name": "-----",
+    "name": "Vivillon Jungle",
     "spriteKey": "vivillon_jungle",
     "type": [
       "TYPE_BUG",
@@ -22267,7 +22267,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_FANCY",
-    "name": "-----",
+    "name": "Vivillon Fancy",
     "spriteKey": "vivillon_fancy",
     "type": [
       "TYPE_BUG",
@@ -22285,7 +22285,7 @@
   },
   {
     "id": "SPECIES_VIVILLON_POKE_BALL",
-    "name": "-----",
+    "name": "Vivillon Poke Ball",
     "spriteKey": "vivillon_poke_ball",
     "type": [
       "TYPE_BUG",
@@ -22303,7 +22303,7 @@
   },
   {
     "id": "SPECIES_FLABEBE_YELLOW_FLOWER",
-    "name": "-----",
+    "name": "Flabebe Yellow Flower",
     "spriteKey": "flabebe_yellow_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22321,7 +22321,7 @@
   },
   {
     "id": "SPECIES_FLABEBE_ORANGE_FLOWER",
-    "name": "-----",
+    "name": "Flabebe Orange Flower",
     "spriteKey": "flabebe_orange_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22339,7 +22339,7 @@
   },
   {
     "id": "SPECIES_FLABEBE_BLUE_FLOWER",
-    "name": "-----",
+    "name": "Flabebe Blue Flower",
     "spriteKey": "flabebe_blue_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22357,7 +22357,7 @@
   },
   {
     "id": "SPECIES_FLABEBE_WHITE_FLOWER",
-    "name": "-----",
+    "name": "Flabebe White Flower",
     "spriteKey": "flabebe_white_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22375,7 +22375,7 @@
   },
   {
     "id": "SPECIES_FLOETTE_YELLOW_FLOWER",
-    "name": "-----",
+    "name": "Floette Yellow Flower",
     "spriteKey": "floette_yellow_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22393,7 +22393,7 @@
   },
   {
     "id": "SPECIES_FLOETTE_ORANGE_FLOWER",
-    "name": "-----",
+    "name": "Floette Orange Flower",
     "spriteKey": "floette_orange_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22411,7 +22411,7 @@
   },
   {
     "id": "SPECIES_FLOETTE_BLUE_FLOWER",
-    "name": "-----",
+    "name": "Floette Blue Flower",
     "spriteKey": "floette_blue_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22429,7 +22429,7 @@
   },
   {
     "id": "SPECIES_FLOETTE_WHITE_FLOWER",
-    "name": "-----",
+    "name": "Floette White Flower",
     "spriteKey": "floette_white_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22447,7 +22447,7 @@
   },
   {
     "id": "SPECIES_FLOETTE_ETERNAL_FLOWER",
-    "name": "-----",
+    "name": "Floette Eternal Flower",
     "spriteKey": "floette_eternal_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22465,7 +22465,7 @@
   },
   {
     "id": "SPECIES_FLORGES_YELLOW_FLOWER",
-    "name": "-----",
+    "name": "Florges Yellow Flower",
     "spriteKey": "florges_yellow_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22483,7 +22483,7 @@
   },
   {
     "id": "SPECIES_FLORGES_ORANGE_FLOWER",
-    "name": "-----",
+    "name": "Florges Orange Flower",
     "spriteKey": "florges_orange_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22501,7 +22501,7 @@
   },
   {
     "id": "SPECIES_FLORGES_BLUE_FLOWER",
-    "name": "-----",
+    "name": "Florges Blue Flower",
     "spriteKey": "florges_blue_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22519,7 +22519,7 @@
   },
   {
     "id": "SPECIES_FLORGES_WHITE_FLOWER",
-    "name": "-----",
+    "name": "Florges White Flower",
     "spriteKey": "florges_white_flower",
     "type": [
       "TYPE_FAIRY",
@@ -22537,7 +22537,7 @@
   },
   {
     "id": "SPECIES_FURFROU_HEART",
-    "name": "-----",
+    "name": "Furfrou Heart",
     "spriteKey": "furfrou_heart",
     "type": [
       "TYPE_NORMAL",
@@ -22555,7 +22555,7 @@
   },
   {
     "id": "SPECIES_FURFROU_STAR",
-    "name": "-----",
+    "name": "Furfrou Star",
     "spriteKey": "furfrou_star",
     "type": [
       "TYPE_NORMAL",
@@ -22573,7 +22573,7 @@
   },
   {
     "id": "SPECIES_FURFROU_DIAMOND",
-    "name": "-----",
+    "name": "Furfrou Diamond",
     "spriteKey": "furfrou_diamond",
     "type": [
       "TYPE_NORMAL",
@@ -22591,7 +22591,7 @@
   },
   {
     "id": "SPECIES_FURFROU_DEBUTANTE",
-    "name": "-----",
+    "name": "Furfrou Debutante",
     "spriteKey": "furfrou_debutante",
     "type": [
       "TYPE_NORMAL",
@@ -22609,7 +22609,7 @@
   },
   {
     "id": "SPECIES_FURFROU_MATRON",
-    "name": "-----",
+    "name": "Furfrou Matron",
     "spriteKey": "furfrou_matron",
     "type": [
       "TYPE_NORMAL",
@@ -22627,7 +22627,7 @@
   },
   {
     "id": "SPECIES_FURFROU_DANDY",
-    "name": "-----",
+    "name": "Furfrou Dandy",
     "spriteKey": "furfrou_dandy",
     "type": [
       "TYPE_NORMAL",
@@ -22645,7 +22645,7 @@
   },
   {
     "id": "SPECIES_FURFROU_LA_REINE",
-    "name": "-----",
+    "name": "Furfrou La Reine",
     "spriteKey": "furfrou_la_reine",
     "type": [
       "TYPE_NORMAL",
@@ -22663,7 +22663,7 @@
   },
   {
     "id": "SPECIES_FURFROU_KABUKI",
-    "name": "-----",
+    "name": "Furfrou Kabuki",
     "spriteKey": "furfrou_kabuki",
     "type": [
       "TYPE_NORMAL",
@@ -22681,7 +22681,7 @@
   },
   {
     "id": "SPECIES_FURFROU_PHARAOH",
-    "name": "-----",
+    "name": "Furfrou Pharaoh",
     "spriteKey": "furfrou_pharaoh",
     "type": [
       "TYPE_NORMAL",
@@ -22699,7 +22699,7 @@
   },
   {
     "id": "SPECIES_AEGISLASH_BLADE",
-    "name": "-----",
+    "name": "Aegislash Blade",
     "spriteKey": "aegislash_blade",
     "type": [
       "TYPE_STEEL",
@@ -22717,7 +22717,7 @@
   },
   {
     "id": "SPECIES_PUMPKABOO_SMALL",
-    "name": "-----",
+    "name": "Pumpkaboo Small",
     "spriteKey": "pumpkaboo_small",
     "type": [
       "TYPE_GHOST",
@@ -22735,7 +22735,7 @@
   },
   {
     "id": "SPECIES_PUMPKABOO_LARGE",
-    "name": "-----",
+    "name": "Pumpkaboo Large",
     "spriteKey": "pumpkaboo_large",
     "type": [
       "TYPE_GHOST",
@@ -22753,7 +22753,7 @@
   },
   {
     "id": "SPECIES_PUMPKABOO_SUPER",
-    "name": "-----",
+    "name": "Pumpkaboo Super",
     "spriteKey": "pumpkaboo_super",
     "type": [
       "TYPE_GHOST",
@@ -22771,7 +22771,7 @@
   },
   {
     "id": "SPECIES_GOURGEIST_SMALL",
-    "name": "-----",
+    "name": "Gourgeist Small",
     "spriteKey": "gourgeist_small",
     "type": [
       "TYPE_GHOST",
@@ -22789,7 +22789,7 @@
   },
   {
     "id": "SPECIES_GOURGEIST_LARGE",
-    "name": "-----",
+    "name": "Gourgeist Large",
     "spriteKey": "gourgeist_large",
     "type": [
       "TYPE_GHOST",
@@ -22807,7 +22807,7 @@
   },
   {
     "id": "SPECIES_GOURGEIST_SUPER",
-    "name": "-----",
+    "name": "Gourgeist Super",
     "spriteKey": "gourgeist_super",
     "type": [
       "TYPE_GHOST",
@@ -22825,7 +22825,7 @@
   },
   {
     "id": "SPECIES_XERNEAS_ACTIVE",
-    "name": "-----",
+    "name": "Xerneas Active",
     "spriteKey": "xerneas_active",
     "type": [
       "TYPE_FAIRY",
@@ -22843,7 +22843,7 @@
   },
   {
     "id": "SPECIES_ZYGARDE_10",
-    "name": "-----",
+    "name": "Zygarde 10",
     "spriteKey": "zygarde_10",
     "type": [
       "TYPE_DRAGON",
@@ -22861,7 +22861,7 @@
   },
   {
     "id": "SPECIES_ZYGARDE_10_POWER_CONSTRUCT",
-    "name": "-----",
+    "name": "Zygarde 10 Power Construct",
     "spriteKey": "zygarde_10_power_construct",
     "type": [
       "TYPE_DRAGON",
@@ -22879,7 +22879,7 @@
   },
   {
     "id": "SPECIES_ZYGARDE_50_POWER_CONSTRUCT",
-    "name": "-----",
+    "name": "Zygarde 50 Power Construct",
     "spriteKey": "zygarde_50_power_construct",
     "type": [
       "TYPE_DRAGON",
@@ -22897,7 +22897,7 @@
   },
   {
     "id": "SPECIES_ZYGARDE_10_COMPLETE",
-    "name": "-----",
+    "name": "Zygarde 10 Complete",
     "spriteKey": "zygarde_10_complete",
     "type": [
       "TYPE_DRAGON",
@@ -22915,7 +22915,7 @@
   },
   {
     "id": "SPECIES_ZYGARDE_50_COMPLETE",
-    "name": "-----",
+    "name": "Zygarde 50 Complete",
     "spriteKey": "zygarde_50_complete",
     "type": [
       "TYPE_DRAGON",
@@ -22933,7 +22933,7 @@
   },
   {
     "id": "SPECIES_HOOPA_UNBOUND",
-    "name": "-----",
+    "name": "Hoopa Unbound",
     "spriteKey": "hoopa_unbound",
     "type": [
       "TYPE_PSYCHIC",
@@ -22951,7 +22951,7 @@
   },
   {
     "id": "SPECIES_ORICORIO_POM_POM",
-    "name": "-----",
+    "name": "Oricorio Pom Pom",
     "spriteKey": "oricorio_pom_pom",
     "type": [
       "TYPE_ELECTRIC",
@@ -22969,7 +22969,7 @@
   },
   {
     "id": "SPECIES_ORICORIO_PAU",
-    "name": "-----",
+    "name": "Oricorio Pau",
     "spriteKey": "oricorio_pau",
     "type": [
       "TYPE_PSYCHIC",
@@ -22987,7 +22987,7 @@
   },
   {
     "id": "SPECIES_ORICORIO_SENSU",
-    "name": "-----",
+    "name": "Oricorio Sensu",
     "spriteKey": "oricorio_sensu",
     "type": [
       "TYPE_GHOST",
@@ -23005,7 +23005,7 @@
   },
   {
     "id": "SPECIES_ROCKRUFF_OWN_TEMPO",
-    "name": "-----",
+    "name": "Rockruff Own Tempo",
     "spriteKey": "rockruff_own_tempo",
     "type": [
       "TYPE_ROCK",
@@ -23023,7 +23023,7 @@
   },
   {
     "id": "SPECIES_LYCANROC_MIDNIGHT",
-    "name": "-----",
+    "name": "Lycanroc Midnight",
     "spriteKey": "lycanroc_midnight",
     "type": [
       "TYPE_ROCK",
@@ -23041,7 +23041,7 @@
   },
   {
     "id": "SPECIES_LYCANROC_DUSK",
-    "name": "-----",
+    "name": "Lycanroc Dusk",
     "spriteKey": "lycanroc_dusk",
     "type": [
       "TYPE_ROCK",
@@ -23059,7 +23059,7 @@
   },
   {
     "id": "SPECIES_WISHIWASHI_SCHOOL",
-    "name": "-----",
+    "name": "Wishiwashi School",
     "spriteKey": "wishiwashi_school",
     "type": [
       "TYPE_WATER",
@@ -23077,7 +23077,7 @@
   },
   {
     "id": "SPECIES_MINIOR_METEOR_ORANGE",
-    "name": "-----",
+    "name": "Minior Meteor Orange",
     "spriteKey": "minior_meteor_orange",
     "type": [
       "TYPE_ROCK",
@@ -23095,7 +23095,7 @@
   },
   {
     "id": "SPECIES_MINIOR_METEOR_YELLOW",
-    "name": "-----",
+    "name": "Minior Meteor Yellow",
     "spriteKey": "minior_meteor_yellow",
     "type": [
       "TYPE_ROCK",
@@ -23113,7 +23113,7 @@
   },
   {
     "id": "SPECIES_MINIOR_METEOR_GREEN",
-    "name": "-----",
+    "name": "Minior Meteor Green",
     "spriteKey": "minior_meteor_green",
     "type": [
       "TYPE_ROCK",
@@ -23131,7 +23131,7 @@
   },
   {
     "id": "SPECIES_MINIOR_METEOR_BLUE",
-    "name": "-----",
+    "name": "Minior Meteor Blue",
     "spriteKey": "minior_meteor_blue",
     "type": [
       "TYPE_ROCK",
@@ -23149,7 +23149,7 @@
   },
   {
     "id": "SPECIES_MINIOR_METEOR_INDIGO",
-    "name": "-----",
+    "name": "Minior Meteor Indigo",
     "spriteKey": "minior_meteor_indigo",
     "type": [
       "TYPE_ROCK",
@@ -23167,7 +23167,7 @@
   },
   {
     "id": "SPECIES_MINIOR_METEOR_VIOLET",
-    "name": "-----",
+    "name": "Minior Meteor Violet",
     "spriteKey": "minior_meteor_violet",
     "type": [
       "TYPE_ROCK",
@@ -23185,7 +23185,7 @@
   },
   {
     "id": "SPECIES_MINIOR_CORE_RED",
-    "name": "-----",
+    "name": "Minior Core Red",
     "spriteKey": "minior_core_red",
     "type": [
       "TYPE_ROCK",
@@ -23203,7 +23203,7 @@
   },
   {
     "id": "SPECIES_MINIOR_CORE_ORANGE",
-    "name": "-----",
+    "name": "Minior Core Orange",
     "spriteKey": "minior_core_orange",
     "type": [
       "TYPE_ROCK",
@@ -23221,7 +23221,7 @@
   },
   {
     "id": "SPECIES_MINIOR_CORE_YELLOW",
-    "name": "-----",
+    "name": "Minior Core Yellow",
     "spriteKey": "minior_core_yellow",
     "type": [
       "TYPE_ROCK",
@@ -23239,7 +23239,7 @@
   },
   {
     "id": "SPECIES_MINIOR_CORE_GREEN",
-    "name": "-----",
+    "name": "Minior Core Green",
     "spriteKey": "minior_core_green",
     "type": [
       "TYPE_ROCK",
@@ -23257,7 +23257,7 @@
   },
   {
     "id": "SPECIES_MINIOR_CORE_BLUE",
-    "name": "-----",
+    "name": "Minior Core Blue",
     "spriteKey": "minior_core_blue",
     "type": [
       "TYPE_ROCK",
@@ -23275,7 +23275,7 @@
   },
   {
     "id": "SPECIES_MINIOR_CORE_INDIGO",
-    "name": "-----",
+    "name": "Minior Core Indigo",
     "spriteKey": "minior_core_indigo",
     "type": [
       "TYPE_ROCK",
@@ -23293,7 +23293,7 @@
   },
   {
     "id": "SPECIES_MINIOR_CORE_VIOLET",
-    "name": "-----",
+    "name": "Minior Core Violet",
     "spriteKey": "minior_core_violet",
     "type": [
       "TYPE_ROCK",
@@ -23311,7 +23311,7 @@
   },
   {
     "id": "SPECIES_MIMIKYU_BUSTED",
-    "name": "-----",
+    "name": "Mimikyu Busted",
     "spriteKey": "mimikyu_busted",
     "type": [
       "TYPE_GHOST",
@@ -23329,7 +23329,7 @@
   },
   {
     "id": "SPECIES_NECROZMA_DUSK_MANE",
-    "name": "-----",
+    "name": "Necrozma Dusk Mane",
     "spriteKey": "necrozma_dusk_mane",
     "type": [
       "TYPE_PSYCHIC",
@@ -23347,7 +23347,7 @@
   },
   {
     "id": "SPECIES_NECROZMA_DAWN_WINGS",
-    "name": "-----",
+    "name": "Necrozma Dawn Wings",
     "spriteKey": "necrozma_dawn_wings",
     "type": [
       "TYPE_PSYCHIC",
@@ -23365,7 +23365,7 @@
   },
   {
     "id": "SPECIES_NECROZMA_ULTRA_DUSK_MANE",
-    "name": "-----",
+    "name": "Necrozma Ultra Dusk Mane",
     "spriteKey": "necrozma_ultra_dusk_mane",
     "type": [
       "TYPE_PSYCHIC",
@@ -23383,7 +23383,7 @@
   },
   {
     "id": "SPECIES_NECROZMA_ULTRA_DAWN_WINGS",
-    "name": "-----",
+    "name": "Necrozma Ultra Dawn Wings",
     "spriteKey": "necrozma_ultra_dawn_wings",
     "type": [
       "TYPE_PSYCHIC",
@@ -23401,7 +23401,7 @@
   },
   {
     "id": "SPECIES_MAGEARNA_ORIGINAL",
-    "name": "-----",
+    "name": "Magearna Original",
     "spriteKey": "magearna_original",
     "type": [
       "TYPE_STEEL",
@@ -23419,7 +23419,7 @@
   },
   {
     "id": "SPECIES_PIKACHU_PARTNER",
-    "name": "-----",
+    "name": "Pikachu Partner",
     "spriteKey": "pikachu_partner",
     "type": [
       "TYPE_ELECTRIC",
@@ -23437,7 +23437,7 @@
   },
   {
     "id": "SPECIES_EEVEE_PARTNER",
-    "name": "-----",
+    "name": "Eevee Partner",
     "spriteKey": "eevee_partner",
     "type": [
       "TYPE_NORMAL",
@@ -23455,7 +23455,7 @@
   },
   {
     "id": "SPECIES_CRAMORANT_GULPING",
-    "name": "-----",
+    "name": "Cramorant Gulping",
     "spriteKey": "cramorant_gulping",
     "type": [
       "TYPE_FLYING",
@@ -23473,7 +23473,7 @@
   },
   {
     "id": "SPECIES_CRAMORANT_GORGING",
-    "name": "-----",
+    "name": "Cramorant Gorging",
     "spriteKey": "cramorant_gorging",
     "type": [
       "TYPE_FLYING",
@@ -23491,7 +23491,7 @@
   },
   {
     "id": "SPECIES_TOXTRICITY_LOW_KEY",
-    "name": "-----",
+    "name": "Toxtricity Low Key",
     "spriteKey": "toxtricity_low_key",
     "type": [
       "TYPE_ELECTRIC",
@@ -23509,7 +23509,7 @@
   },
   {
     "id": "SPECIES_SINISTEA_ANTIQUE",
-    "name": "-----",
+    "name": "Sinistea Antique",
     "spriteKey": "sinistea_antique",
     "type": [
       "TYPE_GHOST",
@@ -23527,7 +23527,7 @@
   },
   {
     "id": "SPECIES_POLTEAGEIST_ANTIQUE",
-    "name": "-----",
+    "name": "Polteageist Antique",
     "spriteKey": "polteageist_antique",
     "type": [
       "TYPE_GHOST",
@@ -23545,7 +23545,7 @@
   },
   {
     "id": "SPECIES_ALCREMIE_BERRY_SWEET",
-    "name": "-----",
+    "name": "Alcremie Berry Sweet",
     "spriteKey": "alcremie_berry_sweet",
     "type": [
       "TYPE_FAIRY",
@@ -23563,7 +23563,7 @@
   },
   {
     "id": "SPECIES_ALCREMIE_LOVE_SWEET",
-    "name": "-----",
+    "name": "Alcremie Love Sweet",
     "spriteKey": "alcremie_love_sweet",
     "type": [
       "TYPE_FAIRY",
@@ -23581,7 +23581,7 @@
   },
   {
     "id": "SPECIES_ALCREMIE_STAR_SWEET",
-    "name": "-----",
+    "name": "Alcremie Star Sweet",
     "spriteKey": "alcremie_star_sweet",
     "type": [
       "TYPE_FAIRY",
@@ -23599,7 +23599,7 @@
   },
   {
     "id": "SPECIES_ALCREMIE_CLOVER_SWEET",
-    "name": "-----",
+    "name": "Alcremie Clover Sweet",
     "spriteKey": "alcremie_clover_sweet",
     "type": [
       "TYPE_FAIRY",
@@ -23617,7 +23617,7 @@
   },
   {
     "id": "SPECIES_ALCREMIE_FLOWER_SWEET",
-    "name": "-----",
+    "name": "Alcremie Flower Sweet",
     "spriteKey": "alcremie_flower_sweet",
     "type": [
       "TYPE_FAIRY",
@@ -23635,7 +23635,7 @@
   },
   {
     "id": "SPECIES_ALCREMIE_RIBBON_SWEET",
-    "name": "-----",
+    "name": "Alcremie Ribbon Sweet",
     "spriteKey": "alcremie_ribbon_sweet",
     "type": [
       "TYPE_FAIRY",
@@ -23653,7 +23653,7 @@
   },
   {
     "id": "SPECIES_ALCREMIE_FILLER_1",
-    "name": "-----",
+    "name": "Alcremie Filler 1",
     "spriteKey": "alcremie_filler_1",
     "type": [
       "TYPE_FAIRY",
@@ -23671,7 +23671,7 @@
   },
   {
     "id": "SPECIES_ALCREMIE_FILLER_2",
-    "name": "-----",
+    "name": "Alcremie Filler 2",
     "spriteKey": "alcremie_filler_2",
     "type": [
       "TYPE_FAIRY",
@@ -23689,7 +23689,7 @@
   },
   {
     "id": "SPECIES_EISCUE_NOICE_FACE",
-    "name": "-----",
+    "name": "Eiscue Noice Face",
     "spriteKey": "eiscue_noice_face",
     "type": [
       "TYPE_ICE",
@@ -23707,7 +23707,7 @@
   },
   {
     "id": "SPECIES_MORPEKO_HANGRY",
-    "name": "-----",
+    "name": "Morpeko Hangry",
     "spriteKey": "morpeko_hangry",
     "type": [
       "TYPE_ELECTRIC",
@@ -23725,7 +23725,7 @@
   },
   {
     "id": "SPECIES_ZACIAN_CROWNED",
-    "name": "-----",
+    "name": "Zacian Crowned",
     "spriteKey": "zacian_crowned",
     "type": [
       "TYPE_FAIRY",
@@ -23743,7 +23743,7 @@
   },
   {
     "id": "SPECIES_ZAMAZENTA_CROWNED",
-    "name": "-----",
+    "name": "Zamazenta Crowned",
     "spriteKey": "zamazenta_crowned",
     "type": [
       "TYPE_FIGHTING",
@@ -23761,7 +23761,7 @@
   },
   {
     "id": "SPECIES_ETERNATUS_ETERNAMAX",
-    "name": "-----",
+    "name": "Eternatus Eternamax",
     "spriteKey": "eternatus_eternamax",
     "type": [
       "TYPE_POISON",
@@ -23779,7 +23779,7 @@
   },
   {
     "id": "SPECIES_URSHIFU_RAPID_STRIKE",
-    "name": "-----",
+    "name": "Urshifu Rapid Strike",
     "spriteKey": "urshifu_rapid_strike",
     "type": [
       "TYPE_FIGHTING",
@@ -23797,7 +23797,7 @@
   },
   {
     "id": "SPECIES_ZARUDE_DADA",
-    "name": "-----",
+    "name": "Zarude Dada",
     "spriteKey": "zarude_dada",
     "type": [
       "TYPE_DARK",
@@ -23815,7 +23815,7 @@
   },
   {
     "id": "SPECIES_CALYREX_ICE_RIDER",
-    "name": "-----",
+    "name": "Calyrex Ice Rider",
     "spriteKey": "calyrex_ice_rider",
     "type": [
       "TYPE_PSYCHIC",
@@ -23833,7 +23833,7 @@
   },
   {
     "id": "SPECIES_CALYREX_SHADOW_RIDER",
-    "name": "-----",
+    "name": "Calyrex Shadow Rider",
     "spriteKey": "calyrex_shadow_rider",
     "type": [
       "TYPE_PSYCHIC",
@@ -23851,7 +23851,7 @@
   },
   {
     "id": "SPECIES_ENAMORUS_THERIAN",
-    "name": "-----",
+    "name": "Enamorus Therian",
     "spriteKey": "enamorus_therian",
     "type": [
       "(FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL",
@@ -23869,7 +23869,7 @@
   },
   {
     "id": "SPECIES_GROWLITHE_HISUIAN",
-    "name": "-----",
+    "name": "Growlithe Hisuian",
     "spriteKey": "growlithe_hisuian",
     "type": [
       "TYPE_FIRE",
@@ -23887,7 +23887,7 @@
   },
   {
     "id": "SPECIES_ARCANINE_HISUIAN",
-    "name": "-----",
+    "name": "Arcanine Hisuian",
     "spriteKey": "arcanine_hisuian",
     "type": [
       "TYPE_FIRE",
@@ -23905,7 +23905,7 @@
   },
   {
     "id": "SPECIES_VOLTORB_HISUIAN",
-    "name": "-----",
+    "name": "Voltorb Hisuian",
     "spriteKey": "voltorb_hisuian",
     "type": [
       "TYPE_ELECTRIC",
@@ -23923,7 +23923,7 @@
   },
   {
     "id": "SPECIES_ELECTRODE_HISUIAN",
-    "name": "-----",
+    "name": "Electrode Hisuian",
     "spriteKey": "electrode_hisuian",
     "type": [
       "TYPE_ELECTRIC",
@@ -23941,7 +23941,7 @@
   },
   {
     "id": "SPECIES_TYPHLOSION_HISUIAN",
-    "name": "-----",
+    "name": "Typhlosion Hisuian",
     "spriteKey": "typhlosion_hisuian",
     "type": [
       "TYPE_FIRE",
@@ -23959,7 +23959,7 @@
   },
   {
     "id": "SPECIES_QWILFISH_HISUIAN",
-    "name": "-----",
+    "name": "Qwilfish Hisuian",
     "spriteKey": "qwilfish_hisuian",
     "type": [
       "TYPE_DARK",
@@ -23977,7 +23977,7 @@
   },
   {
     "id": "SPECIES_SNEASEL_HISUIAN",
-    "name": "-----",
+    "name": "Sneasel Hisuian",
     "spriteKey": "sneasel_hisuian",
     "type": [
       "TYPE_FIGHTING",
@@ -23995,7 +23995,7 @@
   },
   {
     "id": "SPECIES_SAMUROTT_HISUIAN",
-    "name": "-----",
+    "name": "Samurott Hisuian",
     "spriteKey": "samurott_hisuian",
     "type": [
       "TYPE_WATER",
@@ -24013,7 +24013,7 @@
   },
   {
     "id": "SPECIES_LILLIGANT_HISUIAN",
-    "name": "-----",
+    "name": "Lilligant Hisuian",
     "spriteKey": "lilligant_hisuian",
     "type": [
       "TYPE_GRASS",
@@ -24031,7 +24031,7 @@
   },
   {
     "id": "SPECIES_ZORUA_HISUIAN",
-    "name": "-----",
+    "name": "Zorua Hisuian",
     "spriteKey": "zorua_hisuian",
     "type": [
       "TYPE_NORMAL",
@@ -24049,7 +24049,7 @@
   },
   {
     "id": "SPECIES_ZOROARK_HISUIAN",
-    "name": "-----",
+    "name": "Zoroark Hisuian",
     "spriteKey": "zoroark_hisuian",
     "type": [
       "TYPE_NORMAL",
@@ -24067,7 +24067,7 @@
   },
   {
     "id": "SPECIES_BRAVIARY_HISUIAN",
-    "name": "-----",
+    "name": "Braviary Hisuian",
     "spriteKey": "braviary_hisuian",
     "type": [
       "TYPE_PSYCHIC",
@@ -24085,7 +24085,7 @@
   },
   {
     "id": "SPECIES_SLIGGOO_HISUIAN",
-    "name": "-----",
+    "name": "Sliggoo Hisuian",
     "spriteKey": "sliggoo_hisuian",
     "type": [
       "TYPE_STEEL",
@@ -24103,7 +24103,7 @@
   },
   {
     "id": "SPECIES_GOODRA_HISUIAN",
-    "name": "-----",
+    "name": "Goodra Hisuian",
     "spriteKey": "goodra_hisuian",
     "type": [
       "TYPE_STEEL",
@@ -24121,7 +24121,7 @@
   },
   {
     "id": "SPECIES_AVALUGG_HISUIAN",
-    "name": "-----",
+    "name": "Avalugg Hisuian",
     "spriteKey": "avalugg_hisuian",
     "type": [
       "TYPE_ICE",
@@ -24139,7 +24139,7 @@
   },
   {
     "id": "SPECIES_DECIDUEYE_HISUIAN",
-    "name": "-----",
+    "name": "Decidueye Hisuian",
     "spriteKey": "decidueye_hisuian",
     "type": [
       "TYPE_GRASS",
@@ -24157,7 +24157,7 @@
   },
   {
     "id": "SPECIES_KLEAVOR_LORD",
-    "name": "-----",
+    "name": "Kleavor Lord",
     "spriteKey": "kleavor_lord",
     "type": [
       "TYPE_BUG",
@@ -24175,7 +24175,7 @@
   },
   {
     "id": "SPECIES_LILLIGANT_LADY",
-    "name": "-----",
+    "name": "Lilligant Lady",
     "spriteKey": "lilligant_lady",
     "type": [
       "TYPE_GRASS",
@@ -24193,7 +24193,7 @@
   },
   {
     "id": "SPECIES_ARCANINE_LORD",
-    "name": "-----",
+    "name": "Arcanine Lord",
     "spriteKey": "arcanine_lord",
     "type": [
       "TYPE_FIRE",
@@ -24211,7 +24211,7 @@
   },
   {
     "id": "SPECIES_ELECTRODE_LORD",
-    "name": "-----",
+    "name": "Electrode Lord",
     "spriteKey": "electrode_lord",
     "type": [
       "TYPE_ELECTRIC",
@@ -24229,7 +24229,7 @@
   },
   {
     "id": "SPECIES_AVALUGG_LORD",
-    "name": "-----",
+    "name": "Avalugg Lord",
     "spriteKey": "avalugg_lord",
     "type": [
       "TYPE_ICE",
@@ -24247,7 +24247,7 @@
   },
   {
     "id": "SPECIES_UNFEZANT_FEMALE",
-    "name": "-----",
+    "name": "Unfezant Female",
     "spriteKey": "unfezant_female",
     "type": [
       "TYPE_NORMAL",
@@ -24265,7 +24265,7 @@
   },
   {
     "id": "SPECIES_FRILLISH_FEMALE",
-    "name": "-----",
+    "name": "Frillish Female",
     "spriteKey": "frillish_female",
     "type": [
       "TYPE_WATER",
@@ -24283,7 +24283,7 @@
   },
   {
     "id": "SPECIES_JELLICENT_FEMALE",
-    "name": "-----",
+    "name": "Jellicent Female",
     "spriteKey": "jellicent_female",
     "type": [
       "TYPE_WATER",
@@ -24301,7 +24301,7 @@
   },
   {
     "id": "SPECIES_PYROAR_FEMALE",
-    "name": "-----",
+    "name": "Pyroar Female",
     "spriteKey": "pyroar_female",
     "type": [
       "TYPE_FIRE",
@@ -24319,7 +24319,7 @@
   },
   {
     "id": "SPECIES_MEOWSTIC_FEMALE",
-    "name": "-----",
+    "name": "Meowstic Female",
     "spriteKey": "meowstic_female",
     "type": [
       "TYPE_PSYCHIC",
@@ -24337,7 +24337,7 @@
   },
   {
     "id": "SPECIES_INDEEDEE_FEMALE",
-    "name": "-----",
+    "name": "Indeedee Female",
     "spriteKey": "indeedee_female",
     "type": [
       "TYPE_PSYCHIC",
@@ -24355,7 +24355,7 @@
   },
   {
     "id": "SPECIES_BASCULEGION_FEMALE",
-    "name": "-----",
+    "name": "Basculegion Female",
     "spriteKey": "basculegion_female",
     "type": [
       "TYPE_WATER",
@@ -24373,7 +24373,7 @@
   },
   {
     "id": "SPECIES_MAUSHOLD_FAMILY_OF_THREE",
-    "name": "-----",
+    "name": "Maushold Family Of Three",
     "spriteKey": "maushold_family_of_three",
     "type": [
       "TYPE_NORMAL",
@@ -24391,7 +24391,7 @@
   },
   {
     "id": "SPECIES_SQUAWKABILLY_BLUE_PLUMAGE",
-    "name": "-----",
+    "name": "Squawkabilly Blue Plumage",
     "spriteKey": "squawkabilly_blue_plumage",
     "type": [
       "TYPE_NORMAL",
@@ -24409,7 +24409,7 @@
   },
   {
     "id": "SPECIES_SQUAWKABILLY_YELLOW_PLUMAGE",
-    "name": "-----",
+    "name": "Squawkabilly Yellow Plumage",
     "spriteKey": "squawkabilly_yellow_plumage",
     "type": [
       "TYPE_NORMAL",
@@ -24427,7 +24427,7 @@
   },
   {
     "id": "SPECIES_SQUAWKABILLY_WHITE_PLUMAGE",
-    "name": "-----",
+    "name": "Squawkabilly White Plumage",
     "spriteKey": "squawkabilly_white_plumage",
     "type": [
       "TYPE_NORMAL",
@@ -24445,7 +24445,7 @@
   },
   {
     "id": "SPECIES_PALAFIN_HERO",
-    "name": "-----",
+    "name": "Palafin Hero",
     "spriteKey": "palafin_hero",
     "type": [
       "TYPE_WATER",
@@ -24463,7 +24463,7 @@
   },
   {
     "id": "SPECIES_TATSUGIRI_DROOPY",
-    "name": "-----",
+    "name": "Tatsugiri Droopy",
     "spriteKey": "tatsugiri_droopy",
     "type": [
       "TYPE_DRAGON",
@@ -24481,7 +24481,7 @@
   },
   {
     "id": "SPECIES_TATSUGIRI_STRETCHY",
-    "name": "-----",
+    "name": "Tatsugiri Stretchy",
     "spriteKey": "tatsugiri_stretchy",
     "type": [
       "TYPE_DRAGON",
@@ -24499,7 +24499,7 @@
   },
   {
     "id": "SPECIES_DUDUNSPARCE_THREE_SEGMENT",
-    "name": "-----",
+    "name": "Dudunsparce Three Segment",
     "spriteKey": "dudunsparce_three_segment",
     "type": [
       "TYPE_GROUND",
@@ -24517,7 +24517,7 @@
   },
   {
     "id": "SPECIES_GIMMIGHOUL_ROAMING",
-    "name": "-----",
+    "name": "Gimmighoul Roaming",
     "spriteKey": "gimmighoul_roaming",
     "type": [
       "TYPE_GHOST",
@@ -24535,7 +24535,7 @@
   },
   {
     "id": "SPECIES_WOOPER_PALDEAN",
-    "name": "-----",
+    "name": "Wooper Paldean",
     "spriteKey": "wooper_paldean",
     "type": [
       "TYPE_POISON",
@@ -24553,7 +24553,7 @@
   },
   {
     "id": "SPECIES_TAUROS_COMBAT",
-    "name": "-----",
+    "name": "Tauros Combat",
     "spriteKey": "tauros_combat",
     "type": [
       "TYPE_FIGHTING",
@@ -24571,7 +24571,7 @@
   },
   {
     "id": "SPECIES_TAUROS_BLAZE",
-    "name": "-----",
+    "name": "Tauros Blaze",
     "spriteKey": "tauros_blaze",
     "type": [
       "TYPE_FIGHTING",
@@ -24589,7 +24589,7 @@
   },
   {
     "id": "SPECIES_TAUROS_AQUA",
-    "name": "-----",
+    "name": "Tauros Aqua",
     "spriteKey": "tauros_aqua",
     "type": [
       "TYPE_FIGHTING",
@@ -24607,7 +24607,7 @@
   },
   {
     "id": "SPECIES_OINKOLOGNE_FEMALE",
-    "name": "-----",
+    "name": "Oinkologne Female",
     "spriteKey": "oinkologne_female",
     "type": [
       "TYPE_NORMAL",
@@ -24625,7 +24625,7 @@
   },
   {
     "id": "SPECIES_REVAVROOM_SEGIN",
-    "name": "-----",
+    "name": "Revavroom Segin",
     "spriteKey": "revavroom_segin",
     "type": [
       "TYPE_STEEL",
@@ -24643,7 +24643,7 @@
   },
   {
     "id": "SPECIES_REVAVROOM_SCHEDAR",
-    "name": "-----",
+    "name": "Revavroom Schedar",
     "spriteKey": "revavroom_schedar",
     "type": [
       "TYPE_STEEL",
@@ -24661,7 +24661,7 @@
   },
   {
     "id": "SPECIES_REVAVROOM_NAVI",
-    "name": "-----",
+    "name": "Revavroom Navi",
     "spriteKey": "revavroom_navi",
     "type": [
       "TYPE_STEEL",
@@ -24679,7 +24679,7 @@
   },
   {
     "id": "SPECIES_REVAVROOM_RUCHBAH",
-    "name": "-----",
+    "name": "Revavroom Ruchbah",
     "spriteKey": "revavroom_ruchbah",
     "type": [
       "TYPE_STEEL",
@@ -24697,7 +24697,7 @@
   },
   {
     "id": "SPECIES_KORAIDON_LIMITED_BUILD",
-    "name": "-----",
+    "name": "Koraidon Limited Build",
     "spriteKey": "koraidon_limited_build",
     "type": [
       "TYPE_FIGHTING",
@@ -24715,7 +24715,7 @@
   },
   {
     "id": "SPECIES_KORAIDON_SPRINTING_BUILD",
-    "name": "-----",
+    "name": "Koraidon Sprinting Build",
     "spriteKey": "koraidon_sprinting_build",
     "type": [
       "TYPE_FIGHTING",
@@ -24733,7 +24733,7 @@
   },
   {
     "id": "SPECIES_KORAIDON_SWIMMING_BUILD",
-    "name": "-----",
+    "name": "Koraidon Swimming Build",
     "spriteKey": "koraidon_swimming_build",
     "type": [
       "TYPE_FIGHTING",
@@ -24751,7 +24751,7 @@
   },
   {
     "id": "SPECIES_KORAIDON_GLIDING_BUILD",
-    "name": "-----",
+    "name": "Koraidon Gliding Build",
     "spriteKey": "koraidon_gliding_build",
     "type": [
       "TYPE_FIGHTING",
@@ -24769,7 +24769,7 @@
   },
   {
     "id": "SPECIES_MIRAIDON_LOW_POWER_MODE",
-    "name": "-----",
+    "name": "Miraidon Low Power Mode",
     "spriteKey": "miraidon_low_power_mode",
     "type": [
       "TYPE_ELECTRIC",
@@ -24787,7 +24787,7 @@
   },
   {
     "id": "SPECIES_MIRAIDON_DRIVE_MODE",
-    "name": "-----",
+    "name": "Miraidon Drive Mode",
     "spriteKey": "miraidon_drive_mode",
     "type": [
       "TYPE_ELECTRIC",
@@ -24805,7 +24805,7 @@
   },
   {
     "id": "SPECIES_MIRAIDON_AQUATIC_MODE",
-    "name": "-----",
+    "name": "Miraidon Aquatic Mode",
     "spriteKey": "miraidon_aquatic_mode",
     "type": [
       "TYPE_ELECTRIC",
@@ -24823,7 +24823,7 @@
   },
   {
     "id": "SPECIES_MIRAIDON_GLIDE_MODE",
-    "name": "-----",
+    "name": "Miraidon Glide Mode",
     "spriteKey": "miraidon_glide_mode",
     "type": [
       "TYPE_ELECTRIC",
@@ -24841,7 +24841,7 @@
   },
   {
     "id": "SPECIES_POLTCHAGEIST_MASTERPIECE",
-    "name": "-----",
+    "name": "Poltchageist Masterpiece",
     "spriteKey": "poltchageist_masterpiece",
     "type": [
       "TYPE_GRASS",
@@ -24859,7 +24859,7 @@
   },
   {
     "id": "SPECIES_SINISTCHA_MASTERPIECE",
-    "name": "-----",
+    "name": "Sinistcha Masterpiece",
     "spriteKey": "sinistcha_masterpiece",
     "type": [
       "TYPE_GRASS",
@@ -24877,7 +24877,7 @@
   },
   {
     "id": "SPECIES_OGERPON_WELLSPRING_MASK",
-    "name": "-----",
+    "name": "Ogerpon Wellspring Mask",
     "spriteKey": "ogerpon_wellspring_mask",
     "type": [
       "TYPE_GRASS",
@@ -24895,7 +24895,7 @@
   },
   {
     "id": "SPECIES_OGERPON_HEARTHFLAME_MASK",
-    "name": "-----",
+    "name": "Ogerpon Hearthflame Mask",
     "spriteKey": "ogerpon_hearthflame_mask",
     "type": [
       "TYPE_GRASS",
@@ -24913,7 +24913,7 @@
   },
   {
     "id": "SPECIES_OGERPON_CORNERSTONE_MASK",
-    "name": "-----",
+    "name": "Ogerpon Cornerstone Mask",
     "spriteKey": "ogerpon_cornerstone_mask",
     "type": [
       "TYPE_GRASS",
@@ -24931,7 +24931,7 @@
   },
   {
     "id": "SPECIES_OGERPON_TEAL_MASK_TERASTAL",
-    "name": "-----",
+    "name": "Ogerpon Teal Mask Terastal",
     "spriteKey": "ogerpon_teal_mask_terastal",
     "type": [
       "TYPE_GRASS",
@@ -24949,7 +24949,7 @@
   },
   {
     "id": "SPECIES_OGERPON_WELLSPRING_MASK_TERASTAL",
-    "name": "-----",
+    "name": "Ogerpon Wellspring Mask Terastal",
     "spriteKey": "ogerpon_wellspring_mask_terastal",
     "type": [
       "TYPE_GRASS",
@@ -24967,7 +24967,7 @@
   },
   {
     "id": "SPECIES_OGERPON_HEARTHFLAME_MASK_TERASTAL",
-    "name": "-----",
+    "name": "Ogerpon Hearthflame Mask Terastal",
     "spriteKey": "ogerpon_hearthflame_mask_terastal",
     "type": [
       "TYPE_GRASS",
@@ -24985,7 +24985,7 @@
   },
   {
     "id": "SPECIES_OGERPON_CORNERSTONE_MASK_TERASTAL",
-    "name": "-----",
+    "name": "Ogerpon Cornerstone Mask Terastal",
     "spriteKey": "ogerpon_cornerstone_mask_terastal",
     "type": [
       "TYPE_GRASS",
@@ -25003,7 +25003,7 @@
   },
   {
     "id": "SPECIES_URSALUNA_BLOODMOON",
-    "name": "-----",
+    "name": "Ursaluna Bloodmoon",
     "spriteKey": "ursaluna_bloodmoon",
     "type": [
       "TYPE_GHOST",
@@ -25021,7 +25021,7 @@
   },
   {
     "id": "SPECIES_TERAPAGOS_TERASTAL",
-    "name": "-----",
+    "name": "Terapagos Terastal",
     "spriteKey": "terapagos_terastal",
     "type": [
       "TYPE_NORMAL",
@@ -25039,7 +25039,7 @@
   },
   {
     "id": "SPECIES_TERAPAGOS_STELLAR",
-    "name": "-----",
+    "name": "Terapagos Stellar",
     "spriteKey": "terapagos_stellar",
     "type": [
       "TYPE_NORMAL",
@@ -25057,7 +25057,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_VENUSAUR",
-    "name": "-----",
+    "name": "Gigantamax Venusaur",
     "spriteKey": "gigantamax_venusaur",
     "type": [
       "TYPE_GRASS",
@@ -25075,7 +25075,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_CHARIZARD",
-    "name": "-----",
+    "name": "Gigantamax Charizard",
     "spriteKey": "gigantamax_charizard",
     "type": [
       "TYPE_FIRE",
@@ -25093,7 +25093,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_BLASTOISE",
-    "name": "-----",
+    "name": "Gigantamax Blastoise",
     "spriteKey": "gigantamax_blastoise",
     "type": [
       "TYPE_WATER",
@@ -25111,7 +25111,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_BUTTERFREE",
-    "name": "-----",
+    "name": "Gigantamax Butterfree",
     "spriteKey": "gigantamax_butterfree",
     "type": [
       "TYPE_BUG",
@@ -25129,7 +25129,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_PIKACHU",
-    "name": "-----",
+    "name": "Gigantamax Pikachu",
     "spriteKey": "gigantamax_pikachu",
     "type": [
       "TYPE_ELECTRIC",
@@ -25147,7 +25147,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_MEOWTH",
-    "name": "-----",
+    "name": "Gigantamax Meowth",
     "spriteKey": "gigantamax_meowth",
     "type": [
       "TYPE_NORMAL",
@@ -25165,7 +25165,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_MACHAMP",
-    "name": "-----",
+    "name": "Gigantamax Machamp",
     "spriteKey": "gigantamax_machamp",
     "type": [
       "TYPE_FIGHTING",
@@ -25183,7 +25183,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_GENGAR",
-    "name": "-----",
+    "name": "Gigantamax Gengar",
     "spriteKey": "gigantamax_gengar",
     "type": [
       "TYPE_GHOST",
@@ -25201,7 +25201,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_KINGLER",
-    "name": "-----",
+    "name": "Gigantamax Kingler",
     "spriteKey": "gigantamax_kingler",
     "type": [
       "TYPE_WATER",
@@ -25219,7 +25219,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_LAPRAS",
-    "name": "-----",
+    "name": "Gigantamax Lapras",
     "spriteKey": "gigantamax_lapras",
     "type": [
       "TYPE_WATER",
@@ -25237,7 +25237,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_EEVEE",
-    "name": "-----",
+    "name": "Gigantamax Eevee",
     "spriteKey": "gigantamax_eevee",
     "type": [
       "TYPE_NORMAL",
@@ -25255,7 +25255,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_SNORLAX",
-    "name": "-----",
+    "name": "Gigantamax Snorlax",
     "spriteKey": "gigantamax_snorlax",
     "type": [
       "TYPE_NORMAL",
@@ -25273,7 +25273,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_GARBODOR",
-    "name": "-----",
+    "name": "Gigantamax Garbodor",
     "spriteKey": "gigantamax_garbodor",
     "type": [
       "TYPE_POISON",
@@ -25291,7 +25291,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_MELMETAL",
-    "name": "-----",
+    "name": "Gigantamax Melmetal",
     "spriteKey": "gigantamax_melmetal",
     "type": [
       "TYPE_STEEL",
@@ -25309,7 +25309,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_RILLABOOM",
-    "name": "-----",
+    "name": "Gigantamax Rillaboom",
     "spriteKey": "gigantamax_rillaboom",
     "type": [
       "TYPE_GRASS",
@@ -25327,7 +25327,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_CINDERACE",
-    "name": "-----",
+    "name": "Gigantamax Cinderace",
     "spriteKey": "gigantamax_cinderace",
     "type": [
       "TYPE_FIRE",
@@ -25345,7 +25345,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_INTELEON",
-    "name": "-----",
+    "name": "Gigantamax Inteleon",
     "spriteKey": "gigantamax_inteleon",
     "type": [
       "TYPE_WATER",
@@ -25363,7 +25363,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_CORVIKNIGHT",
-    "name": "-----",
+    "name": "Gigantamax Corviknight",
     "spriteKey": "gigantamax_corviknight",
     "type": [
       "TYPE_FLYING",
@@ -25381,7 +25381,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_ORBEETLE",
-    "name": "-----",
+    "name": "Gigantamax Orbeetle",
     "spriteKey": "gigantamax_orbeetle",
     "type": [
       "TYPE_BUG",
@@ -25399,7 +25399,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_DREDNAW",
-    "name": "-----",
+    "name": "Gigantamax Drednaw",
     "spriteKey": "gigantamax_drednaw",
     "type": [
       "TYPE_WATER",
@@ -25417,7 +25417,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_COALOSSAL",
-    "name": "-----",
+    "name": "Gigantamax Coalossal",
     "spriteKey": "gigantamax_coalossal",
     "type": [
       "TYPE_ROCK",
@@ -25435,7 +25435,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_FLAPPLE",
-    "name": "-----",
+    "name": "Gigantamax Flapple",
     "spriteKey": "gigantamax_flapple",
     "type": [
       "TYPE_GRASS",
@@ -25453,7 +25453,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_APPLETUN",
-    "name": "-----",
+    "name": "Gigantamax Appletun",
     "spriteKey": "gigantamax_appletun",
     "type": [
       "TYPE_GRASS",
@@ -25471,7 +25471,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_SANDACONDA",
-    "name": "-----",
+    "name": "Gigantamax Sandaconda",
     "spriteKey": "gigantamax_sandaconda",
     "type": [
       "TYPE_GROUND",
@@ -25489,7 +25489,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_TOXTRICITY",
-    "name": "-----",
+    "name": "Gigantamax Toxtricity",
     "spriteKey": "gigantamax_toxtricity",
     "type": [
       "TYPE_ELECTRIC",
@@ -25507,7 +25507,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_TOXTRICITY_LOW_KEY",
-    "name": "-----",
+    "name": "Gigantamax Toxtricity Low Key",
     "spriteKey": "gigantamax_toxtricity_low_key",
     "type": [
       "TYPE_ELECTRIC",
@@ -25525,7 +25525,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_CENTISKORCH",
-    "name": "-----",
+    "name": "Gigantamax Centiskorch",
     "spriteKey": "gigantamax_centiskorch",
     "type": [
       "TYPE_FIRE",
@@ -25543,7 +25543,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_HATTERENE",
-    "name": "-----",
+    "name": "Gigantamax Hatterene",
     "spriteKey": "gigantamax_hatterene",
     "type": [
       "TYPE_PSYCHIC",
@@ -25561,7 +25561,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_GRIMMSNARL",
-    "name": "-----",
+    "name": "Gigantamax Grimmsnarl",
     "spriteKey": "gigantamax_grimmsnarl",
     "type": [
       "TYPE_DARK",
@@ -25579,7 +25579,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_ALCREMIE",
-    "name": "-----",
+    "name": "Gigantamax Alcremie",
     "spriteKey": "gigantamax_alcremie",
     "type": [
       "(FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_NORMAL",
@@ -25597,7 +25597,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_COPPERAJAH",
-    "name": "-----",
+    "name": "Gigantamax Copperajah",
     "spriteKey": "gigantamax_copperajah",
     "type": [
       "TYPE_STEEL",
@@ -25615,7 +25615,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_DURALUDON",
-    "name": "-----",
+    "name": "Gigantamax Duraludon",
     "spriteKey": "gigantamax_duraludon",
     "type": [
       "TYPE_STEEL",
@@ -25633,7 +25633,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_URSHIFU",
-    "name": "-----",
+    "name": "Gigantamax Urshifu",
     "spriteKey": "gigantamax_urshifu",
     "type": [
       "TYPE_FIGHTING",
@@ -25651,7 +25651,7 @@
   },
   {
     "id": "SPECIES_GIGANTAMAX_URSHIFU_RAPID_STRIKE",
-    "name": "-----",
+    "name": "Gigantamax Urshifu Rapid Strike",
     "spriteKey": "gigantamax_urshifu_rapid_strike",
     "type": [
       "TYPE_FIGHTING",
@@ -25669,7 +25669,7 @@
   },
   {
     "id": "SPECIES_MEGA_RAICHU_X",
-    "name": "-----",
+    "name": "Mega Raichu X",
     "spriteKey": "mega_raichu_x",
     "type": [
       "TYPE_ELECTRIC",
@@ -25687,7 +25687,7 @@
   },
   {
     "id": "SPECIES_MEGA_RAICHU_Y",
-    "name": "-----",
+    "name": "Mega Raichu Y",
     "spriteKey": "mega_raichu_y",
     "type": [
       "TYPE_ELECTRIC",
@@ -25705,7 +25705,7 @@
   },
   {
     "id": "SPECIES_MEGA_CLEFABLE",
-    "name": "-----",
+    "name": "Mega Clefable",
     "spriteKey": "mega_clefable",
     "type": [
       "TYPE_FAIRY",
@@ -25723,7 +25723,7 @@
   },
   {
     "id": "SPECIES_MEGA_VICTREEBEL",
-    "name": "-----",
+    "name": "Mega Victreebel",
     "spriteKey": "mega_victreebel",
     "type": [
       "TYPE_GRASS",
@@ -25741,7 +25741,7 @@
   },
   {
     "id": "SPECIES_MEGA_STARMIE",
-    "name": "-----",
+    "name": "Mega Starmie",
     "spriteKey": "mega_starmie",
     "type": [
       "TYPE_WATER",
@@ -25759,7 +25759,7 @@
   },
   {
     "id": "SPECIES_MEGA_DRAGONITE",
-    "name": "-----",
+    "name": "Mega Dragonite",
     "spriteKey": "mega_dragonite",
     "type": [
       "TYPE_DRAGON",
@@ -25777,7 +25777,7 @@
   },
   {
     "id": "SPECIES_MEGA_MEGANIUM",
-    "name": "-----",
+    "name": "Mega Meganium",
     "spriteKey": "mega_meganium",
     "type": [
       "TYPE_GRASS",
@@ -25795,7 +25795,7 @@
   },
   {
     "id": "SPECIES_MEGA_FERALIGATR",
-    "name": "-----",
+    "name": "Mega Feraligatr",
     "spriteKey": "mega_feraligatr",
     "type": [
       "TYPE_WATER",
@@ -25813,7 +25813,7 @@
   },
   {
     "id": "SPECIES_MEGA_SKARMORY",
-    "name": "-----",
+    "name": "Mega Skarmory",
     "spriteKey": "mega_skarmory",
     "type": [
       "TYPE_STEEL",
@@ -25831,7 +25831,7 @@
   },
   {
     "id": "SPECIES_MEGA_CHIMECHO",
-    "name": "-----",
+    "name": "Mega Chimecho",
     "spriteKey": "mega_chimecho",
     "type": [
       "TYPE_PSYCHIC",
@@ -25849,7 +25849,7 @@
   },
   {
     "id": "SPECIES_MEGA_ABSOL_Z",
-    "name": "-----",
+    "name": "Mega Absol Z",
     "spriteKey": "mega_absol_z",
     "type": [
       "TYPE_DARK",
@@ -25867,7 +25867,7 @@
   },
   {
     "id": "SPECIES_MEGA_STARAPTOR",
-    "name": "-----",
+    "name": "Mega Staraptor",
     "spriteKey": "mega_staraptor",
     "type": [
       "TYPE_FIGHTING",
@@ -25885,7 +25885,7 @@
   },
   {
     "id": "SPECIES_MEGA_GARCHOMP_Z",
-    "name": "-----",
+    "name": "Mega Garchomp Z",
     "spriteKey": "mega_garchomp_z",
     "type": [
       "TYPE_DRAGON",
@@ -25903,7 +25903,7 @@
   },
   {
     "id": "SPECIES_MEGA_LUCARIO_Z",
-    "name": "-----",
+    "name": "Mega Lucario Z",
     "spriteKey": "mega_lucario_z",
     "type": [
       "TYPE_FIGHTING",
@@ -25921,7 +25921,7 @@
   },
   {
     "id": "SPECIES_MEGA_FROSLASS",
-    "name": "-----",
+    "name": "Mega Froslass",
     "spriteKey": "mega_froslass",
     "type": [
       "TYPE_ICE",
@@ -25939,7 +25939,7 @@
   },
   {
     "id": "SPECIES_MEGA_HEATRAN",
-    "name": "-----",
+    "name": "Mega Heatran",
     "spriteKey": "mega_heatran",
     "type": [
       "TYPE_FIRE",
@@ -25957,7 +25957,7 @@
   },
   {
     "id": "SPECIES_MEGA_DARKRAI",
-    "name": "-----",
+    "name": "Mega Darkrai",
     "spriteKey": "mega_darkrai",
     "type": [
       "TYPE_DARK",
@@ -25975,7 +25975,7 @@
   },
   {
     "id": "SPECIES_MEGA_EMBOAR",
-    "name": "-----",
+    "name": "Mega Emboar",
     "spriteKey": "mega_emboar",
     "type": [
       "TYPE_FIRE",
@@ -25993,7 +25993,7 @@
   },
   {
     "id": "SPECIES_MEGA_EXCADRILL",
-    "name": "-----",
+    "name": "Mega Excadrill",
     "spriteKey": "mega_excadrill",
     "type": [
       "TYPE_GROUND",
@@ -26011,7 +26011,7 @@
   },
   {
     "id": "SPECIES_MEGA_SCOLIPEDE",
-    "name": "-----",
+    "name": "Mega Scolipede",
     "spriteKey": "mega_scolipede",
     "type": [
       "TYPE_BUG",
@@ -26029,7 +26029,7 @@
   },
   {
     "id": "SPECIES_MEGA_SCRAFTY",
-    "name": "-----",
+    "name": "Mega Scrafty",
     "spriteKey": "mega_scrafty",
     "type": [
       "TYPE_DARK",
@@ -26047,7 +26047,7 @@
   },
   {
     "id": "SPECIES_MEGA_EELEKTROSS",
-    "name": "-----",
+    "name": "Mega Eelektross",
     "spriteKey": "mega_eelektross",
     "type": [
       "TYPE_ELECTRIC",
@@ -26065,7 +26065,7 @@
   },
   {
     "id": "SPECIES_MEGA_CHANDELURE",
-    "name": "-----",
+    "name": "Mega Chandelure",
     "spriteKey": "mega_chandelure",
     "type": [
       "TYPE_GHOST",
@@ -26083,7 +26083,7 @@
   },
   {
     "id": "SPECIES_MEGA_GOLURK",
-    "name": "-----",
+    "name": "Mega Golurk",
     "spriteKey": "mega_golurk",
     "type": [
       "TYPE_GROUND",
@@ -26101,7 +26101,7 @@
   },
   {
     "id": "SPECIES_MEGA_CHESNAUGHT",
-    "name": "-----",
+    "name": "Mega Chesnaught",
     "spriteKey": "mega_chesnaught",
     "type": [
       "TYPE_GRASS",
@@ -26119,7 +26119,7 @@
   },
   {
     "id": "SPECIES_MEGA_DELPHOX",
-    "name": "-----",
+    "name": "Mega Delphox",
     "spriteKey": "mega_delphox",
     "type": [
       "TYPE_FIRE",
@@ -26137,7 +26137,7 @@
   },
   {
     "id": "SPECIES_MEGA_GRENINJA",
-    "name": "-----",
+    "name": "Mega Greninja",
     "spriteKey": "mega_greninja",
     "type": [
       "TYPE_WATER",
@@ -26155,7 +26155,7 @@
   },
   {
     "id": "SPECIES_MEGA_PYROAR",
-    "name": "-----",
+    "name": "Mega Pyroar",
     "spriteKey": "mega_pyroar",
     "type": [
       "TYPE_FIRE",
@@ -26173,7 +26173,7 @@
   },
   {
     "id": "SPECIES_MEGA_FLOETTE",
-    "name": "-----",
+    "name": "Mega Floette",
     "spriteKey": "mega_floette",
     "type": [
       "TYPE_FAIRY",
@@ -26191,7 +26191,7 @@
   },
   {
     "id": "SPECIES_MEGA_MEOWSTIC",
-    "name": "-----",
+    "name": "Mega Meowstic",
     "spriteKey": "mega_meowstic",
     "type": [
       "TYPE_PSYCHIC",
@@ -26209,7 +26209,7 @@
   },
   {
     "id": "SPECIES_MEGA_MEOWSTIC_FEMALE",
-    "name": "-----",
+    "name": "Mega Meowstic Female",
     "spriteKey": "mega_meowstic_female",
     "type": [
       "TYPE_PSYCHIC",
@@ -26227,7 +26227,7 @@
   },
   {
     "id": "SPECIES_MEGA_MALAMAR",
-    "name": "-----",
+    "name": "Mega Malamar",
     "spriteKey": "mega_malamar",
     "type": [
       "TYPE_DARK",
@@ -26245,7 +26245,7 @@
   },
   {
     "id": "SPECIES_MEGA_BARBARACLE",
-    "name": "-----",
+    "name": "Mega Barbaracle",
     "spriteKey": "mega_barbaracle",
     "type": [
       "TYPE_ROCK",
@@ -26263,7 +26263,7 @@
   },
   {
     "id": "SPECIES_MEGA_DRAGALGE",
-    "name": "-----",
+    "name": "Mega Dragalge",
     "spriteKey": "mega_dragalge",
     "type": [
       "TYPE_POISON",
@@ -26281,7 +26281,7 @@
   },
   {
     "id": "SPECIES_MEGA_HAWLUCHA",
-    "name": "-----",
+    "name": "Mega Hawlucha",
     "spriteKey": "mega_hawlucha",
     "type": [
       "TYPE_FIGHTING",
@@ -26299,7 +26299,7 @@
   },
   {
     "id": "SPECIES_MEGA_ZYGARDE",
-    "name": "-----",
+    "name": "Mega Zygarde",
     "spriteKey": "mega_zygarde",
     "type": [
       "TYPE_DRAGON",
@@ -26317,7 +26317,7 @@
   },
   {
     "id": "SPECIES_MEGA_CRABOMINABLE",
-    "name": "-----",
+    "name": "Mega Crabominable",
     "spriteKey": "mega_crabominable",
     "type": [
       "TYPE_FIGHTING",
@@ -26335,7 +26335,7 @@
   },
   {
     "id": "SPECIES_MEGA_GOLISOPOD",
-    "name": "-----",
+    "name": "Mega Golisopod",
     "spriteKey": "mega_golisopod",
     "type": [
       "TYPE_BUG",
@@ -26353,7 +26353,7 @@
   },
   {
     "id": "SPECIES_MEGA_DRAMPA",
-    "name": "-----",
+    "name": "Mega Drampa",
     "spriteKey": "mega_drampa",
     "type": [
       "TYPE_NORMAL",
@@ -26371,7 +26371,7 @@
   },
   {
     "id": "SPECIES_MEGA_MAGEARNA",
-    "name": "-----",
+    "name": "Mega Magearna",
     "spriteKey": "mega_magearna",
     "type": [
       "TYPE_STEEL",
@@ -26389,7 +26389,7 @@
   },
   {
     "id": "SPECIES_MEGA_MAGEARNA_ORIGINAL",
-    "name": "-----",
+    "name": "Mega Magearna Original",
     "spriteKey": "mega_magearna_original",
     "type": [
       "TYPE_STEEL",
@@ -26407,7 +26407,7 @@
   },
   {
     "id": "SPECIES_MEGA_ZERAORA",
-    "name": "-----",
+    "name": "Mega Zeraora",
     "spriteKey": "mega_zeraora",
     "type": [
       "TYPE_ELECTRIC",
@@ -26425,7 +26425,7 @@
   },
   {
     "id": "SPECIES_MEGA_FALINKS",
-    "name": "-----",
+    "name": "Mega Falinks",
     "spriteKey": "mega_falinks",
     "type": [
       "TYPE_FIGHTING",
@@ -26443,7 +26443,7 @@
   },
   {
     "id": "SPECIES_MEGA_SCOVILLAIN",
-    "name": "-----",
+    "name": "Mega Scovillain",
     "spriteKey": "mega_scovillain",
     "type": [
       "TYPE_GRASS",
@@ -26461,7 +26461,7 @@
   },
   {
     "id": "SPECIES_MEGA_GLIMMORA",
-    "name": "-----",
+    "name": "Mega Glimmora",
     "spriteKey": "mega_glimmora",
     "type": [
       "TYPE_ROCK",
@@ -26479,7 +26479,7 @@
   },
   {
     "id": "SPECIES_MEGA_TATSUGIRI",
-    "name": "-----",
+    "name": "Mega Tatsugiri",
     "spriteKey": "mega_tatsugiri",
     "type": [
       "TYPE_DRAGON",
@@ -26497,7 +26497,7 @@
   },
   {
     "id": "SPECIES_MEGA_TATSUGIRI_DROOPY",
-    "name": "-----",
+    "name": "Mega Tatsugiri Droopy",
     "spriteKey": "mega_tatsugiri_droopy",
     "type": [
       "TYPE_DRAGON",
@@ -26515,7 +26515,7 @@
   },
   {
     "id": "SPECIES_MEGA_TATSUGIRI_STRETCHY",
-    "name": "-----",
+    "name": "Mega Tatsugiri Stretchy",
     "spriteKey": "mega_tatsugiri_stretchy",
     "type": [
       "TYPE_DRAGON",
@@ -26530,5 +26530,23 @@
     "speed": 92,
     "spAttack": 135,
     "spDefense": 125
+  },
+  {
+    "id": "SPECIES_MEGA_BAXCALIBUR",
+    "name": "Mega Baxcalibur",
+    "spriteKey": "mega_baxcalibur",
+    "type": [
+      "TYPE_DRAGON",
+      "TYPE_ICE"
+    ],
+    "ability1": "ABILITY_THERMAL_EXCHANGE",
+    "ability2": "ABILITY_NONE",
+    "hiddenAbility": "ABILITY_NONE",
+    "hp": 115,
+    "attack": 175,
+    "defense": 117,
+    "speed": 87,
+    "spAttack": 105,
+    "spDefense": 101
   }
 ]
