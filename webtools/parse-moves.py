@@ -1,0 +1,232 @@
+import re
+import json
+
+INPUT_FILE = "./armips/data/moves.s"
+OUTPUT_FILE = "./website/webdata/moves.json"
+
+moves = {}
+
+# -------------------------------------------------
+# HELPERS (resilient parsing core)
+# -------------------------------------------------
+
+def extract_int(line):
+    """
+    Extract first integer safely from a line.
+    Ignores any trailing macros like FLAG_* etc.
+    """
+    match = re.search(r"-?\d+", line)
+    return int(match.group()) if match else None
+
+
+def extract_token(line, prefix):
+    """
+    Extract a token after a keyword, stripping prefixes.
+    Example:
+        battleeffect MOVE_EFFECT_HIT -> HIT
+    """
+    parts = line.split()
+    if len(parts) < 2:
+        return None
+    return parts[1].replace(prefix, "")
+
+
+def clean_flags(line):
+    """
+    Extract all FLAG_* tokens safely.
+    Ignores everything else on line.
+    """
+    return [
+        f.replace("FLAG_", "")
+        for f in line.split()
+        if f.startswith("FLAG_")
+    ]
+
+
+def clean_generic_prefix(value, prefix):
+    if not value:
+        return None
+    return value.replace(prefix, "")
+
+
+def format_pss(value):
+    if value == "SPLIT_PHYSICAL":
+        return "Physical"
+    if value == "SPLIT_SPECIAL":
+        return "Special"
+    return "Status"
+
+
+# -------------------------------------------------
+# PARSE FILE
+# -------------------------------------------------
+
+with open(INPUT_FILE, "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+current = None
+
+
+for line in lines:
+    line = line.strip()
+
+    if not line:
+        continue
+
+    # -------------------------------------------------
+    # START MOVE BLOCK
+    # -------------------------------------------------
+    if line.startswith("movedata"):
+
+        match = re.search(r'movedata\s+(\w+),\s*"(.+?)"', line)
+
+        if match:
+            move_id = match.group(1)
+            move_name = match.group(2)
+
+            current = {
+                "id": move_id,
+                "name": move_name,
+
+                "battleeffect": None,
+                "pss": None,
+                "basepower": None,
+                "type": None,
+                "accuracy": None,
+                "pp": None,
+                "effectchance": None,
+                "target": None,
+                "priority": None,
+
+                "flags": [],
+                "appeal": None,
+                "contesttype": None,
+
+                "description": None
+            }
+
+            moves[move_id] = current
+        continue
+
+    # -------------------------------------------------
+    # BATTLE EFFECT
+    # -------------------------------------------------
+    if line.startswith("battleeffect") and current:
+        current["battleeffect"] = clean_generic_prefix(
+            extract_token(line, "MOVE_EFFECT_"),
+            ""
+        )
+
+    # -------------------------------------------------
+    # PSS CATEGORY
+    # -------------------------------------------------
+    elif line.startswith("pss") and current:
+        current["pss"] = format_pss(extract_token(line, ""))
+
+    # -------------------------------------------------
+    # TYPE
+    # -------------------------------------------------
+    elif line.startswith("type") and current:
+
+        raw = line.split(" ", 1)[1].strip()
+
+
+        if "?" in raw and ":" in raw:
+
+            # split ternary
+            parts = raw.split("?")
+            true_false = parts[1].split(":")
+
+            true_branch = true_false[0].strip()
+            false_branch = true_false[1].strip()
+
+            # prefer FAIRY if present
+            chosen = true_branch if "FAIRY" in true_branch else false_branch
+
+        else:
+            chosen = raw
+
+        # cleanup TYPE_ prefix
+        chosen = chosen.replace("TYPE_", "").strip()
+        chosen = chosen.replace("(", "").replace(")", "")
+
+        current["type"] = chosen
+
+    # -------------------------------------------------
+    # TARGET
+    # -------------------------------------------------
+    elif line.startswith("target") and current:
+        current["target"] = clean_generic_prefix(
+            extract_token(line, "RANGE_"),
+            ""
+        )
+
+    # -------------------------------------------------
+    # FLAGS (SAFE, NEVER BREAKS)
+    # -------------------------------------------------
+    elif line.startswith("flags") and current:
+        current["flags"] = clean_flags(line)
+
+    # -------------------------------------------------
+    # SIMPLE INT FIELDS (CRASH-PROOF)
+    # -------------------------------------------------
+    elif line.startswith("basepower") and current:
+        current["basepower"] = extract_int(line)
+
+    elif line.startswith("accuracy") and current:
+        current["accuracy"] = extract_int(line)
+
+    elif line.startswith("pp") and current:
+        current["pp"] = extract_int(line)
+
+    elif line.startswith("effectchance") and current:
+        current["effectchance"] = extract_int(line)
+
+    elif line.startswith("priority") and current:
+        current["priority"] = extract_int(line)
+
+    # -------------------------------------------------
+    # APPEAL
+    # -------------------------------------------------
+    elif line.startswith("appeal") and current:
+        current["appeal"] = clean_generic_prefix(
+            extract_token(line, "APPEAL_"),
+            ""
+        )
+
+    # -------------------------------------------------
+    # CONTEST TYPE
+    # -------------------------------------------------
+    elif line.startswith("contesttype") and current:
+        current["contesttype"] = clean_generic_prefix(
+            extract_token(line, "CONTEST_"),
+            ""
+        )
+
+    # -------------------------------------------------
+    # DESCRIPTION (ROBUST + MULTILINE SAFE)
+    # -------------------------------------------------
+    elif line.startswith("movedescription") and current:
+
+        match = re.search(r'movedescription\s+(\w+),\s*"(.*)"', line)
+
+        if match:
+            move_id = match.group(1)
+            text = match.group(2)
+
+            # normalize hg-engine newline format
+            text = text.replace("\\n", " ")
+            text = re.sub(r"\s+", " ", text).strip()
+
+            if move_id in moves:
+                moves[move_id]["description"] = text
+
+
+# -------------------------------------------------
+# EXPORT
+# -------------------------------------------------
+
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    json.dump(list(moves.values()), f, indent=2)
+
+print(f"Exported {len(moves)} moves to {OUTPUT_FILE}")

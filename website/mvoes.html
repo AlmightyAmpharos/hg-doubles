@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Move Database</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        input, select {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            cursor: pointer;
+            background: #f4f4f4;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        .type-badge {
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #eee;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Move Database</h1>
+
+<div class="controls">
+
+    <input id="search" placeholder="Search move...">
+
+    <select id="typeFilter">
+        <option value="">All Types</option>
+    </select>
+
+    <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="Physical">Physical</option>
+        <option value="Special">Special</option>
+        <option value="Status">Status</option>
+    </select>
+
+    <select id="targetFilter">
+        <option value="">All Targets</option>
+    </select>
+
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th data-sort="name">Name</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th data-sort="basepower">Power</th>
+            <th data-sort="accuracy">Acc</th>
+            <th data-sort="pp">PP</th>
+            <th>Target</th>
+        </tr>
+    </thead>
+    <tbody id="moveTable"></tbody>
+</table>
+
+<script>
+
+let moves = [];
+let sortKey = "";
+let sortDir = 1;
+
+fetch("webdata/moves.json")
+    .then(res => res.json())
+    .then(data => {
+        moves = data;
+
+        populateFilters();
+        render();
+    });
+
+function populateFilters() {
+    const typeSet = new Set();
+    const targetSet = new Set();
+
+    moves.forEach(m => {
+        if (m.type) typeSet.add(m.type);
+        if (m.target) targetSet.add(m.target);
+    });
+
+    const typeFilter = document.getElementById("typeFilter");
+    const targetFilter = document.getElementById("targetFilter");
+
+    [...typeSet].sort().forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t;
+        opt.textContent = t;
+        typeFilter.appendChild(opt);
+    });
+
+    [...targetSet].sort().forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t;
+        opt.textContent = t;
+        targetFilter.appendChild(opt);
+    });
+}
+
+function render() {
+
+    const search = document.getElementById("search").value.toLowerCase();
+    const type = document.getElementById("typeFilter").value;
+    const category = document.getElementById("categoryFilter").value;
+    const target = document.getElementById("targetFilter").value;
+
+    let filtered = moves.filter(m => {
+
+        return (
+            (!search || m.name.toLowerCase().includes(search)) &&
+            (!type || m.type === type) &&
+            (!category || m.pss === category) &&
+            (!target || m.target === target)
+        );
+
+    });
+
+    if (sortKey) {
+        filtered.sort((a, b) => {
+            return (a[sortKey] - b[sortKey]) * sortDir;
+        });
+    }
+
+    const tbody = document.getElementById("moveTable");
+    tbody.innerHTML = "";
+
+    filtered.forEach(m => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${m.name}</td>
+            <td><span class="type-badge">${m.type || ""}</span></td>
+            <td>${m.pss || ""}</td>
+            <td>${m.basepower ?? "-"}</td>
+            <td>${m.accuracy ?? "-"}</td>
+            <td>${m.pp ?? "-"}</td>
+            <td>${m.target || ""}</td>
+        `;
+
+        tbody.appendChild(row);
+    });
+}
+
+document.querySelectorAll("input, select").forEach(el => {
+    el.addEventListener("input", render);
+    el.addEventListener("change", render);
+});
+
+document.querySelectorAll("th[data-sort]").forEach(th => {
+    th.addEventListener("click", () => {
+
+        const key = th.dataset.sort;
+
+        if (sortKey === key) {
+            sortDir *= -1;
+        } else {
+            sortKey = key;
+            sortDir = 1;
+        }
+
+        render();
+    });
+});
+
+</script>
+
+</body>
+</html>
