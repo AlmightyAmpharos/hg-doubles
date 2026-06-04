@@ -92,7 +92,7 @@ const params = new URLSearchParams(window.location.search);
 const pokemonId = params.get('id');
 
 /* -------------------------
-   STAT FUNCTIONS (FIXED)
+   STAT FUNCTIONS
 --------------------------*/
 
 function getStatColor(value) {
@@ -125,30 +125,74 @@ function renderStat(label, value) {
 }
 
 /* -------------------------
-   DATA LOAD
+   FORMATTERS
 --------------------------*/
+
 function formatAbility(raw) {
     if (!raw) return "None";
 
     return raw
-        .replace("ABILITY_", "")          // remove prefix
-        .toLowerCase()                    // lower case
-        .replace(/_/g, " ")               // underscores → spaces
-        .replace(/\b\w/g, c => c.toUpperCase()); // capitalize words
+        .replace("ABILITY_", "")
+        .toLowerCase()
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, c => c.toUpperCase());
 }
 
 function formatType(raw) {
     if (!raw) return "";
 
     return raw
-        .replace("TYPE_", "")   // remove prefix
+        .replace("TYPE_", "")
         .toLowerCase()
-        .replace(/\b\w/g, c => c.toUpperCase()); // Water, Fire, Grass
+        .replace(/\b\w/g, c => c.toUpperCase());
 }
+
+/* -------------------------
+   SPRITE RESOLVER (IMPORTANT FIX)
+--------------------------*/
+
+function getSpritePath(pokemon) {
+    const base = "webimages/sprites/";
+
+    const key = pokemon.spriteKey?.toLowerCase();
+
+    // 1. exact match from exporter
+    let candidates = [
+        `${key}.png`,
+        `${key}_male.png`,
+        `${key}_female.png`
+    ];
+
+    return new Promise((resolve) => {
+        let i = 0;
+
+        function tryNext() {
+            if (i >= candidates.length) {
+                resolve(`${base}missingno.png`);
+                return;
+            }
+
+            const img = new Image();
+            img.src = base + candidates[i];
+
+            img.onload = () => resolve(base + candidates[i]);
+            img.onerror = () => {
+                i++;
+                tryNext();
+            };
+        }
+
+        tryNext();
+    });
+}
+
+/* -------------------------
+   LOAD DATA
+--------------------------*/
 
 fetch('webdata/pokemon.json')
   .then(response => response.json())
-  .then(data => {
+  .then(async data => {
 
     const pokemon = data.find(p => p.id === pokemonId);
 
@@ -157,6 +201,8 @@ fetch('webdata/pokemon.json')
             '<h1>Pokémon not found</h1>';
         return;
     }
+
+    const spritePath = await getSpritePath(pokemon);
 
     const bst =
         pokemon.hp +
@@ -172,20 +218,20 @@ fetch('webdata/pokemon.json')
 
             <h1>${pokemon.name}</h1>
 
-            <img src="${pokemon.sprite}" width="160">
+            <img src="${spritePath}" width="160">
 
            <div class="type-icons">
-    ${[...new Set(pokemon.type)].map(type => {
-        const formatted = formatType(type);
+            ${[...new Set(pokemon.type)].map(type => {
+                const formatted = formatType(type);
 
-        return `
-            <img
-                src="webimages/types/${formatted}.png"
-                alt="${formatted}"
-                height="44">
-        `;
-    }).join('')}
-</div>
+                return `
+                    <img
+                        src="webimages/types/${formatted}.png"
+                        alt="${formatted}"
+                        height="44">
+                `;
+            }).join('')}
+            </div>
 
         </div>
 
