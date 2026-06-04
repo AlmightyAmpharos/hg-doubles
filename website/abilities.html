@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abilities</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        /* LEFT PANEL (Abilities list) */
+        .abilities-panel {
+            border: 1px solid #ccc;
+            padding: 15px;
+            height: 80vh;
+            overflow-y: auto;
+        }
+
+        .ability-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .ability-item:hover {
+            background: #f6f6f6;
+        }
+
+        .ability-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .ability-desc {
+            font-size: 13px;
+            color: #444;
+        }
+
+        /* RIGHT PANEL (Pokémon list) */
+        .pokemon-panel {
+            border: 1px solid #ccc;
+            padding: 15px;
+            height: 80vh;
+            overflow-y: auto;
+        }
+
+        .pokemon-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pokemon-row img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .pokemon-row a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .pokemon-row a:hover {
+            text-decoration: underline;
+        }
+
+        .panel-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Abilities</h1>
+
+<div class="layout">
+
+    <!-- LEFT: ABILITIES -->
+    <div class="abilities-panel">
+        <div class="panel-title">Ability List</div>
+        <div id="ability-list"></div>
+    </div>
+
+    <!-- RIGHT: POKÉMON -->
+    <div class="pokemon-panel">
+        <div class="panel-title">Pokémon with Ability</div>
+        <div id="pokemon-list">Select an ability</div>
+    </div>
+
+</div>
+
+<script>
+
+let abilitiesData = [];
+let pokemonData = [];
+
+/* -----------------------------
+   HELPERS
+------------------------------*/
+
+function formatAbilityName(name) {
+    return name.replace(/_/g, " ");
+}
+
+function getSpriteKey(pokemon) {
+    return (pokemon.spriteKey || pokemon.name || "").toLowerCase();
+}
+
+function getPokemonByName(name) {
+    return pokemonData.find(p => p.name === name);
+}
+
+/* -----------------------------
+   LOAD DATA
+------------------------------*/
+
+Promise.all([
+    fetch("webdata/abilities.json").then(r => r.json()),
+    fetch("webdata/pokemon.json").then(r => r.json())
+]).then(([abilities, pokemon]) => {
+
+    abilitiesData = abilities;
+    pokemonData = pokemon;
+
+    renderAbilities();
+});
+
+/* -----------------------------
+   RENDER ABILITIES
+------------------------------*/
+
+function renderAbilities() {
+    const container = document.getElementById("ability-list");
+
+    container.innerHTML = abilitiesData.map(ability => `
+        <div class="ability-item" onclick="selectAbility(${ability.id})">
+            <div class="ability-name">${ability.name}</div>
+            <div class="ability-desc">${ability.description || ""}</div>
+        </div>
+    `).join("");
+}
+
+/* -----------------------------
+   SELECT ABILITY
+------------------------------*/
+
+function selectAbility(id) {
+    const ability = abilitiesData.find(a => a.id === id);
+    const container = document.getElementById("pokemon-list");
+
+    if (!ability || !ability.pokemon) {
+        container.innerHTML = "No Pokémon found.";
+        return;
+    }
+
+    container.innerHTML = ability.pokemon.map(name => {
+        const p = getPokemonByName(name);
+
+        if (!p) {
+            return `
+                <div class="pokemon-row">
+                    <span>${name}</span>
+                </div>
+            `;
+        }
+
+        const key = getSpriteKey(p);
+
+        return `
+            <div class="pokemon-row">
+                <img src="webimages/sprites/${key}.png"
+                     onerror="this.src='webimages/sprites/missingno.png'">
+
+                <a href="pokemon-details.html?id=${p.id}">
+                    ${p.name}
+                </a>
+            </div>
+        `;
+    }).join("");
+}
+
+</script>
+
+</body>
+</html>
