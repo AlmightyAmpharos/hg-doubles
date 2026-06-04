@@ -12,29 +12,15 @@ def build_sprite_key(path: Path):
     Converts sprite path → consistent filename key
 
     Examples:
-    - pikachu/male/front.png → pikachu.png
-    - raichu/alolan/male/front.png → raichu_alolan.png
-    - meowstic/female/front.png → meowstic_female.png
+    - bulbasaur/male/front.png → bulbasaur.png
+    - jynx/female/front.png → jynx_female.png
     """
 
-    parts = path.parts
+    pokemon = path.parent.parent.name.lower()
+    gender = path.parent.name.lower()
 
-    # Find key folders more safely (no fragile indexing)
-    pokemon = parts[-4].lower()
-    form = parts[-3].lower()
-    gender = parts[-2].lower()
-
-    # Case 1: no special form folder (just male/female)
-    if form in ["male", "female"]:
-        if gender == "female":
-            return f"{pokemon}_female"
-        return pokemon
-
-    # Case 2: form exists (alolan, mega, regional, etc.)
-    if form not in ["male", "female"]:
-        if gender == "female":
-            return f"{pokemon}_{form}_female"
-        return f"{pokemon}_{form}"
+    if gender == "female":
+        return f"{pokemon}_female"
 
     return pokemon
 
