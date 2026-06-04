@@ -56,34 +56,31 @@ fetch('webdata/pokemon.json')
     }
 
     function createSpriteImg(pokemon) {
-        const img = document.createElement("img");
+    const img = document.createElement("img");
 
-        const candidates = getSpriteCandidates(pokemon);
-        let i = 0;
+    const key = (pokemon.spriteKey || pokemon.name).toLowerCase();
 
-        function tryNext() {
-            if (i >= candidates.length) {
-                img.src = SPRITE_BASE + "missingno.png";
-                return;
-            }
+    const candidates = [
+        `${key}.png`,
+        `${key}_male.png`,
+        `${key}_female.png`
+    ];
 
-            const test = new Image();
-            test.src = SPRITE_BASE + candidates[i];
+    let i = 0;
 
-            test.onload = () => {
-                img.src = SPRITE_BASE + candidates[i];
-            };
+    img.src = `webimages/sprites/${candidates[i]}`;
 
-            test.onerror = () => {
-                i++;
-                tryNext();
-            };
+    img.onerror = () => {
+        i++;
+        if (i < candidates.length) {
+            img.src = `webimages/sprites/${candidates[i]}`;
+        } else {
+            img.src = `webimages/sprites/missingno.png`;
         }
+    };
 
-        tryNext();
-
-        return img;
-    }
+    return img;
+}
 
     function renderPokemon(filter = '') {
         list.innerHTML = '';
