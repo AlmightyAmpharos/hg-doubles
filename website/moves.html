@@ -212,6 +212,7 @@ function safeMove(m) {
         basepower: m.basepower ?? 0,
         accuracy: m.accuracy ?? 0,
         pp: m.pp ?? 0,
+        priority: m.priority ?? 0,
         target: m.target ?? "-",
         flags: m.flags ?? [],
         description: m.description ?? ""
@@ -317,12 +318,22 @@ function renderDetails() {
             ${typeIcon(m.type)}
             ${categoryIcon(m.pss)}
         </div>
-
+        
         <div class="grid">
-            <div class="label">Power</div><div class="value">${m.basepower}</div>
-            <div class="label">Accuracy</div><div class="value">${m.accuracy}</div>
-            <div class="label">PP</div><div class="value">${m.pp}</div>
-            <div class="label">Target</div><div class="value">${m.target}</div>
+            <div class="label">Power</div>
+            <div class="value">${m.basepower}</div>
+
+            <div class="label">Accuracy</div>
+            <div class="value">${m.accuracy}</div>
+
+            <div class="label">PP</div>
+            <div class="value">${m.pp}</div>
+
+            <div class="label">Priority</div>
+            <div class="value">${m.priority ?? 0}</div>
+
+            <div class="label">Target</div>
+            <div class="value">${m.target}</div>
         </div>
 
         <div class="flags">

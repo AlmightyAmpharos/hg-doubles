@@ -60,10 +60,10 @@
 
     .stat-row {
         display: grid;
-        grid-template-columns: 90px 60px 1fr;
+        grid-template-columns: 40px 40px 1fr;
         align-items: center;
         margin: 6px 0;
-        gap: 10px;
+        gap: 8px;
     }
 
     .stat-label {
@@ -86,9 +86,13 @@
         text-align: right;
     }
 
-    .bst {
-        margin-top: 10px;
-        text-align: right;
+    .bst-row {
+        display: grid;
+        grid-template-columns: 40px 40px 1fr;
+        align-items: center;
+        margin-top: 5px;
+        gap: 8px;
+        font-weight: bold;
     }
 
     /* -------------------------
@@ -154,6 +158,45 @@ const pokemonId = params.get('id');
 /* -------------------------
    FORMATTERS
 --------------------------*/
+
+/* -------------------------
+   STAT FUNCTIONS
+--------------------------*/
+
+function getStatColor(value) {
+    if (value <= 29) return "#e0534c";
+    if (value <= 59) return "#ef8636";
+    if (value <= 89) return "#F9DE6E";
+    if (value <= 119) return "#AED46D";
+    if (value <= 149) return "#62CA6B";
+    return "#57BFB7";
+}
+
+function renderStat(label, value) {
+
+    const percent = Math.min(value / 255, 1) * 100;
+    const color = getStatColor(value);
+
+    return `
+        <div class="stat-row">
+
+            <div class="stat-label">${label}</div>
+
+            <div class="stat-value">${value}</div>
+
+            <div class="stat-bar-bg">
+                <div
+                    class="stat-bar-fill"
+                    style="
+                        width:${percent}%;
+                        background:${color};
+                    ">
+                </div>
+            </div>
+
+        </div>
+    `;
+}
 
 function formatAbility(raw) {
     if (!raw) return "None";
@@ -326,23 +369,17 @@ fetch('webdata/pokemon.json')
 
             <div class="stats-container">
 
-                <div class="stat-row"><div class="stat-label">HP</div><div class="stat-value">${pokemon.hp}</div></div>
-                <div class="stat-row"><div class="stat-label">ATK</div><div class="stat-value">${pokemon.attack}</div></div>
-                <div class="stat-row"><div class="stat-label">DEF</div><div class="stat-value">${pokemon.defense}</div></div>
-                <div class="stat-row"><div class="stat-label">SPA</div><div class="stat-value">${pokemon.spAttack}</div></div>
-                <div class="stat-row"><div class="stat-label">SPD</div><div class="stat-value">${pokemon.spDefense}</div></div>
-                <div class="stat-row"><div class="stat-label">SPE</div><div class="stat-value">${pokemon.speed}</div></div>
+                ${renderStat("HP", pokemon.hp)}
+                ${renderStat("ATK", pokemon.attack)}
+                ${renderStat("DEF", pokemon.defense)}
+                ${renderStat("SPA", pokemon.spAttack)}
+                ${renderStat("SPD", pokemon.spDefense)}
+                ${renderStat("SPE", pokemon.speed)}
 
-                <div class="bst">
-                    <strong>BST:</strong>
-                    ${
-                        pokemon.hp +
-                        pokemon.attack +
-                        pokemon.defense +
-                        pokemon.speed +
-                        pokemon.spAttack +
-                        pokemon.spDefense
-                    }
+                <div class="bst-row">
+                    <div class="stat-label">BST</div>
+                    <div class="stat-value">${bst}</div>
+                    <div></div>
                 </div>
 
             </div>

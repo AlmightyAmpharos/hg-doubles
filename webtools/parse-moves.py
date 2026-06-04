@@ -43,6 +43,65 @@ def format_pss(value):
         return "Special"
     return "Status"
 
+# -------------------------------------------------
+# TARGET FORMATTING
+# -------------------------------------------------
+
+TARGET_MAP = {
+    "SINGLE_TARGET": "Single",
+    "USER": "User",
+    "ADJACENT_OPPONENTS": "Adjacent Opponents",
+    "ALL_ADJACENT": "All Adjacent",
+    "ALLY": "Ally",
+    "FIELD": "Field",
+    "OPPONENT_SIDE": "Opponent Side",
+    "RANDOM_OPPONENT": "Random Opponent",
+    "SINGLE_SPECIAL": "Single Special",
+    "USER_SIDE": "User Side"
+}
+
+
+def format_target(raw):
+    return TARGET_MAP.get(
+        raw,
+        raw.replace("_", " ").title()
+    )
+
+
+# -------------------------------------------------
+# FLAG FORMATTING
+# -------------------------------------------------
+
+FLAG_MAP = {
+    "CONTACT": "Contact",
+    "PROTECT": "Protect",
+    "MAGIC_COAT": "Magic Coat",
+    "SNATCH": "Snatch",
+    "MIRROR_MOVE": "Mirror Move",
+    "KINGS_ROCK": "King's Rock"
+}
+
+
+def clean_flags(line):
+
+    flags = []
+
+    for token in line.split():
+
+        if not token.startswith("FLAG_"):
+            continue
+
+        raw = token.replace("FLAG_", "")
+
+        flags.append(
+            FLAG_MAP.get(
+                raw,
+                raw.replace("_", " ").title()
+            )
+        )
+
+    return flags
+
 
 # -------------------------------------------------
 # NORMALIZATION (NEW UI RULES MOVED HERE)
@@ -168,10 +227,14 @@ for line in lines:
     # TARGET
     # -------------------------------------------------
     elif line.startswith("target") and current:
-        current["target"] = clean_generic_prefix(
+
+        raw_target = clean_generic_prefix(
             extract_token(line, "RANGE_"),
             ""
         )
+
+        current["target"] = format_target(raw_target)
+
 
     # -------------------------------------------------
     # FLAGS
