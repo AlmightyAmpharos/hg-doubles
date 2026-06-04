@@ -120,6 +120,16 @@
         margin-top: 6px;
     }
 
+    .male-text {
+        color: #4da3ff;
+        font-weight: bold;
+    }
+
+    .female-text {
+        color: #ff6fb1;
+        font-weight: bold;
+    }
+
     </style>
 
 </head>
@@ -185,21 +195,22 @@ function formatType(raw) {
 }
 
 function formatDex(text) {
-    if (!text) return "";
+    if (!text) return "<p>No entry available.</p>";
 
     return text
-        .replace(/\\n/g, "\n")
-        .split("\n")
-        .map(l => `<p>${l.trim()}</p>`)
+        .split("\\n")
+        .map(line => `<p>${line}</p>`)
         .join("");
 }
 
 /* -------------------------
-   GENDER RATIO
+   GENDER RATIO (FIXED RULES)
 --------------------------*/
 
 function renderGenderRatio(ratio) {
-    if (ratio === null || ratio === undefined) {
+
+    // 255 = genderless
+    if (ratio === 255) {
         return `
             <div class="gender-bar">
                 <div class="gender-none"></div>
@@ -213,15 +224,47 @@ function renderGenderRatio(ratio) {
     const female = (ratio / 254) * 100;
     const male = 100 - female;
 
+    const maleText = `
+        <span class="male-text">♂ ${male.toFixed(1)}%</span>
+    `;
+
+    const femaleText = `
+        <span class="female-text">♀ ${female.toFixed(1)}%</span>
+    `;
+
+    // 100% female
+    if (male <= 0.01) {
+        return `
+            <div class="gender-bar">
+                <div class="gender-female" style="width:100%"></div>
+            </div>
+            <div class="gender-label">
+                ${femaleText}
+            </div>
+        `;
+    }
+
+    // 100% male
+    if (female <= 0.01) {
+        return `
+            <div class="gender-bar">
+                <div class="gender-male" style="width:100%"></div>
+            </div>
+            <div class="gender-label">
+                ${maleText}
+            </div>
+        `;
+    }
+
+    // mixed
     return `
         <div class="gender-bar">
             <div class="gender-male" style="width:${male}%"></div>
             <div class="gender-female" style="width:${female}%"></div>
         </div>
-
         <div class="gender-label">
-            <span>♂ ${male.toFixed(1)}%</span>
-            <span>♀ ${female.toFixed(1)}%</span>
+            ${maleText}
+            ${femaleText}
         </div>
     `;
 }
@@ -320,14 +363,14 @@ fetch('webdata/pokemon.json')
             </div>
         </div>
 
-        <!-- GENDER + DEX BOX -->
         <div class="extra-box">
 
             <h2>Gender Ratio</h2>
             ${renderGenderRatio(pokemon.genderRatio)}
 
             <h2 style="margin-top:20px;">Pokédex Entry</h2>
-            ${formatDex(pokemon.mondexentry)}
+            ${formatDex(pokemon.dexEntry)}
+
         </div>
 
     `;
