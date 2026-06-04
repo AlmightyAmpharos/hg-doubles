@@ -2,7 +2,7 @@ import re
 import json
 
 INPUT_FILE = "./armips/data/mondata.s"
-OUTPUT_FILE = "./webdata/pokemon.json"
+OUTPUT_FILE = "./website/webdata/pokemon.json"
 
 with open(INPUT_FILE, "r", encoding="utf-8") as f:
     lines = f.readlines()

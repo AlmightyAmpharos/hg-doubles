@@ -1,8 +1,8 @@
 import json
 
-POKEMON_FILE = "./webdata/pokemon.json"
-HIDDEN_FILE = "./webdata/hiddenAbilities.json"
-OUTPUT_FILE = "./webdata/pokemon.json"  # overwrite final output
+POKEMON_FILE = "./website/webdata/pokemon.json"
+HIDDEN_FILE = "./website/webdata/hiddenAbilities.json"
+OUTPUT_FILE = "./website/webdata/pokemon.json"  # overwrite final output
 
 # Load data
 with open(POKEMON_FILE, "r", encoding="utf-8") as f:

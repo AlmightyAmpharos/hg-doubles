@@ -2,7 +2,7 @@ import re
 import json
 
 INPUT_FILE = "./data/HiddenAbilityTable.c"
-OUTPUT_FILE = "./webdata/hiddenAbilities.json"
+OUTPUT_FILE = "./website/webdata/hiddenAbilities.json"
 
 hidden_map = {}
 
