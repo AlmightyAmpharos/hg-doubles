@@ -45,42 +45,38 @@ fetch('webdata/pokemon.json')
 
     const SPRITE_BASE = "webimages/sprites/";
 
-    function getSpriteCandidates(pokemon) {
-        const key = (pokemon.spriteKey || pokemon.name).toLowerCase();
+    function createSpriteImg(pokemon) {
+        const img = document.createElement("img");
 
-        return [
+        const key = (pokemon.spriteKey || pokemon.name || "")
+            .toLowerCase();
+
+        const candidates = [
             `${key}.png`,
             `${key}_male.png`,
             `${key}_female.png`
         ];
-    }
 
-    function createSpriteImg(pokemon) {
-    const img = document.createElement("img");
+        let i = 0;
 
-    const key = (pokemon.spriteKey || pokemon.name).toLowerCase();
+        function tryNext() {
+            if (i >= candidates.length) {
+                img.src = `${SPRITE_BASE}missingno.png`;
+                return;
+            }
 
-    const candidates = [
-        `${key}.png`,
-        `${key}_male.png`,
-        `${key}_female.png`
-    ];
+            img.src = `${SPRITE_BASE}${candidates[i]}`;
 
-    let i = 0;
-
-    img.src = `webimages/sprites/${candidates[i]}`;
-
-    img.onerror = () => {
-        i++;
-        if (i < candidates.length) {
-            img.src = `webimages/sprites/${candidates[i]}`;
-        } else {
-            img.src = `webimages/sprites/missingno.png`;
+            img.onerror = () => {
+                i++;
+                tryNext();
+            };
         }
-    };
 
-    return img;
-}
+        tryNext();
+
+        return img;
+    }
 
     function renderPokemon(filter = '') {
         list.innerHTML = '';
