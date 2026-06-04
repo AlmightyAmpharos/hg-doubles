@@ -42,10 +42,15 @@
         margin-bottom: 20px;
     }
 
+    .bottom-boxes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
     .extra-box {
         border: 1px solid #ccc;
         padding: 20px;
-        margin-bottom: 20px;
     }
 
     .stats-container {
@@ -120,14 +125,18 @@
         margin-top: 6px;
     }
 
-    .male-text {
+    .male-symbol {
         color: #4da3ff;
-        font-weight: bold;
+        font-weight: 900;
     }
 
-    .female-text {
+    .female-symbol {
         color: #ff6fb1;
-        font-weight: bold;
+        font-weight: 900;
+    }
+
+    .genderless-symbol {
+        font-weight: 900;
     }
 
     </style>
@@ -204,19 +213,27 @@ function formatDex(text) {
 }
 
 /* -------------------------
-   GENDER RATIO (FIXED RULES)
+   EXACT PERCENT ROUNDING
+--------------------------*/
+
+function roundPercent(value) {
+    return Math.round(value * 10) / 10; // keeps 12.5, 25, 50, 87.5 clean
+}
+
+/* -------------------------
+   GENDER RATIO (FIXED + CLEAN)
 --------------------------*/
 
 function renderGenderRatio(ratio) {
 
-    // 255 = genderless
+    // genderless
     if (ratio === 255) {
         return `
             <div class="gender-bar">
                 <div class="gender-none"></div>
             </div>
             <div class="gender-label">
-                <span>〇 Genderless</span>
+                <span class="genderless-symbol">〇 Genderless</span>
             </div>
         `;
     }
@@ -224,34 +241,41 @@ function renderGenderRatio(ratio) {
     const female = (ratio / 254) * 100;
     const male = 100 - female;
 
-    const maleText = `
-        <span class="male-text">♂ ${male.toFixed(1)}%</span>
+    const malePct = roundPercent(male);
+    const femalePct = roundPercent(female);
+
+    const maleHTML = `
+        <span>
+            <span class="male-symbol">♂</span> ${malePct}%
+        </span>
     `;
 
-    const femaleText = `
-        <span class="female-text">♀ ${female.toFixed(1)}%</span>
+    const femaleHTML = `
+        <span>
+            <span class="female-symbol">♀</span> ${femalePct}%
+        </span>
     `;
 
     // 100% female
-    if (male <= 0.01) {
+    if (malePct === 0) {
         return `
             <div class="gender-bar">
                 <div class="gender-female" style="width:100%"></div>
             </div>
             <div class="gender-label">
-                ${femaleText}
+                ${femaleHTML}
             </div>
         `;
     }
 
     // 100% male
-    if (female <= 0.01) {
+    if (femalePct === 0) {
         return `
             <div class="gender-bar">
                 <div class="gender-male" style="width:100%"></div>
             </div>
             <div class="gender-label">
-                ${maleText}
+                ${maleHTML}
             </div>
         `;
     }
@@ -259,12 +283,12 @@ function renderGenderRatio(ratio) {
     // mixed
     return `
         <div class="gender-bar">
-            <div class="gender-male" style="width:${male}%"></div>
-            <div class="gender-female" style="width:${female}%"></div>
+            <div class="gender-male" style="width:${male}%;"></div>
+            <div class="gender-female" style="width:${female}%;"></div>
         </div>
         <div class="gender-label">
-            ${maleText}
-            ${femaleText}
+            ${maleHTML}
+            ${femaleHTML}
         </div>
     `;
 }
@@ -363,21 +387,21 @@ fetch('webdata/pokemon.json')
             </div>
         </div>
 
-        <div class="extra-box">
+        <div class="bottom-boxes">
 
-            <h2>Gender Ratio</h2>
-            ${renderGenderRatio(pokemon.genderRatio)}
+            <div class="extra-box">
+                <h2>Gender Ratio</h2>
+                ${renderGenderRatio(pokemon.genderRatio)}
+            </div>
 
-            <h2 style="margin-top:20px;">Pokédex Entry</h2>
-            ${formatDex(pokemon.dexEntry)}
+            <div class="extra-box">
+                <h2>Pokédex Entry</h2>
+                ${formatDex(pokemon.dexEntry)}
+            </div>
 
         </div>
 
     `;
-
-    /* -------------------------
-       SPRITE LOADER
-    --------------------------*/
 
     const img = document.getElementById("pokemon-sprite");
 
