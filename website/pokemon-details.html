@@ -92,7 +92,7 @@
     }
 
     /* -------------------------
-       GENDER BAR
+       GENDER
     --------------------------*/
 
     .gender-bar {
@@ -121,7 +121,7 @@
     .gender-label {
         display: flex;
         justify-content: space-between;
-        font-size: 13px;
+        font-size: 14px;
         margin-top: 6px;
     }
 
@@ -152,41 +152,11 @@ const params = new URLSearchParams(window.location.search);
 const pokemonId = params.get('id');
 
 /* -------------------------
-   STAT FUNCTIONS
---------------------------*/
-
-function getStatColor(value) {
-    if (value <= 29) return "#e0534c";
-    if (value <= 59) return "#ef8636";
-    if (value <= 89) return "#F9DE6E";
-    if (value <= 119) return "#AED46D";
-    if (value <= 149) return "#62CA6B";
-    return "#57BFB7";
-}
-
-function renderStat(label, value) {
-    const percent = Math.min(value / 225, 1) * 100;
-    const color = getStatColor(value);
-
-    return `
-    <div class="stat-row">
-        <div class="stat-label">${label}</div>
-        <div class="stat-value">${value}</div>
-        <div class="stat-bar-bg">
-            <div class="stat-bar-fill"
-                 style="width:${percent}%; background:${color};"></div>
-        </div>
-    </div>
-`;
-}
-
-/* -------------------------
    FORMATTERS
 --------------------------*/
 
 function formatAbility(raw) {
     if (!raw) return "None";
-
     return raw
         .replace("ABILITY_", "")
         .toLowerCase()
@@ -196,7 +166,6 @@ function formatAbility(raw) {
 
 function formatType(raw) {
     if (!raw) return "";
-
     return raw
         .replace("TYPE_", "")
         .toLowerCase()
@@ -204,30 +173,26 @@ function formatType(raw) {
 }
 
 function formatDex(text) {
-    if (!text) return "<p>No entry available.</p>";
-
-    return text
-        .split("\\n")
-        .map(line => `<p>${line}</p>`)
-        .join("");
+    if (!text) return "No entry available.";
+    return text.replace(/\\n/g, " ");
 }
 
 /* -------------------------
-   EXACT PERCENT ROUNDING
+   ROUNDING HELPERS
 --------------------------*/
 
-function roundPercent(value) {
-    return Math.round(value * 10) / 10; // keeps 12.5, 25, 50, 87.5 clean
+function roundHalf(value) {
+    return Math.round(value * 2) / 2;
 }
 
 /* -------------------------
-   GENDER RATIO (FIXED + CLEAN)
+   GENDER RATIO
 --------------------------*/
 
 function renderGenderRatio(ratio) {
 
     // genderless
-    if (ratio === 255) {
+    if (ratio === 255 || ratio == null) {
         return `
             <div class="gender-bar">
                 <div class="gender-none"></div>
@@ -238,23 +203,14 @@ function renderGenderRatio(ratio) {
         `;
     }
 
-    const female = (ratio / 254) * 100;
-    const male = 100 - female;
+    const femaleRaw = ratio / 254;
+    const maleRaw = 1 - femaleRaw;
 
-    const malePct = roundPercent(male);
-    const femalePct = roundPercent(female);
+    const femalePct = roundHalf(femaleRaw * 100);
+    const malePct = roundHalf(maleRaw * 100);
 
-    const maleHTML = `
-        <span>
-            <span class="male-symbol">♂</span> ${malePct}%
-        </span>
-    `;
-
-    const femaleHTML = `
-        <span>
-            <span class="female-symbol">♀</span> ${femalePct}%
-        </span>
-    `;
+    const maleSpan = `<span><span class="male-symbol">♂</span> ${malePct}%</span>`;
+    const femaleSpan = `<span><span class="female-symbol">♀</span> ${femalePct}%</span>`;
 
     // 100% female
     if (malePct === 0) {
@@ -263,7 +219,7 @@ function renderGenderRatio(ratio) {
                 <div class="gender-female" style="width:100%"></div>
             </div>
             <div class="gender-label">
-                ${femaleHTML}
+                ${femaleSpan}
             </div>
         `;
     }
@@ -275,20 +231,19 @@ function renderGenderRatio(ratio) {
                 <div class="gender-male" style="width:100%"></div>
             </div>
             <div class="gender-label">
-                ${maleHTML}
+                ${maleSpan}
             </div>
         `;
     }
 
-    // mixed
     return `
         <div class="gender-bar">
-            <div class="gender-male" style="width:${male}%;"></div>
-            <div class="gender-female" style="width:${female}%;"></div>
+            <div class="gender-male" style="width:${maleRaw * 100}%;"></div>
+            <div class="gender-female" style="width:${femaleRaw * 100}%;"></div>
         </div>
         <div class="gender-label">
-            ${maleHTML}
-            ${femaleHTML}
+            ${maleSpan}
+            ${femaleSpan}
         </div>
     `;
 }
@@ -336,12 +291,10 @@ fetch('webdata/pokemon.json')
             <div class="type-icons">
             ${[...new Set(pokemon.type)].map(type => {
                 const formatted = formatType(type);
-
                 return `
-                    <img
-                        src="webimages/types/${formatted}.png"
-                        alt="${formatted}"
-                        height="44">
+                    <img src="webimages/types/${formatted}.png"
+                         alt="${formatted}"
+                         height="44">
                 `;
             }).join('')}
             </div>
@@ -373,15 +326,23 @@ fetch('webdata/pokemon.json')
 
             <div class="stats-container">
 
-                ${renderStat("HP", pokemon.hp)}
-                ${renderStat("ATK", pokemon.attack)}
-                ${renderStat("DEF", pokemon.defense)}
-                ${renderStat("SPA", pokemon.spAttack)}
-                ${renderStat("SPD", pokemon.spDefense)}
-                ${renderStat("SPE", pokemon.speed)}
+                <div class="stat-row"><div class="stat-label">HP</div><div class="stat-value">${pokemon.hp}</div></div>
+                <div class="stat-row"><div class="stat-label">ATK</div><div class="stat-value">${pokemon.attack}</div></div>
+                <div class="stat-row"><div class="stat-label">DEF</div><div class="stat-value">${pokemon.defense}</div></div>
+                <div class="stat-row"><div class="stat-label">SPA</div><div class="stat-value">${pokemon.spAttack}</div></div>
+                <div class="stat-row"><div class="stat-label">SPD</div><div class="stat-value">${pokemon.spDefense}</div></div>
+                <div class="stat-row"><div class="stat-label">SPE</div><div class="stat-value">${pokemon.speed}</div></div>
 
                 <div class="bst">
-                    <strong>BST:</strong> ${bst}
+                    <strong>BST:</strong>
+                    ${
+                        pokemon.hp +
+                        pokemon.attack +
+                        pokemon.defense +
+                        pokemon.speed +
+                        pokemon.spAttack +
+                        pokemon.spDefense
+                    }
                 </div>
 
             </div>
@@ -396,7 +357,7 @@ fetch('webdata/pokemon.json')
 
             <div class="extra-box">
                 <h2>Pokédex Entry</h2>
-                ${formatDex(pokemon.dexEntry)}
+                <p>${formatDex(pokemon.dexEntry)}</p>
             </div>
 
         </div>
@@ -414,7 +375,6 @@ fetch('webdata/pokemon.json')
         }
 
         img.src = spriteCandidates[i];
-
         img.onerror = () => {
             i++;
             tryNext();

@@ -84,9 +84,19 @@ for line in lines:
     # TYPES
     # -------------------------
     elif line.startswith("types") and current:
-        parts = line.replace("types", "").strip().split(",")
 
-        current["type"] = [p.strip() for p in parts]
+        # Extract ALL TYPE_* tokens anywhere in the line
+        matches = re.findall(r"TYPE_[A-Z]+", line)
+
+        # Remove duplicates while preserving order
+        seen = set()
+        cleaned = []
+        for t in matches:
+            if t not in seen:
+                seen.add(t)
+                cleaned.append(t)
+
+        current["type"] = cleaned
 
     # -------------------------
     # ABILITIES
