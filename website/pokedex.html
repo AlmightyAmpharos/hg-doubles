@@ -275,8 +275,11 @@ function renderList() {
             div.appendChild(name);
 
             div.onclick = () => {
-                document.getElementById("pokemon-details").innerHTML =
-                    renderPokemonDetails(p);
+                const container = document.getElementById("pokemon-details");
+                container.innerHTML = renderPokemonDetails(p);
+
+                const img = document.getElementById("main-sprite");
+                getSprite(p, img);
             };
 
             list.appendChild(div);
