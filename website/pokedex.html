@@ -196,6 +196,28 @@ body {
     font-size: 14px;
     margin-top: 6px;
 }
+
+.learnset-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.learnset-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.learnset-table th,
+.learnset-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.learnset-table th {
+    background: #f3f3f3;
+}
     </style>
 </head>
 
@@ -216,13 +238,18 @@ body {
 
 let pokemonData = [];
 let abilitiesData = [];
+let learnsetsData = {};
 
 Promise.all([
     fetch('webdata/pokemon.json').then(r => r.json()),
-    fetch('webdata/abilities.json').then(r => r.json())
-]).then(([pokemon, abilities]) => {
+    fetch('webdata/abilities.json').then(r => r.json()),
+    fetch('data/learnsets/learnsets.json').then(r => r.json())
+]).then(([pokemon, abilities, learnsets]) => {
+
     pokemonData = pokemon;
     abilitiesData = abilities;
+    learnsetsData = learnsets;
+
     renderList();
 });
 
@@ -343,6 +370,46 @@ function getStatColor(v) {
     return "#57BFB7";
 }
 
+function formatMove(raw) {
+
+    if (!raw) return "";
+
+    return raw
+        .replace("MOVE_", "")
+        .toLowerCase()
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function renderLevelUpMoves(pokemon) {
+
+    const learnset =
+        learnsetsData[pokemon.id];
+
+    if (!learnset || !learnset.LevelMoves) {
+        return "<p>No learnset data found.</p>";
+    }
+
+    return `
+        <table class="learnset-table">
+            <thead>
+                <tr>
+                    <th>Lvl</th>
+                    <th>Move</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${learnset.LevelMoves.map(move => `
+                    <tr>
+                        <td>${move.Level}</td>
+                        <td>${formatMove(move.Move)}</td>
+                    </tr>
+                `).join("")}
+            </tbody>
+        </table>
+    `;
+}
+
 function statRow(label, val) {
     const pct = Math.min(val / 255, 1) * 100;
     return `
@@ -442,6 +509,15 @@ return `
     </div>
 
 </div>
+
+<div class="learnset-box">
+
+    <h2>Level-Up Learnset</h2>
+
+    ${renderLevelUpMoves(pokemon)}
+
+</div>
+
 `;
 }
 
