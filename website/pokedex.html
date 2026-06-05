@@ -283,7 +283,8 @@ function renderList() {
         });
 }
 
-function getSpriteHTML(pokemon) {
+function getSprite(pokemon, imgEl) {
+
     const key = (pokemon.spriteKey || pokemon.name).toLowerCase();
 
     const candidates = [
@@ -294,31 +295,20 @@ function getSpriteHTML(pokemon) {
 
     let i = 0;
 
-    return `
-        <img id="main-sprite" width="160">
-        <script>
-            (function() {
-                const img = document.getElementById("main-sprite");
-                const candidates = ${JSON.stringify(candidates)};
-                let i = 0;
+    function tryNext() {
+        if (i >= candidates.length) {
+            imgEl.src = "webimages/sprites/missingno.png";
+            return;
+        }
 
-                function tryNext() {
-                    if (i >= candidates.length) {
-                        img.src = "webimages/sprites/missingno.png";
-                        return;
-                    }
+        imgEl.src = `webimages/sprites/${candidates[i]}`;
+        imgEl.onerror = () => {
+            i++;
+            tryNext();
+        };
+    }
 
-                    img.src = "webimages/sprites/" + candidates[i];
-                    img.onerror = () => {
-                        i++;
-                        tryNext();
-                    };
-                }
-
-                tryNext();
-            })();
-        </script>
-    `;
+    tryNext();
 }
 
 function renderPokemonDetails(pokemon) {
@@ -390,7 +380,7 @@ const bst =
 return `
 <div class="pokemon-header">
     <h1>${pokemon.name}</h1>
-    ${getSpriteHTML(pokemon)}
+    <img id="main-sprite" width="160">
 
     <div class="type-icons">
         ${(Array.isArray(pokemon.type) ? pokemon.type : []).map(t => `
@@ -464,7 +454,7 @@ function renderGender(ratio) {
                 <div class="gender-none"></div>
             </div>
             <div class="gender-label">
-                <span style="font-weight:800;">〇 Genderless</span>
+                <span style="font-weight:900;">〇 Genderless</span>
             </div>
         `;
     }
