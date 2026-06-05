@@ -683,9 +683,7 @@
     "name": "Clefairy",
     "spriteKey": "clefairy",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CUTE_CHARM",
     "ability2": "ABILITY_MAGIC_GUARD",
@@ -704,9 +702,7 @@
     "name": "Clefable",
     "spriteKey": "clefable",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CUTE_CHARM",
     "ability2": "ABILITY_MAGIC_GUARD",
@@ -765,7 +761,6 @@
     "spriteKey": "jigglypuff",
     "type": [
       "TYPE_NORMAL",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CUTE_CHARM",
@@ -786,7 +781,6 @@
     "spriteKey": "wigglytuff",
     "type": [
       "TYPE_NORMAL",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CUTE_CHARM",
@@ -2388,7 +2382,6 @@
     "spriteKey": "mr_mime",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SOUNDPROOF",
@@ -3380,9 +3373,7 @@
     "name": "Cleffa",
     "spriteKey": "cleffa",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CUTE_CHARM",
     "ability2": "ABILITY_MAGIC_GUARD",
@@ -3402,7 +3393,6 @@
     "spriteKey": "igglybuff",
     "type": [
       "TYPE_NORMAL",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CUTE_CHARM",
@@ -3422,9 +3412,7 @@
     "name": "Togepi",
     "spriteKey": "togepi",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_HUSTLE",
     "ability2": "ABILITY_SERENE_GRACE",
@@ -3443,9 +3431,7 @@
     "name": "Togetic",
     "spriteKey": "togetic",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_FLYING"
     ],
     "ability1": "ABILITY_HUSTLE",
@@ -3563,7 +3549,6 @@
     "spriteKey": "bellossom",
     "type": [
       "TYPE_GRASS",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CHLOROPHYLL",
@@ -3584,7 +3569,6 @@
     "spriteKey": "marill",
     "type": [
       "TYPE_WATER",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_THICK_FAT",
@@ -3605,7 +3589,6 @@
     "spriteKey": "azumarill",
     "type": [
       "TYPE_WATER",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_THICK_FAT",
@@ -3920,7 +3903,6 @@
     "spriteKey": "misdreavus",
     "type": [
       "TYPE_GHOST",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_LEVITATE",
@@ -4097,9 +4079,7 @@
     "name": "Snubbull",
     "spriteKey": "snubbull",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_INTIMIDATE",
     "ability2": "ABILITY_RUN_AWAY",
@@ -4118,9 +4098,7 @@
     "name": "Granbull",
     "spriteKey": "granbull",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_FIGHTING"
     ],
     "ability1": "ABILITY_INTIMIDATE",
@@ -4904,9 +4882,7 @@
     "spriteKey": "ho_oh",
     "type": [
       "TYPE_FIRE",
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_FLYING"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PRESSURE",
     "ability2": "ABILITY_NONE",
@@ -5493,7 +5469,6 @@
     "spriteKey": "ralts",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SYNCHRONIZE",
@@ -5514,7 +5489,6 @@
     "spriteKey": "kirlia",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SYNCHRONIZE",
@@ -5535,7 +5509,6 @@
     "spriteKey": "gardevoir",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SYNCHRONIZE",
@@ -5847,7 +5820,6 @@
     "spriteKey": "azurill",
     "type": [
       "TYPE_NORMAL",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_THICK_FAT",
@@ -5945,7 +5917,6 @@
     "spriteKey": "mawile",
     "type": [
       "TYPE_STEEL",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_HYPER_CUTTER",
@@ -6162,7 +6133,6 @@
     "spriteKey": "illumise",
     "type": [
       "TYPE_BUG",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_OBLIVIOUS",
@@ -6868,7 +6838,6 @@
     "spriteKey": "milotic",
     "type": [
       "TYPE_WATER",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_MARVEL_SCALE",
@@ -8409,7 +8378,6 @@
     "spriteKey": "mismagius",
     "type": [
       "TYPE_GHOST",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_LEVITATE",
@@ -8606,7 +8574,6 @@
     "spriteKey": "mime_jr",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SOUNDPROOF",
@@ -9175,9 +9142,7 @@
     "name": "Togekiss",
     "spriteKey": "togekiss",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_FLYING"
     ],
     "ability1": "ABILITY_HUSTLE",
@@ -9570,7 +9535,6 @@
     "spriteKey": "cresselia",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_LEVITATE",
@@ -11651,7 +11615,6 @@
     "spriteKey": "cottonee",
     "type": [
       "TYPE_GRASS",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PRANKSTER",
@@ -11672,7 +11635,6 @@
     "spriteKey": "whimsicott",
     "type": [
       "TYPE_GRASS",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PRANKSTER",
@@ -14056,9 +14018,7 @@
     "name": "Flab\u00e9b\u00e9",
     "spriteKey": "flabebe",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_FLOWER_VEIL",
     "ability2": "ABILITY_NONE",
@@ -14077,9 +14037,7 @@
     "name": "Floette",
     "spriteKey": "floette",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_FLOWER_VEIL",
     "ability2": "ABILITY_NONE",
@@ -14098,9 +14056,7 @@
     "name": "Florges",
     "spriteKey": "florges",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_FLOWER_VEIL",
     "ability2": "ABILITY_NONE",
@@ -14313,9 +14269,7 @@
     "name": "Spritzee",
     "spriteKey": "spritzee",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_HEALER",
     "ability2": "ABILITY_NONE",
@@ -14334,9 +14288,7 @@
     "name": "Aromatisse",
     "spriteKey": "aromatisse",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_HEALER",
     "ability2": "ABILITY_NONE",
@@ -14355,9 +14307,7 @@
     "name": "Swirlix",
     "spriteKey": "swirlix",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SWEET_VEIL",
     "ability2": "ABILITY_NONE",
@@ -14376,9 +14326,7 @@
     "name": "Slurpuff",
     "spriteKey": "slurpuff",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SWEET_VEIL",
     "ability2": "ABILITY_NONE",
@@ -14675,9 +14623,7 @@
     "name": "Sylveon",
     "spriteKey": "sylveon",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CUTE_CHARM",
     "ability2": "ABILITY_NONE",
@@ -14717,7 +14663,6 @@
     "spriteKey": "dedenne",
     "type": [
       "TYPE_ELECTRIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CHEEK_POUCH",
@@ -14738,7 +14683,6 @@
     "spriteKey": "carbink",
     "type": [
       "TYPE_ROCK",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CLEAR_BODY",
@@ -14819,7 +14763,6 @@
     "spriteKey": "klefki",
     "type": [
       "TYPE_STEEL",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PRANKSTER",
@@ -14997,9 +14940,7 @@
     "name": "Xerneas",
     "spriteKey": "xerneas",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_FAIRY_AURA",
     "ability2": "ABILITY_NONE",
@@ -15059,7 +15000,6 @@
     "spriteKey": "diancie",
     "type": [
       "TYPE_ROCK",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_CLEAR_BODY",
@@ -15276,7 +15216,6 @@
     "spriteKey": "primarina",
     "type": [
       "TYPE_WATER",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_TORRENT",
@@ -15513,7 +15452,6 @@
     "spriteKey": "cutiefly",
     "type": [
       "TYPE_BUG",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_HONEY_GATHER",
@@ -15534,7 +15472,6 @@
     "spriteKey": "ribombee",
     "type": [
       "TYPE_BUG",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_HONEY_GATHER",
@@ -15768,7 +15705,6 @@
     "spriteKey": "morelull",
     "type": [
       "TYPE_GRASS",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_ILLUMINATE",
@@ -15789,7 +15725,6 @@
     "spriteKey": "shiinotic",
     "type": [
       "TYPE_GRASS",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_ILLUMINATE",
@@ -15946,9 +15881,7 @@
     "name": "Comfey",
     "spriteKey": "comfey",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_FLOWER_VEIL",
     "ability2": "ABILITY_TRIAGE",
@@ -16223,7 +16156,6 @@
     "spriteKey": "mimikyu",
     "type": [
       "TYPE_GHOST",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_DISGUISE",
@@ -16363,7 +16295,6 @@
     "spriteKey": "tapu_koko",
     "type": [
       "TYPE_ELECTRIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_ELECTRIC_SURGE",
@@ -16384,7 +16315,6 @@
     "spriteKey": "tapu_lele",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PSYCHIC_SURGE",
@@ -16405,7 +16335,6 @@
     "spriteKey": "tapu_bulu",
     "type": [
       "TYPE_GRASS",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_GRASSY_SURGE",
@@ -16426,7 +16355,6 @@
     "spriteKey": "tapu_fini",
     "type": [
       "TYPE_WATER",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_MISTY_SURGE",
@@ -16683,7 +16611,6 @@
     "spriteKey": "magearna",
     "type": [
       "TYPE_STEEL",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SOUL_HEART",
@@ -17786,7 +17713,6 @@
     "spriteKey": "hatterene",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_HEALER",
@@ -17807,7 +17733,6 @@
     "spriteKey": "impidimp",
     "type": [
       "TYPE_DARK",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PRANKSTER",
@@ -17828,7 +17753,6 @@
     "spriteKey": "morgrem",
     "type": [
       "TYPE_DARK",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PRANKSTER",
@@ -17849,7 +17773,6 @@
     "spriteKey": "grimmsnarl",
     "type": [
       "TYPE_DARK",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PRANKSTER",
@@ -17986,9 +17909,7 @@
     "name": "Milcery",
     "spriteKey": "milcery",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SWEET_VEIL",
     "ability2": "ABILITY_NONE",
@@ -18007,9 +17928,7 @@
     "name": "Alcremie",
     "spriteKey": "alcremie",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SWEET_VEIL",
     "ability2": "ABILITY_NONE",
@@ -18382,9 +18301,7 @@
     "name": "Zacian",
     "spriteKey": "zacian",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_INTREPID_SWORD",
     "ability2": "ABILITY_NONE",
@@ -18717,9 +18634,7 @@
     "name": "Enamorus",
     "spriteKey": "enamorus",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_FLYING"
     ],
     "ability1": "ABILITY_CUTE_CHARM",
@@ -19125,9 +19040,7 @@
     "name": "Fidough",
     "spriteKey": "fidough",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_OWN_TEMPO",
     "ability2": "ABILITY_NONE",
@@ -19146,9 +19059,7 @@
     "name": "Dachsbun",
     "spriteKey": "dachsbun",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_WELL_BAKED_BODY",
     "ability2": "ABILITY_NONE",
@@ -19734,9 +19645,7 @@
     "name": "Tinkatink",
     "spriteKey": "tinkatink",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_STEEL"
     ],
     "ability1": "ABILITY_MOLD_BREAKER",
@@ -19756,9 +19665,7 @@
     "name": "Tinkatuff",
     "spriteKey": "tinkatuff",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_STEEL"
     ],
     "ability1": "ABILITY_MOLD_BREAKER",
@@ -19778,9 +19685,7 @@
     "name": "Tinkaton",
     "spriteKey": "tinkaton",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_STEEL"
     ],
     "ability1": "ABILITY_MOLD_BREAKER",
@@ -20290,9 +20195,7 @@
     "name": "ScreamTail",
     "spriteKey": "scream_tail",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_PSYCHIC"
     ],
     "ability1": "ABILITY_PROTOSYNTHESIS",
@@ -20333,7 +20236,6 @@
     "spriteKey": "flutter_mane",
     "type": [
       "TYPE_GHOST",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PROTOSYNTHESIS",
@@ -20712,9 +20614,7 @@
     "name": "Iron Valor",
     "spriteKey": "iron_valiant",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_FIGHTING"
     ],
     "ability1": "ABILITY_QUARK_DRIVE",
@@ -20915,7 +20815,6 @@
     "spriteKey": "fezandipiti",
     "type": [
       "TYPE_POISON",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_TOXIC_CHAIN",
@@ -21590,8 +21489,7 @@
     "spriteKey": "mega_gardevoir",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY"
+      "TYPE_IMPLEMENTED"
     ],
     "ability1": "ABILITY_PIXILATE",
     "ability2": "ABILITY_PIXILATE",
@@ -21631,8 +21529,7 @@
     "spriteKey": "mega_mawile",
     "type": [
       "TYPE_STEEL",
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY"
+      "TYPE_IMPLEMENTED"
     ],
     "ability1": "ABILITY_HUGE_POWER",
     "ability2": "ABILITY_HUGE_POWER",
@@ -21789,7 +21686,6 @@
     "spriteKey": "mega_absol",
     "type": [
       "TYPE_DARK",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PRESSURE",
@@ -22029,8 +21925,7 @@
     "spriteKey": "mega_audino",
     "type": [
       "TYPE_NORMAL",
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY"
+      "TYPE_IMPLEMENTED"
     ],
     "ability1": "ABILITY_HEALER",
     "ability2": "ABILITY_HEALER",
@@ -22050,9 +21945,7 @@
     "spriteKey": "mega_diancie",
     "type": [
       "TYPE_ROCK",
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_PSYCHIC"
+      "TYPE_IMPLEMENTED"
     ],
     "ability1": "ABILITY_MAGIC_BOUNCE",
     "ability2": "ABILITY_NONE",
@@ -22548,7 +22441,6 @@
     "spriteKey": "ribombee_large",
     "type": [
       "TYPE_BUG",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SWEET_VEIL",
@@ -22648,7 +22540,6 @@
     "spriteKey": "mimikyu_large",
     "type": [
       "TYPE_GHOST",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_DISGUISE",
@@ -26020,9 +25911,7 @@
     "name": "Enamorus Therian",
     "spriteKey": "enamorus_therian",
     "type": [
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY",
-      "TYPE_NORMAL",
       "TYPE_FLYING"
     ],
     "ability1": "ABILITY_OVERCOAT",
@@ -27881,7 +27770,6 @@
     "spriteKey": "gigantamax_hatterene",
     "type": [
       "TYPE_PSYCHIC",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_HEALER",
@@ -27902,7 +27790,6 @@
     "spriteKey": "gigantamax_grimmsnarl",
     "type": [
       "TYPE_DARK",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_PRANKSTER",
@@ -27922,9 +27809,7 @@
     "name": "Gigantamax Alcremie",
     "spriteKey": "gigantamax_alcremie",
     "type": [
-      "TYPE_IMPLEMENTED",
-      "TYPE_FAIRY",
-      "TYPE_NORMAL"
+      "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SWEET_VEIL",
     "ability2": "ABILITY_NONE",
@@ -28795,7 +28680,6 @@
     "spriteKey": "mega_magearna",
     "type": [
       "TYPE_STEEL",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SOUL_HEART",
@@ -28816,7 +28700,6 @@
     "spriteKey": "mega_magearna_original",
     "type": [
       "TYPE_STEEL",
-      "TYPE_IMPLEMENTED",
       "TYPE_FAIRY"
     ],
     "ability1": "ABILITY_SOUL_HEART",

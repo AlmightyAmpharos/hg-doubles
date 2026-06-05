@@ -85,19 +85,37 @@ for line in lines:
     # -------------------------
     elif line.startswith("types") and current:
 
-        # Extract ALL TYPE_* tokens anywhere in the line
-        matches = re.findall(r"TYPE_[A-Z]+", line)
+        line = line.replace("types", "").strip()
 
-        # Remove duplicates while preserving order
+        def eval_type(expr):
+            expr = expr.strip()
+
+            # Fairy-type ternary
+            ternary = re.search(
+                r"\(FAIRY_TYPE_IMPLEMENTED\)\s*\?\s*(TYPE_[A-Z_]+)\s*:\s*(TYPE_[A-Z_]+)",
+                expr
+            )
+
+            if ternary:
+                return ternary.group(1)  # always choose fairy-enabled result
+
+            match = re.search(r"(TYPE_[A-Z_]+)", expr)
+            return match.group(1) if match else None
+
+        # split top-level commas (important for dual types)
+        parts = [p.strip() for p in line.split(",")]
+
         seen = set()
         cleaned = []
-        for t in matches:
-            if t not in seen:
+
+        for part in parts:
+            t = eval_type(part)
+            if t and t not in seen:
                 seen.add(t)
                 cleaned.append(t)
 
         current["type"] = cleaned
-
+        
     # -------------------------
     # ABILITIES
     # -------------------------
