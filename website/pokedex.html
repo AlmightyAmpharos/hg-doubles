@@ -40,6 +40,14 @@ body {
     cursor: pointer;
 }
 
+.pokemon-item:nth-child(even) {
+    background: #f7f7f7;
+}
+
+.pokemon-item:nth-child(odd) {
+    background: #ffffff;
+}
+
 .pokemon-item:hover {
     background: #eaf3ff;
 }
@@ -84,7 +92,7 @@ body {
 }
 
 .ability-name {
-    margin-top: 6px;
+    margin-top: 2px;
 }
 
 /* tooltip */
@@ -124,7 +132,6 @@ body {
 }
 
 .stats-container {
-    border: 1px solid #ccc;
     padding: 15px;
 }
 
@@ -407,18 +414,69 @@ return `
 }
 
 /* gender helper */
+function roundGender(value) {
+    const allowed = [12.5, 25, 50, 75, 87.5, 100];
+
+    let closest = allowed.reduce((prev, curr) =>
+        Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
+    );
+
+    return closest;
+}
+
 function renderGender(ratio) {
+
+    const symbolMale = `<span style="color:#4da3ff;font-weight:900;">♂</span>`;
+    const symbolFemale = `<span style="color:#ff6fb1;font-weight:900;">♀</span>`;
+
+    const formatPct = (v) => `${v}%`;
+
     if (ratio === 255 || !ratio) {
-        return `<div class="gender-bar"><div class="gender-none"></div></div>`;
+        return `
+            <div class="gender-bar">
+                <div class="gender-none"></div>
+            </div>
+            <div class="gender-label">
+                <span>〇 Genderless</span>
+            </div>
+        `;
     }
 
-    const f = ratio / 254;
-    const m = 1 - f;
+    const femaleRaw = ratio / 254;
+    let female = roundGender(femaleRaw * 100);
+    let male = 100 - female;
+
+    // fix 0% omission rule
+    if (female === 0) {
+        return `
+            <div class="gender-bar">
+                <div class="gender-male" style="width:100%"></div>
+            </div>
+            <div class="gender-label">
+                <span>${symbolMale} <span style="color:#000">100%</span></span>
+            </div>
+        `;
+    }
+
+    if (male === 0) {
+        return `
+            <div class="gender-bar">
+                <div class="gender-female" style="width:100%"></div>
+            </div>
+            <div class="gender-label">
+                <span>${symbolFemale} <span style="color:#000">100%</span></span>
+            </div>
+        `;
+    }
 
     return `
         <div class="gender-bar">
-            <div class="gender-male" style="width:${m*100}%"></div>
-            <div class="gender-female" style="width:${f*100}%"></div>
+            <div class="gender-male" style="width:${male}%"></div>
+            <div class="gender-female" style="width:${female}%"></div>
+        </div>
+        <div class="gender-label">
+            <span>${symbolMale} <span style="color:#000">${formatPct(male)}</span></span>
+            <span>${symbolFemale} <span style="color:#000">${formatPct(female)}</span></span>
         </div>
     `;
 }
