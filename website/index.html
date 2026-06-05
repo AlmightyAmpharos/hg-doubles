@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HG Doubles Dex</title>
-</head>
-<body>
-    <h1>HG Doubles Pokédex</h1>
-    <p>If you can read this, GitHub Pages is working.</p>
+    <title>HG Doubles</title>
 
-    <a href="pokedex.html">Pokédex</a>
-    <a href="moves.html">Moves</a>
-    <a href="abilities.html">Abilities</a>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background: #333;
+            padding: 10px;
+        }
+
+        .navbar button {
+            color: white;
+            background: none;
+            border: none;
+            margin-right: 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .navbar button:hover {
+            text-decoration: underline;
+        }
+
+        #content {
+            width: 100%;
+            height: calc(100vh - 50px);
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <button onclick="loadPage('pokedex.html')">Pokédex</button>
+    <button onclick="loadPage('moves.html')">Moves</button>
+    <button onclick="loadPage('abilities.html')">Abilities</button>
+</div>
+
+<iframe
+    id="content"
+    src="pokedex.html">
+</iframe>
+
+<script>
+function loadPage(page) {
+    document.getElementById("content").src = page;
+}
+</script>
+
 </body>
 </html>
