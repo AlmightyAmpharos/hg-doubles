@@ -404,6 +404,17 @@ function formatMove(raw) {
         .replace(/\b\w/g, c => c.toUpperCase());
 }
 
+/* ICONS */
+function typeIcon(type) {
+    if (!type) return "";
+    return `<img class="icon" src="webimages/types/${type}.png">`;
+}
+
+function categoryIcon(cat) {
+    if (!cat) return "";
+    return `<img class="icon" src="webimages/categories/${cat}.png">`;
+}
+
 function renderLevelUpMoves(pokemon) {
 
     const learnset = learnsetsData[pokemon.id];
@@ -420,7 +431,7 @@ function renderLevelUpMoves(pokemon) {
                     <th>Name</th>
                     <th>Type</th>
                     <th>Cat</th>
-                    <th>Power</th>
+                    <th>Pow</th>
                     <th>Acc</th>
                     <th>PP</th>
                 </tr>
@@ -434,28 +445,8 @@ function renderLevelUpMoves(pokemon) {
                         <tr>
                             <td>${entry.Level}</td>
                             <td>${formatMove(entry.Move)}</td>
-                            <td>
-                                ${
-                                    move
-                                    ? `<img
-                                            src="webimages/types/${move.type}.png"
-                                            height="24"
-                                            title="${move.type}"
-                                        >`
-                                    : "-"
-                                }
-                            </td>
-                            <td>
-                                ${
-                                    move
-                                    ? `<img
-                                            src="webimages/categories/${move.category}.png"
-                                            height="20"
-                                            title="${move.category}"
-                                        >`
-                                    : "-"
-                                }
-                            </td>
+                            <td>${typeIcon(m.type)}</td>
+                            <td>${categoryIcon(m.pss)}</td>
                             <td>${move?.power ?? "-"}</td>
                             <td>${move?.accuracy ?? "-"}</td>
                             <td>${move?.pp ?? "-"}</td>
