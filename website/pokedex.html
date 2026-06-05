@@ -208,15 +208,35 @@ body {
     border-collapse: collapse;
 }
 
-.learnset-table th,
-.learnset-table td {
-    border-bottom: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+.learnset-table th {
+    background: #e5e5e5;
+    cursor: pointer;
 }
 
-.learnset-table th {
-    background: #f3f3f3;
+.learnset-table th,
+.learnset-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.learnset-table tbody tr:nth-child(odd) {
+    background: white;
+}
+
+.learnset-table tbody tr:nth-child(even) {
+    background: #f5f5f5;
+}
+
+.learnset-table tbody tr:hover {
+    background: #eaf3ff;
+}
+
+.learnset-table td {
+    text-align: center;
+}
+
+.learnset-table td:nth-child(2) {
+    text-align: left;
 }
     </style>
 </head>
@@ -238,17 +258,20 @@ body {
 
 let pokemonData = [];
 let abilitiesData = [];
+let movesData = [];
 let learnsetsData = {};
 
 Promise.all([
     fetch('webdata/pokemon.json').then(r => r.json()),
     fetch('webdata/abilities.json').then(r => r.json()),
-    fetch('webdata/learnsets.json').then(r => r.json())
-]).then(([pokemon, abilities, learnsets]) => {
+    fetch('webdata/learnsets.json').then(r => r.json()),
+    fetch('webdata/moves.json').then(r => r.json())
+]).then(([pokemon, abilities, learnsets, moves]) => {
 
     pokemonData = pokemon;
     abilitiesData = abilities;
     learnsetsData = learnsets;
+    movesData = moves;
 
     renderList();
 });
@@ -383,8 +406,7 @@ function formatMove(raw) {
 
 function renderLevelUpMoves(pokemon) {
 
-    const learnset =
-        learnsetsData[pokemon.id];
+    const learnset = learnsetsData[pokemon.id];
 
     if (!learnset || !learnset.LevelMoves) {
         return "<p>No learnset data found.</p>";
@@ -395,16 +417,51 @@ function renderLevelUpMoves(pokemon) {
             <thead>
                 <tr>
                     <th>Lvl</th>
-                    <th>Move</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Cat</th>
+                    <th>Power</th>
+                    <th>Acc</th>
+                    <th>PP</th>
                 </tr>
             </thead>
             <tbody>
-                ${learnset.LevelMoves.map(move => `
-                    <tr>
-                        <td>${move.Level}</td>
-                        <td>${formatMove(move.Move)}</td>
-                    </tr>
-                `).join("")}
+                ${learnset.LevelMoves.map(entry => {
+
+                    const move = getMoveData(entry.Move);
+
+                    return `
+                        <tr>
+                            <td>${entry.Level}</td>
+                            <td>${formatMove(entry.Move)}</td>
+                            <td>
+                                ${
+                                    move
+                                    ? `<img
+                                            src="webimages/types/${move.type}.png"
+                                            height="24"
+                                            title="${move.type}"
+                                        >`
+                                    : "-"
+                                }
+                            </td>
+                            <td>
+                                ${
+                                    move
+                                    ? `<img
+                                            src="webimages/categories/${move.category}.png"
+                                            height="20"
+                                            title="${move.category}"
+                                        >`
+                                    : "-"
+                                }
+                            </td>
+                            <td>${move?.power ?? "-"}</td>
+                            <td>${move?.accuracy ?? "-"}</td>
+                            <td>${move?.pp ?? "-"}</td>
+                        </tr>
+                    `;
+                }).join("")}
             </tbody>
         </table>
     `;
@@ -439,6 +496,10 @@ function abilityHTML(raw) {
             <div class="ability-tooltip">${desc}</div>
         </span>
     `;
+}
+
+function getMoveData(moveId) {
+    return movesData.find(m => m.id === moveId);
 }
 
 const key = (pokemon.spriteKey || pokemon.name).toLowerCase();
