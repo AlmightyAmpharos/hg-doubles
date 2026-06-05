@@ -238,6 +238,11 @@ body {
 .learnset-table td:nth-child(2) {
     text-align: left;
 }
+
+.icon {
+    height: 24px;
+    width: auto;
+}
     </style>
 </head>
 
@@ -445,8 +450,8 @@ function renderLevelUpMoves(pokemon) {
                         <tr>
                             <td>${entry.Level}</td>
                             <td>${formatMove(entry.Move)}</td>
-                            <td>${typeIcon(m.type)}</td>
-                            <td>${categoryIcon(m.pss)}</td>
+                            <td>${typeIcon(move?.type)}</td>
+                            <td>${categoryIcon(move?.category)}</td>
                             <td>${move?.power ?? "-"}</td>
                             <td>${move?.accuracy ?? "-"}</td>
                             <td>${move?.pp ?? "-"}</td>
