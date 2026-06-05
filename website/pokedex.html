@@ -455,8 +455,8 @@ return `
 /* GENDER */
 function renderGender(ratio) {
 
-    const maleSymbol = `<span style="color:#4da3ff;font-weight:1800;">♂</span>`;
-    const femaleSymbol = `<span style="color:#ff6fb1;font-weight:1800;">♀</span>`;
+    const maleSymbol = `<span style="color:#4da3ff;font-weight:900;">♂</span>`;
+    const femaleSymbol = `<span style="color:#ff6fb1;font-weight:900;">♀</span>`;
 
     if (ratio === 255 || !ratio) {
         return `
@@ -464,7 +464,7 @@ function renderGender(ratio) {
                 <div class="gender-none"></div>
             </div>
             <div class="gender-label">
-                <span> style="font-weight:1800;">〇 Genderless</span>`
+                <span style="font-weight:800;">〇 Genderless</span>
             </div>
         `;
     }
