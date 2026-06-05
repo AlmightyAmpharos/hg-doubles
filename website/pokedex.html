@@ -83,7 +83,7 @@ body {
 .ability-column {
     border: 1px solid #ccc;
     text-align: center;
-    padding-top: 4px;
+    padding: 4px;
 }
 
 .ability-name {
@@ -283,6 +283,44 @@ function renderList() {
         });
 }
 
+function getSpriteHTML(pokemon) {
+    const key = (pokemon.spriteKey || pokemon.name).toLowerCase();
+
+    const candidates = [
+        `${key}.png`,
+        `${key}_male.png`,
+        `${key}_female.png`
+    ];
+
+    let i = 0;
+
+    return `
+        <img id="main-sprite" width="160">
+        <script>
+            (function() {
+                const img = document.getElementById("main-sprite");
+                const candidates = ${JSON.stringify(candidates)};
+                let i = 0;
+
+                function tryNext() {
+                    if (i >= candidates.length) {
+                        img.src = "webimages/sprites/missingno.png";
+                        return;
+                    }
+
+                    img.src = "webimages/sprites/" + candidates[i];
+                    img.onerror = () => {
+                        i++;
+                        tryNext();
+                    };
+                }
+
+                tryNext();
+            })();
+        </script>
+    `;
+}
+
 function renderPokemonDetails(pokemon) {
 
 function formatAbility(raw) {
@@ -352,7 +390,7 @@ const bst =
 return `
 <div class="pokemon-header">
     <h1>${pokemon.name}</h1>
-    <img src="webimages/sprites/${key}.png" width="160">
+    ${getSpriteHTML(pokemon)}
 
     <div class="type-icons">
         ${(Array.isArray(pokemon.type) ? pokemon.type : []).map(t => `
@@ -417,8 +455,8 @@ return `
 /* GENDER */
 function renderGender(ratio) {
 
-    const maleSymbol = `<span style="color:#4da3ff;font-weight:900;">♂</span>`;
-    const femaleSymbol = `<span style="color:#ff6fb1;font-weight:900;">♀</span>`;
+    const maleSymbol = `<span style="color:#4da3ff;font-weight:1800;">♂</span>`;
+    const femaleSymbol = `<span style="color:#ff6fb1;font-weight:1800;">♀</span>`;
 
     if (ratio === 255 || !ratio) {
         return `
@@ -426,7 +464,7 @@ function renderGender(ratio) {
                 <div class="gender-none"></div>
             </div>
             <div class="gender-label">
-                <span>〇 Genderless</span>
+                <span> style="font-weight:1800;">〇 Genderless</span>`
             </div>
         `;
     }
