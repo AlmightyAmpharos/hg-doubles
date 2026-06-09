@@ -451,8 +451,8 @@ function renderLevelUpMoves(pokemon) {
                             <td>${entry.Level}</td>
                             <td>${formatMove(entry.Move)}</td>
                             <td>${typeIcon(move?.type)}</td>
-                            <td>${categoryIcon(move?.category)}</td>
-                            <td>${move?.power ?? "-"}</td>
+                            <td>${categoryIcon(move?.pss)}</td>
+                            <td>${move?.basePower ?? "-"}</td>
                             <td>${move?.accuracy ?? "-"}</td>
                             <td>${move?.pp ?? "-"}</td>
                         </tr>
