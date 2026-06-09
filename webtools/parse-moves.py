@@ -125,7 +125,8 @@ def normalize_move(move):
         else:
             move["accuracy"] = "∞"
 
-    return move
+    elif isinstance(acc, int):
+        move["accuracy"] = f"{acc}%"
 
 
 # -------------------------------------------------
