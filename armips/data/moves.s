@@ -13364,7 +13364,7 @@ movedata MOVE_STONE_AXE, "Stone Axe"
     terminatedata
     movedescription MOVE_STONE_AXE, "The user swings its\nstone axes at the\ntarget. Splinters left\nbehind by this attack\nfloat around the target."
 
-movedatalongname MOVE_SPRINGTIDE_STORM, "SpringtideStorm", "Springtide Storm"
+movedatalongname MOVE_SPRINGTIDE_STORM, "Springtide Storm"
     battleeffect MOVE_EFFECT_LOWER_ATTACK_HIT
     pss SPLIT_SPECIAL
     basepower 100

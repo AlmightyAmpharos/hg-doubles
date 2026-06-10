@@ -1213,7 +1213,7 @@ mondata SPECIES_MANKEY, "Mankey"
 
 mondata SPECIES_PRIMEAPE, "Primeape"
     basestats 65, 105, 60, 95, 60, 70
-    types TYPE_FIGHTING, TYPE_DARK
+    types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 75
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -2641,7 +2641,7 @@ mondata SPECIES_JYNX, "Jynx"
 
 mondata SPECIES_ELECTABUZZ, "Electabuzz"
     basestats 65, 83, 57, 105, 95, 85
-    types TYPE_ELECTRIC, TYPE_FIGHTING
+    types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -5035,7 +5035,7 @@ mondata SPECIES_SMOOCHUM, "Smoochum"
 
 mondata SPECIES_ELEKID, "Elekid"
     basestats 45, 63, 37, 95, 65, 55
-    types TYPE_ELECTRIC, TYPE_FIGHTING
+    types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 45
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -9802,7 +9802,7 @@ mondata SPECIES_TANGROWTH, "Tangrowth"
 
 mondata SPECIES_ELECTIVIRE, "Electivire"
     basestats 75, 123, 67, 95, 95, 85
-    types TYPE_ELECTRIC, TYPE_FIGHTING
+    types TYPE_ELECTRIC, TYPE_ELECTRIC
     catchrate 30
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -9812,7 +9812,7 @@ mondata SPECIES_ELECTIVIRE, "Electivire"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_MOTOR_DRIVE, ABILITY_NONE
+    abilities ABILITY_MOTOR_DRIVE, ABILITY_GALVANIZE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_ELECTIVIRE, "As its electric charge amplifies,\nblue sparks begin to crackle between\nits horns."
@@ -28238,7 +28238,7 @@ mondata SPECIES_MEGA_RAICHU_X, "-----"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FAIRY
-    abilities ABILITY_STATIC, ABILITY_NONE
+    abilities ABILITY_ELECTRIC_SURGE, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
 
@@ -28254,7 +28254,7 @@ mondata SPECIES_MEGA_RAICHU_Y, "-----"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FAIRY
-    abilities ABILITY_STATIC, ABILITY_NONE
+    abilities ABILITY_NO_GUARD, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
 
@@ -28339,7 +28339,7 @@ mondata SPECIES_MEGA_MEGANIUM, "-----"
     colorflip BODY_COLOR_GREEN, 0
 
 mondata SPECIES_MEGA_FERALIGATR, "-----"
-    basestats 85, 160, 100, 78, 89, 93
+    basestats 85, 160, 125, 78, 89, 93
     types TYPE_WATER, TYPE_DRAGON
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -28355,7 +28355,7 @@ mondata SPECIES_MEGA_FERALIGATR, "-----"
     colorflip BODY_COLOR_BLUE, 0
 
 mondata SPECIES_MEGA_SKARMORY, "-----"
-    basestats 85, 140, 110, 110, 40, 100
+    basestats 65, 140, 110, 110, 40, 100
     types TYPE_STEEL, TYPE_FLYING
     catchrate 25
     baseexp 0 // defined in baseexp.s
