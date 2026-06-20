@@ -175,6 +175,8 @@
 let items = [];
 let filteredItems = [];
 
+selectedItem = item;
+
 const itemList = document.getElementById("itemList");
 const itemDetails = document.getElementById("itemDetails");
 
@@ -245,6 +247,7 @@ function renderList() {
         const row = document.createElement("div");
 
         row.className = "item-entry";
+        row.dataset.id = item.id;
 
         row.innerHTML = `
             <img
@@ -281,6 +284,8 @@ function renderList() {
 
 function showItem(item) {
 
+    selectedItem = item;
+    
     itemDetails.innerHTML = `
 
         <div style="
@@ -334,6 +339,39 @@ function showItem(item) {
     `;
 }
 
+function selectItemByIndex(index) {
+
+    if (
+        index < 0 ||
+        index >= filteredItems.length
+    ) {
+        return;
+    }
+
+    const item = filteredItems[index];
+
+    showItem(item);
+
+    document
+        .querySelectorAll(".item-entry")
+        .forEach(e =>
+            e.classList.remove("active")
+        );
+
+    const row = document.querySelector(
+        `[data-id="${item.id}"]`
+    );
+
+    if (row) {
+
+        row.classList.add("active");
+
+        row.scrollIntoView({
+            block: "nearest"
+        });
+    }
+}
+
 searchInput.addEventListener(
     "input",
     applyFilters
@@ -342,6 +380,45 @@ searchInput.addEventListener(
 pocketFilter.addEventListener(
     "change",
     applyFilters
+);
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (!filteredItems.length) {
+            return;
+        }
+
+        const currentIndex =
+            filteredItems.findIndex(
+                i => i.id === selectedItem?.id
+            );
+
+        if (event.key === "ArrowDown") {
+
+            event.preventDefault();
+
+            selectItemByIndex(
+                Math.min(
+                    currentIndex + 1,
+                    filteredItems.length - 1
+                )
+            );
+        }
+
+        if (event.key === "ArrowUp") {
+
+            event.preventDefault();
+
+            selectItemByIndex(
+                Math.max(
+                    currentIndex - 1,
+                    0
+                )
+            );
+        }
+    }
 );
 
 loadItems();
